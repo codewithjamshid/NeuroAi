@@ -1,0 +1,21 @@
+{
+  "name": "neuroai",
+  "private": true,
+  "version": "0.1.0",
+  "description": "NeuroAI — insultdan keyingi bemorlar uchun multimodal reabilitatsiya hamrohi (monorepo)",
+  "packageManager": "pnpm@9.15.9",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev:web": "pnpm --filter web dev",
+    "build:web": "pnpm --filter web build",
+    "lint:web": "pnpm --filter web lint",
+    "typecheck:web": "pnpm --filter web typecheck",
+    "format": "prettier --write \"**/*.{md,yml,yaml,json}\" --ignore-path .prettierignore",
+    "format:check": "prettier --check \"**/*.{md,yml,yaml,json}\" --ignore-path .prettierignore"
+  },
+  "devDependencies": {
+    "prettier": "^3.6.2"
+  }
+}

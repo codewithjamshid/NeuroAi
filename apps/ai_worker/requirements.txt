@@ -1,0 +1,31 @@
+# NeuroAI AI worker — runtime deps (skelet).
+# Laptop: `uv sync` (pyproject.toml). Bu fayl ofis kompyuteri (pip / conda, Python 3.11) uchun (TZ §9.1, ADR-003).
+fastapi>=0.115
+uvicorn[standard]>=0.30
+pydantic>=2.7
+pydantic-settings>=2.3
+python-multipart>=0.0.9
+
+# --- Ofis GPU kompyuterida (docs/AI_WORKER_TZ.md) — LAPTOPDA O'RNATMANG ---
+# CUDA 12.x + Python 3.11 muhitida izohni olib tashlab o'rnating. Laptopda bu bo'lim doim izohda qoladi.
+#
+# STT — Kotib/uzbek_stt_v1 (Whisper-medium → CTranslate2 float16, TZ §4.7):
+# faster-whisper>=1.0
+# ctranslate2>=4.4
+# transformers>=4.44          # ct2-transformers-converter uchun (+ audeering, MedGemma)
+# --extra-index-url https://download.pytorch.org/whl/cu124
+# torch>=2.4
+# torchaudio>=2.4
+# soundfile>=0.12
+#
+# Ovoz hissiyoti — emotion2vec/emotion2vec_plus_base (funasr) + audeering A/V/D (transformers):
+# funasr>=1.1
+# modelscope>=1.15            # funasr model yuklash uchun
+#
+# TTS — Navoiy (aisha-org/navoiy-tts, CosyVoice2-0.5B): HF repo'dagi requirements bo'yicha
+# (CosyVoice, hyperpyyaml, onnxruntime-gpu, WeTextProcessing, librosa, ...) — docs/AI_WORKER_TZ.md
+#
+# MedLLM (P2) — google/medgemma-1.5-4b-it (4-bit, gated → `huggingface-cli login`):
+# accelerate>=0.33
+# bitsandbytes>=0.43
+# huggingface_hub[cli]>=0.24

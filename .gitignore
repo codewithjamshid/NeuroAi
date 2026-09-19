@@ -1,0 +1,56 @@
+# --- OS / editor ---
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+*.swp
+
+# --- env / secrets ---
+.env
+.env.*
+!.env.example
+apps/*/.env
+apps/*/.env.*
+!apps/*/.env.example
+
+# --- Node / Next.js ---
+node_modules/
+.pnpm-store/
+apps/web/.next/
+apps/web/out/
+apps/web/next-env.d.ts
+apps/web/public/sw.js
+apps/web/public/sw.js.map
+apps/web/public/swe-worker-*.js
+apps/web/public/workbox-*.js
+*.tsbuildinfo
+packages/shared/src/generated/*
+!packages/shared/src/generated/.gitkeep
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+*.egg-info/
+dist/
+build/
+htmlcov/
+.coverage
+
+# --- Data / media ---
+*.db
+*.sqlite
+media/
+apps/api/media/
+apps/ai_worker/models/
+*.wav
+*.webm
+
+# --- Logs ---
+*.log
+logs/

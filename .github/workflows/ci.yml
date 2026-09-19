@@ -1,0 +1,52 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  python:
+    name: api + ai_worker (ruff, black, pytest)
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        app: [apps/api, apps/ai_worker]
+    defaults:
+      run:
+        working-directory: ${{ matrix.app }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+      - run: uv python install 3.12
+      - run: uv sync --frozen
+      - run: uv run ruff check .
+      - run: uv run black --check .
+      - run: uv run pytest -q
+        env:
+          AI_WORKER_URL: mock
+          DATABASE_URL: sqlite+aiosqlite:///./ci.db
+
+  web:
+    name: web (eslint, tsc, prettier, build)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9.15.9
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm --filter @neuroai/shared typecheck
+      - run: pnpm --filter web lint
+      - run: pnpm --filter web typecheck
+      - run: pnpm --filter web format:check
+      - run: pnpm format:check
+      - run: pnpm --filter web build
+        env:
+          NEXT_PUBLIC_API_URL: http://localhost:8000/api/v1

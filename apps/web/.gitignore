@@ -1,0 +1,10 @@
+# Root .gitignore covers node_modules, .next, sw.js, env files; local extras only.
+/.next/
+/out/
+/coverage
+*.tsbuildinfo
+next-env.d.ts
+public/sw.js
+public/sw.js.map
+public/swe-worker-*.js
+.vercel

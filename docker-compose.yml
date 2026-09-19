@@ -1,0 +1,70 @@
+# NeuroAI — laptop/demo stack: web + api + postgres (TZ §4.1, §9.1).
+# ai_worker bu yerda YO'Q — u ofis GPU kompyuterida alohida ishlaydi (docs/AI_WORKER_TZ.md).
+# Portlar root .env dan olinadi (ADR-005): API_PORT, WEB_PORT, POSTGRES_PORT.
+name: neuroai
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-neuroai}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-neuroai}
+      POSTGRES_DB: ${POSTGRES_DB:-neuroai}
+    ports:
+      # host 5433 (lokal Postgres bilan to'qnashmasin) → konteyner 5432
+      - "${POSTGRES_PORT:-5433}:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-neuroai} -d ${POSTGRES_DB:-neuroai}"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  api:
+    build:
+      context: ./apps/api
+    restart: unless-stopped
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      # compose tarmog'i ichida postgres xizmat nomi bilan (root .env dagi localhost:5433 ni bekor qiladi)
+      DATABASE_URL: postgresql+asyncpg://${POSTGRES_USER:-neuroai}:${POSTGRES_PASSWORD:-neuroai}@postgres:5432/${POSTGRES_DB:-neuroai}
+      CORS_ORIGINS: http://localhost:${WEB_PORT:-3000},http://127.0.0.1:${WEB_PORT:-3000}
+      MEDIA_DIR: /app/media
+      AI_WORKER_URL: ${AI_WORKER_URL:-mock}
+    ports:
+      - "${API_PORT:-8000}:8000"
+    volumes:
+      - ./media:/app/media
+    depends_on:
+      postgres:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://localhost:8000/health"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+
+  web:
+    build:
+      context: .
+      dockerfile: apps/web/Dockerfile
+      args:
+        # build vaqtida "pishiriladi": brauzer yetib boradigan URL (host porti yoki cloudflared tunnel), api:8000 emas
+        NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:-http://localhost:8000/api/v1}
+        NEXT_PUBLIC_EMERGENCY_NUMBER: ${NEXT_PUBLIC_EMERGENCY_NUMBER:-103}
+        NEXT_PUBLIC_FACE_FPS: ${NEXT_PUBLIC_FACE_FPS:-15}
+    restart: unless-stopped
+    environment:
+      NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:-http://localhost:8000/api/v1}
+    ports:
+      - "${WEB_PORT:-3000}:3000"
+    depends_on:
+      api:
+        condition: service_healthy
+
+volumes:
+  pgdata:

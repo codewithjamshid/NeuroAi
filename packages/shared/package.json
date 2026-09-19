@@ -1,0 +1,31 @@
+{
+  "name": "@neuroai/shared",
+  "version": "0.1.0",
+  "private": true,
+  "description": "NeuroAI — apps/api OpenAPI sxemasidan generatsiya qilingan TS tiplar",
+  "type": "module",
+  "types": "src/index.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    },
+    "./api": {
+      "types": "./src/api.ts",
+      "default": "./src/api.ts"
+    }
+  },
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "generate": "node scripts/generate.mjs",
+    "ensure-generated": "node scripts/ensure-generated.mjs",
+    "postinstall": "node scripts/ensure-generated.mjs",
+    "typecheck": "node scripts/ensure-generated.mjs && tsc --noEmit"
+  },
+  "devDependencies": {
+    "openapi-typescript": "^7.13.0",
+    "typescript": "^5.9.3"
+  }
+}

@@ -1,0 +1,18 @@
+# Root build context (apps/web/Dockerfile uses context: .). apps/api has its own context + .dockerignore.
+.git
+.github
+docs
+node_modules
+**/node_modules
+**/.next
+**/.venv
+**/__pycache__
+**/.pytest_cache
+**/.ruff_cache
+**/*.db
+media
+apps/api
+apps/ai_worker
+.env
+.env.*
+!.env.example
