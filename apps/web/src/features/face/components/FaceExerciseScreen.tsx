@@ -26,7 +26,7 @@ import { type I18nKey, t } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 
 import { CALIBRATION_MS, baselineAgeDays, buildBaseline } from "../baseline";
-import { speak, stopSpeaking, useFaceBaseline, useFaceTracker } from "../hooks";
+import { speak, stopSpeaking, useFaceBaseline, useFaceTracker, warmInstructions } from "../hooks";
 import {
   EXERCISE_ORDER,
   HOLD_TARGET_MS,
@@ -152,6 +152,16 @@ export function FaceExerciseScreen() {
       setStep("calibrate");
     }
   }, [status, step, baseline]);
+
+  // Warm the TTS cache for every spoken instruction while the camera/model are still loading.
+  useEffect(() => {
+    warmInstructions([
+      t("face.calib.speak"),
+      ...EXERCISE_ORDER.map((key) => t(`face.exercise.${key}` as I18nKey)),
+      t("face.reached", { n: REPS_TARGET }),
+      t("face.summary.title"),
+    ]);
+  }, []);
 
   // Calibration window (10 s of measured frames).
   useEffect(() => {

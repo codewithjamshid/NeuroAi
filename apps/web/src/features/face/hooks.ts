@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 
+import { speakUz, stopSpeaking as stopAudio, warmUz } from "@/features/audio/useAudioPlayer";
 import { env } from "@/lib/env";
 
 import { clearBaseline, loadBaseline, saveBaseline } from "./baseline";
@@ -127,34 +128,17 @@ export function useFaceBaseline(patientId: string | null) {
   return { baseline, loaded, save, clear };
 }
 
-// Browser TTS fallback for instructions (no server call). Prefers an Uzbek voice, then Turkish
-// (reads Latin Uzbek acceptably), else the default voice.
+// Instructions via Navoiy (POST /tts, cached), browser speechSynthesis only as the last resort.
+// Each call cancels the previous utterance (shared player state), so instructions never stack.
 export function speak(text: string) {
-  if (typeof window === "undefined" || !("speechSynthesis" in window)) return;
-  try {
-    const synth = window.speechSynthesis;
-    synth.cancel();
-    const u = new SpeechSynthesisUtterance(text);
-    const voices = synth.getVoices();
-    const pick =
-      voices.find((v) => v.lang.toLowerCase().startsWith("uz")) ??
-      voices.find((v) => v.lang.toLowerCase().startsWith("tr")) ??
-      null;
-    if (pick) u.voice = pick;
-    u.lang = pick?.lang ?? "uz-UZ";
-    u.rate = 0.9;
-    synth.speak(u);
-  } catch {
-    // speech is optional
-  }
+  void speakUz(text);
 }
 
 export function stopSpeaking() {
-  if (typeof window !== "undefined" && "speechSynthesis" in window) {
-    try {
-      window.speechSynthesis.cancel();
-    } catch {
-      // ignore
-    }
-  }
+  stopAudio();
+}
+
+// Pre-synthesize the instruction phrases so the first one plays without the worker's cold delay.
+export function warmInstructions(texts: string[]) {
+  warmUz(texts);
 }
