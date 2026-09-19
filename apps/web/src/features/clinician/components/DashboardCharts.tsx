@@ -1,6 +1,6 @@
 "use client";
 
-import { Flag } from "lucide-react";
+import { Activity, Dumbbell, Flag, Pill } from "lucide-react";
 import {
   Bar,
   BarChart,
@@ -18,12 +18,19 @@ import {
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import type { Dashboard, DashboardDay } from "@/features/patients/types";
 import { t, tk } from "@/lib/i18n";
+import { cn } from "@/lib/utils";
 
 // dataviz reference palette: categorical slots in fixed order (blue, orange, aqua, yellow);
 // one chart = one measure (no dual axes); 2px lines, ≥ 8px markers, recessive grid, tooltip on hover.
 const SERIES = { blue: "#2a78d6", orange: "#eb6834", aqua: "#1baf7a", yellow: "#eda100" } as const;
-const GRID = "#e1e0d9";
+const GRID = "#e5e1d8";
 const AXIS = "#898781";
+const TOOLTIP_STYLE = {
+  borderRadius: 10,
+  border: "1px solid #e5e1d8",
+  boxShadow: "0 8px 24px rgba(15,118,110,.08)",
+  fontSize: 12,
+};
 
 function shortDate(d: string): string {
   return d.length >= 10 ? d.slice(5, 10) : d;
@@ -39,6 +46,63 @@ function asFraction<T extends number | null | undefined>(v: T): T {
 }
 
 type Key = keyof Omit<DashboardDay, "date">;
+
+function ChartTitle({ title, color }: { title: string; color?: string }) {
+  return (
+    <CardTitle className="flex items-center gap-2">
+      {color && (
+        <span
+          aria-hidden
+          className="inline-block size-2.5 rounded-full"
+          style={{ background: color }}
+        />
+      )}
+      {title}
+    </CardTitle>
+  );
+}
+
+function StatTile({
+  Icon,
+  label,
+  value,
+  unit,
+  sub,
+  tone,
+}: {
+  Icon: typeof Activity;
+  label: string;
+  value: string;
+  unit?: string;
+  sub?: string;
+  tone?: "default" | "alert";
+}) {
+  return (
+    <Card size="sm">
+      <CardContent className="flex items-start gap-3">
+        <span
+          aria-hidden
+          className={cn(
+            "inline-flex size-9 shrink-0 items-center justify-center rounded-lg",
+            tone === "alert" ? "bg-red-50 text-red-800" : "bg-accent text-accent-foreground",
+          )}
+        >
+          <Icon className="size-4" />
+        </span>
+        <div className="flex min-w-0 flex-col">
+          <p className="text-muted-foreground text-xs font-semibold tracking-wide uppercase">
+            {label}
+          </p>
+          <p className="text-2xl leading-tight font-semibold tabular-nums">
+            {value}
+            {unit && <span className="text-muted-foreground ml-1 text-sm font-normal">{unit}</span>}
+          </p>
+          {sub && <p className="text-muted-foreground text-xs">{sub}</p>}
+        </div>
+      </CardContent>
+    </Card>
+  );
+}
 
 function MetricChart({
   title,
@@ -64,22 +128,31 @@ function MetricChart({
   return (
     <Card size="sm">
       <CardHeader>
-        <CardTitle>{title}</CardTitle>
+        <ChartTitle title={title} color={color} />
       </CardHeader>
       <CardContent>
         <div className="h-56">
           <ResponsiveContainer width="100%" height="100%">
             <LineChart data={data} margin={{ top: 8, right: 12, bottom: 0, left: -12 }}>
               <CartesianGrid stroke={GRID} vertical={false} />
-              <XAxis dataKey="date" tickFormatter={shortDate} stroke={AXIS} fontSize={11} />
+              <XAxis
+                dataKey="date"
+                tickFormatter={shortDate}
+                stroke={AXIS}
+                fontSize={11}
+                tickLine={false}
+              />
               <YAxis
                 domain={domain}
                 tickFormatter={percent ? pctTick : undefined}
                 stroke={AXIS}
                 fontSize={11}
                 width={48}
+                tickLine={false}
+                axisLine={false}
               />
               <Tooltip
+                contentStyle={TOOLTIP_STYLE}
                 labelFormatter={(l) => String(l)}
                 formatter={(v) =>
                   percent && typeof v === "number" ? pctTick(v) : String(v ?? "—")
@@ -141,36 +214,46 @@ export function DashboardCharts({ data }: { data: Dashboard }) {
     exercise: asFraction(data.adherence_week?.exercise),
     medication: asFraction(data.adherence_week?.medication),
   };
+  const openFlags = (data.flags ?? []).filter((f) => f.status === "open").length;
 
   return (
     <div className="flex flex-col gap-4">
-      <div className="grid gap-3 sm:grid-cols-3">
-        <Card size="sm">
-          <CardContent>
-            <p className="text-muted-foreground">{t("d.stat.sessions")}</p>
-            <p className="text-2xl font-semibold">{data.sessions_count ?? 0}</p>
-          </CardContent>
-        </Card>
-        <Card size="sm">
-          <CardContent>
-            <p className="text-muted-foreground">{t("d.stat.adherence_exercise")}</p>
-            <p className="text-2xl font-semibold">
-              {adherence.exercise === null || adherence.exercise === undefined
-                ? "—"
-                : pctTick(adherence.exercise)}
-            </p>
-          </CardContent>
-        </Card>
-        <Card size="sm">
-          <CardContent>
-            <p className="text-muted-foreground">{t("d.stat.adherence_medication")}</p>
-            <p className="text-2xl font-semibold">
-              {adherence.medication === null || adherence.medication === undefined
-                ? "—"
-                : pctTick(adherence.medication)}
-            </p>
-          </CardContent>
-        </Card>
+      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        <StatTile
+          Icon={Activity}
+          label={t("d.stat.sessions")}
+          value={String(data.sessions_count ?? 0)}
+          unit={t("d.stat.unit.count")}
+          sub={t("d.stat.period")}
+        />
+        <StatTile
+          Icon={Dumbbell}
+          label={t("d.stat.adherence_exercise")}
+          value={
+            adherence.exercise === null || adherence.exercise === undefined
+              ? "—"
+              : pctTick(adherence.exercise)
+          }
+          sub={t("d.stat.unit.week")}
+        />
+        <StatTile
+          Icon={Pill}
+          label={t("d.stat.adherence_medication")}
+          value={
+            adherence.medication === null || adherence.medication === undefined
+              ? "—"
+              : pctTick(adherence.medication)
+          }
+          sub={t("d.stat.unit.week")}
+        />
+        <StatTile
+          Icon={Flag}
+          label={t("d.stat.flags")}
+          value={String((data.flags ?? []).length)}
+          unit={t("d.stat.unit.count")}
+          sub={`${t("flag.status.open")}: ${openFlags}`}
+          tone={openFlags > 0 ? "alert" : "default"}
+        />
       </div>
 
       <div className="grid gap-4 md:grid-cols-2">
@@ -212,22 +295,33 @@ export function DashboardCharts({ data }: { data: Dashboard }) {
 
       <Card size="sm">
         <CardHeader>
-          <CardTitle>{t("d.chart.adherence")}</CardTitle>
+          <ChartTitle title={t("d.chart.adherence")} />
         </CardHeader>
         <CardContent>
           <div className="h-48">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={days} margin={{ top: 8, right: 12, bottom: 0, left: -12 }} barGap={2}>
                 <CartesianGrid stroke={GRID} vertical={false} />
-                <XAxis dataKey="date" tickFormatter={shortDate} stroke={AXIS} fontSize={11} />
+                <XAxis
+                  dataKey="date"
+                  tickFormatter={shortDate}
+                  stroke={AXIS}
+                  fontSize={11}
+                  tickLine={false}
+                />
                 <YAxis
                   domain={[0, 1]}
                   tickFormatter={pctTick}
                   stroke={AXIS}
                   fontSize={11}
                   width={48}
+                  tickLine={false}
+                  axisLine={false}
                 />
-                <Tooltip formatter={(v) => (typeof v === "number" ? pctTick(v) : "—")} />
+                <Tooltip
+                  contentStyle={TOOLTIP_STYLE}
+                  formatter={(v) => (typeof v === "number" ? pctTick(v) : "—")}
+                />
                 <Legend />
                 <Bar
                   dataKey="adherence_exercise"
@@ -253,18 +347,24 @@ export function DashboardCharts({ data }: { data: Dashboard }) {
         <Card size="sm">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <Flag aria-hidden className="size-4" />
+              <Flag aria-hidden className="size-4 text-red-800" />
               {t("d.tab.flags")}
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <ul className="flex flex-col gap-1">
+            <ul className="flex flex-col gap-1.5">
               {data.flags.map((f) => (
-                <li key={f.id} className="flex flex-wrap gap-2">
-                  <span className="text-muted-foreground">{(f.created_at ?? "").slice(0, 10)}</span>
+                <li key={f.id} className="flex flex-wrap items-center gap-2">
+                  <span className="text-muted-foreground font-mono text-xs">
+                    {(f.created_at ?? "").slice(0, 10)}
+                  </span>
                   <span className="font-medium">{tk(`flag.category.${f.category}`)}</span>
-                  <span>· {tk(`flag.severity.${f.severity}`)}</span>
-                  <span>· {tk(`flag.status.${f.status}`)}</span>
+                  <span className="bg-muted rounded-full px-2 py-0.5 text-xs">
+                    {tk(`flag.severity.${f.severity}`)}
+                  </span>
+                  <span className="bg-muted rounded-full px-2 py-0.5 text-xs">
+                    {tk(`flag.status.${f.status}`)}
+                  </span>
                 </li>
               ))}
             </ul>

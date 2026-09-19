@@ -1,10 +1,11 @@
-import { Activity, BatteryLow, HeartPulse, Smile } from "lucide-react";
+import { Activity, BatteryLow, Brain, HeartPulse, Smile } from "lucide-react";
 
 import type { PatientState } from "@/features/sessions/types";
 import { t } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 
-// "AI shunday tushundi" (TZ §8.1): simplified PatientState — plain words, icon + text.
+// "AI shunday tushundi" (TZ §8.1): simplified PatientState — 4 compact pills, icon + text, plus
+// the plain-words explanation list.
 export function StatePanel({ state, className }: { state: PatientState; className?: string }) {
   const items = [
     {
@@ -23,14 +24,21 @@ export function StatePanel({ state, className }: { state: PatientState; classNam
   return (
     <section
       aria-label={t("state.title")}
-      className={cn("bg-muted/60 flex flex-col gap-1 rounded-xl px-3 py-2", className)}
+      className={cn("bg-muted/60 flex flex-col gap-2 rounded-2xl px-4 py-3", className)}
     >
-      <ul className="flex flex-wrap gap-x-4 gap-y-1">
+      <p className="text-muted-foreground flex items-center gap-1.5 text-[0.8em] font-semibold tracking-wide uppercase">
+        <Brain aria-hidden className="size-[1.1em]" />
+        {t("state.title")}
+      </p>
+      <ul className="flex flex-wrap gap-2">
         {items.map(({ Icon, label, value }) => (
-          <li key={label} className="flex items-center gap-1.5">
-            <Icon aria-hidden className="size-[1em]" />
+          <li
+            key={label}
+            className="bg-card ring-border inline-flex items-center gap-1.5 rounded-full px-3 py-1 ring-1 ring-inset"
+          >
+            <Icon aria-hidden className="text-primary size-[1em]" />
             <span className="text-muted-foreground">{label}:</span>
-            <span className="font-medium">{value}</span>
+            <span className="font-semibold">{value}</span>
           </li>
         ))}
       </ul>

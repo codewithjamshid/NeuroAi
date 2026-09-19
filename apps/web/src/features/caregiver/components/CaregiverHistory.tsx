@@ -1,5 +1,7 @@
 "use client";
 
+import { History } from "lucide-react";
+
 import { EmptyState, ErrorCard, LoadingCard } from "@/components/ErrorCard";
 import { Badge } from "@/components/ui/badge";
 import { usePatientSessions } from "@/features/clinician/hooks";
@@ -15,14 +17,20 @@ function summaryText(s: unknown): string | null {
   return null;
 }
 
-// /c/history — daily summaries (stub: session list with caregiver_text).
+// /c/history — daily summaries (stub: session list with caregiver_text) as a timeline.
 export function CaregiverHistory() {
   const { patientId, isPending: pidPending } = usePatientId();
   const sessions = usePatientSessions(patientId, 20);
 
   return (
-    <div className="flex flex-col gap-4">
-      <h1 className="text-2xl font-semibold">{t("c.history.title")}</h1>
+    <div className="flex flex-col gap-5">
+      <header className="flex flex-col gap-0.5">
+        <h1 className="flex items-center gap-2 text-2xl">
+          <History aria-hidden className="text-primary size-6" />
+          {t("c.history.title")}
+        </h1>
+        <p className="text-muted-foreground text-sm">{t("c.history.hint")}</p>
+      </header>
       {!patientId && !pidPending ? (
         <EmptyState text={t("p.no_patient")} />
       ) : sessions.isPending ? (
@@ -32,19 +40,29 @@ export function CaregiverHistory() {
       ) : sessions.data.length === 0 ? (
         <EmptyState />
       ) : (
-        <ul className="flex flex-col gap-2">
+        <ol className="border-border ml-2 flex flex-col gap-4 border-l-2 pl-5">
           {sessions.data.map((s) => (
-            <li key={s.id} className="rounded-lg border px-3 py-2">
-              <div className="flex items-center justify-between gap-2">
-                <Badge variant="secondary">{tk(`session.mode.${s.mode}`)}</Badge>
-                <span className="text-muted-foreground text-xs">
-                  {new Date(s.started_at).toLocaleString()}
-                </span>
+            <li key={s.id} className="relative">
+              <span
+                aria-hidden
+                className="bg-primary ring-background absolute top-2 -left-[27px] size-3 rounded-full ring-4"
+              />
+              <div className="bg-card shadow-soft flex flex-col gap-1.5 rounded-xl border px-4 py-3">
+                <div className="flex items-center justify-between gap-2">
+                  <Badge variant="secondary">{tk(`session.mode.${s.mode}`)}</Badge>
+                  <span className="text-muted-foreground text-xs">
+                    {new Date(s.started_at).toLocaleString()}
+                  </span>
+                </div>
+                <p className="text-sm leading-snug">
+                  {summaryText(s.summary) ?? (
+                    <span className="text-muted-foreground">{t("c.history.no_summary")}</span>
+                  )}
+                </p>
               </div>
-              <p className="mt-1 text-sm">{summaryText(s.summary) ?? t("c.history.no_summary")}</p>
             </li>
           ))}
-        </ul>
+        </ol>
       )}
     </div>
   );

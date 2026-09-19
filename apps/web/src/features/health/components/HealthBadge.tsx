@@ -15,7 +15,7 @@ export function HealthBadge({ className }: { className?: string }) {
   if (isPending) {
     return (
       <Badge variant="outline" className={cn("gap-1.5", className)}>
-        <CircleDashed aria-hidden className="animate-spin" />
+        <CircleDashed aria-hidden data-motion className="animate-spin" />
         {t("health.checking")}
       </Badge>
     );
@@ -33,7 +33,7 @@ export function HealthBadge({ className }: { className?: string }) {
   return (
     <Badge
       variant="outline"
-      className={cn("gap-1.5 border-teal-700 text-teal-800 dark:text-teal-300", className)}
+      className={cn("gap-1.5 border-teal-300 bg-teal-50 text-teal-900", className)}
     >
       <CircleCheck aria-hidden />
       {t("health.ok")}

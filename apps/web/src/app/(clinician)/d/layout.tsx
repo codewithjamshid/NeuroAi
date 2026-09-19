@@ -6,8 +6,8 @@ import { t } from "@/lib/i18n";
 export default function ClinicianLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex min-h-dvh flex-col">
-      <RoleHeader role={t("role.clinician")} home="/d" />
-      <main className="mx-auto flex w-full max-w-6xl flex-1 flex-col px-4 py-6 text-sm">
+      <RoleHeader role={t("role.clinician")} home="/d" tone="clinician" />
+      <main className="mx-auto flex w-full max-w-6xl flex-1 flex-col px-4 py-6 text-sm md:px-6 md:py-8">
         <RoleGuard roles={["clinician", "admin"]}>{children}</RoleGuard>
       </main>
     </div>

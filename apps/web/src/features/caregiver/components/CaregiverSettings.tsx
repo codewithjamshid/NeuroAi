@@ -1,13 +1,14 @@
 "use client";
 
-import { CircleCheck, CircleDashed, Send } from "lucide-react";
+import { CircleCheck, CircleDashed, Send, Settings, User } from "lucide-react";
 
 import { ErrorCard } from "@/components/ErrorCard";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { usePatient, usePatientId } from "@/features/patients/hooks";
-import { t } from "@/lib/i18n";
+import { t, tk } from "@/lib/i18n";
+import { cn } from "@/lib/utils";
 
 import { useTelegramLink, useTelegramStatus } from "../hooks";
 
@@ -20,20 +21,33 @@ export function CaregiverSettings() {
   const linked = status.data?.linked === true;
 
   return (
-    <div className="flex flex-col gap-4">
-      <h1 className="text-2xl font-semibold">{t("c.settings.title")}</h1>
+    <div className="flex flex-col gap-5">
+      <header className="flex flex-col gap-0.5">
+        <h1 className="flex items-center gap-2 text-2xl">
+          <Settings aria-hidden className="text-primary size-6" />
+          {t("c.settings.title")}
+        </h1>
+      </header>
 
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center justify-between gap-2 text-lg">
-            {t("c.telegram.title")}
+            <span className="flex items-center gap-2">
+              <span
+                aria-hidden
+                className="inline-flex size-8 shrink-0 items-center justify-center rounded-lg bg-sky-50 text-sky-800"
+              >
+                <Send className="size-4" />
+              </span>
+              {t("c.telegram.title")}
+            </span>
             {status.isPending ? (
               <Badge variant="outline" className="gap-1">
-                <CircleDashed aria-hidden className="animate-spin" />
+                <CircleDashed aria-hidden data-motion className="animate-spin" />
                 {t("status.loading")}
               </Badge>
             ) : linked ? (
-              <Badge variant="outline" className="gap-1 border-teal-700 text-teal-800">
+              <Badge variant="outline" className="gap-1 border-teal-300 bg-teal-50 text-teal-900">
                 <CircleCheck aria-hidden />
                 {t("c.telegram.linked")}
               </Badge>
@@ -55,19 +69,25 @@ export function CaregiverSettings() {
           </Button>
           {link.isError && <ErrorCard error={link.error} />}
           {link.data && (
-            <div className="bg-muted flex flex-col gap-2 rounded-lg p-3">
+            <div className="bg-muted/70 flex flex-col gap-3 rounded-xl p-4">
               <p className="text-sm">{t("c.telegram.instruction")}</p>
-              <code className="bg-background rounded border px-3 py-2 text-lg font-semibold select-all">
-                /start {link.data.code}
-              </code>
+              <div className="flex flex-col gap-1">
+                <span className="text-muted-foreground text-xs font-semibold tracking-wide uppercase">
+                  {t("c.telegram.code_label")}
+                </span>
+                <code className="bg-card block rounded-lg border px-4 py-3 text-center font-mono text-2xl font-semibold tracking-wider select-all">
+                  /start {link.data.code}
+                </code>
+              </div>
               {link.data.bot_username && (
                 <a
-                  className="text-primary underline"
+                  className={cn(buttonVariants({ variant: "outline" }), "min-h-11 gap-2")}
                   href={`https://t.me/${link.data.bot_username}?start=${encodeURIComponent(link.data.code)}`}
                   target="_blank"
                   rel="noreferrer"
                 >
-                  @{link.data.bot_username}
+                  <Send aria-hidden />
+                  {t("c.telegram.open_bot")} · @{link.data.bot_username}
                 </a>
               )}
             </div>
@@ -77,21 +97,33 @@ export function CaregiverSettings() {
 
       <Card>
         <CardHeader>
-          <CardTitle className="text-lg">{t("c.profile.title")}</CardTitle>
+          <CardTitle className="flex items-center gap-2 text-lg">
+            <span
+              aria-hidden
+              className="bg-accent text-accent-foreground inline-flex size-8 shrink-0 items-center justify-center rounded-lg"
+            >
+              <User className="size-4" />
+            </span>
+            {t("c.profile.title")}
+          </CardTitle>
         </CardHeader>
         <CardContent>
           {patient.isError ? (
             <ErrorCard error={patient.error} />
           ) : patient.data ? (
-            <dl className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 text-sm">
+            <dl className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-2 text-sm">
               <dt className="text-muted-foreground">{t("patient.full_name")}</dt>
-              <dd>{patient.data.full_name}</dd>
+              <dd className="font-medium">{patient.data.full_name}</dd>
               <dt className="text-muted-foreground">{t("patient.birth_year")}</dt>
-              <dd>{patient.data.birth_year ?? "—"}</dd>
+              <dd className="font-medium">{patient.data.birth_year ?? "—"}</dd>
               <dt className="text-muted-foreground">{t("patient.aphasia_type")}</dt>
-              <dd>{patient.data.aphasia_type ?? "—"}</dd>
+              <dd className="font-medium">
+                {patient.data.aphasia_type ? tk(`aphasia.${patient.data.aphasia_type}`) : "—"}
+              </dd>
               <dt className="text-muted-foreground">{t("patient.dialect")}</dt>
-              <dd>{patient.data.dialect ?? "—"}</dd>
+              <dd className="font-medium">
+                {patient.data.dialect ? tk(`dialect.${patient.data.dialect}`) : "—"}
+              </dd>
             </dl>
           ) : (
             <p className="text-muted-foreground">{t("p.no_patient")}</p>

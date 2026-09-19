@@ -1,20 +1,21 @@
 "use client";
 
+import { UserPlus } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 import { ErrorCard } from "@/components/ErrorCard";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useCreatePatient } from "@/features/patients/hooks";
 import { t } from "@/lib/i18n";
 
-const inputCls = "border-input bg-background min-h-10 rounded-md border px-3";
+const inputCls = "field";
 
 function Field({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <label className="flex flex-col gap-1">
-      <span className="font-medium">{label}</span>
+      <span className="text-sm font-medium">{label}</span>
       {children}
     </label>
   );
@@ -47,11 +48,20 @@ export function NewPatientForm() {
   return (
     <Card className="mx-auto w-full max-w-2xl">
       <CardHeader>
-        <CardTitle className="text-xl">{t("d.new.title")}</CardTitle>
+        <CardTitle className="flex items-center gap-2 text-xl">
+          <span
+            aria-hidden
+            className="bg-accent text-accent-foreground inline-flex size-8 shrink-0 items-center justify-center rounded-lg"
+          >
+            <UserPlus className="size-4" />
+          </span>
+          {t("d.new.title")}
+        </CardTitle>
+        <CardDescription>{t("app.disclaimer")}</CardDescription>
       </CardHeader>
       <CardContent>
         <form
-          className="grid gap-3 sm:grid-cols-2"
+          className="grid gap-4 sm:grid-cols-2"
           onSubmit={(ev) => {
             ev.preventDefault();
             if (!f.consent) return;
@@ -152,11 +162,11 @@ export function NewPatientForm() {
               />
             </Field>
           </div>
-          <label className="flex items-start gap-2 sm:col-span-2">
+          <label className="bg-muted/60 flex items-start gap-3 rounded-xl px-3 py-3 sm:col-span-2">
             <input
               type="checkbox"
               required
-              className="mt-1 size-4"
+              className="accent-primary mt-1 size-4"
               checked={f.consent}
               onChange={set("consent")}
             />

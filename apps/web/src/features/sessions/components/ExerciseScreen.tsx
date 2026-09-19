@@ -1,7 +1,7 @@
 "use client";
 
 import { useMutation } from "@tanstack/react-query";
-import { ArrowRight, Lightbulb, SkipForward, Trophy } from "lucide-react";
+import { ArrowRight, Ear, Lightbulb, SkipForward, Trophy } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
@@ -26,6 +26,9 @@ import type { NextExercise, SubmitResult } from "../types";
 function pct(v: number | undefined | null): string {
   return v === undefined || v === null ? "—" : `${Math.round(v * 100)}%`;
 }
+
+const chipCls =
+  "bg-muted text-foreground ring-border inline-flex items-center rounded-full px-3 py-0.5 text-[0.8em] font-semibold ring-1 ring-inset";
 
 // TZ §8.2 /p/exercise: stimulus, prompt, mic, result animation (icon + text), cue, progress, skip.
 export function ExerciseScreen() {
@@ -97,24 +100,30 @@ export function ExerciseScreen() {
   if (!current) return <LoadingCard text={t("exercise.loading")} />;
 
   if (current.done) {
+    const stats = [
+      { label: t("exercise.done.accuracy"), value: pct(current.summary.accuracy) },
+      { label: t("exercise.done.independence"), value: pct(current.summary.independence) },
+      { label: t("exercise.done.attempts"), value: String(current.summary.attempts ?? "—") },
+    ];
     return (
       <Card className="mx-auto w-full max-w-xl">
         <CardHeader>
-          <CardTitle className="flex items-center gap-2 text-[1.3em]">
-            <Trophy aria-hidden className="size-[1.3em]" />
+          <CardTitle className="flex items-center gap-3 text-[1.3em]">
+            <span className="inline-flex size-[2em] shrink-0 items-center justify-center rounded-full bg-amber-50 text-amber-700">
+              <Trophy aria-hidden className="size-[1.1em]" />
+            </span>
             {t("exercise.done.title")}
           </CardTitle>
         </CardHeader>
-        <CardContent className="flex flex-col gap-3">
-          <p>
-            {t("exercise.done.accuracy")}: <strong>{pct(current.summary.accuracy)}</strong>
-          </p>
-          <p>
-            {t("exercise.done.independence")}: <strong>{pct(current.summary.independence)}</strong>
-          </p>
-          <p>
-            {t("exercise.done.attempts")}: <strong>{current.summary.attempts ?? "—"}</strong>
-          </p>
+        <CardContent className="flex flex-col gap-4">
+          <div className="grid gap-3 sm:grid-cols-3">
+            {stats.map(({ label, value }) => (
+              <div key={label} className="bg-muted/60 flex flex-col rounded-2xl px-4 py-3">
+                <span className="text-muted-foreground text-[0.8em]">{label}</span>
+                <span className="text-[1.6em] leading-tight font-bold">{value}</span>
+              </div>
+            ))}
+          </div>
           <Link href="/p" className={cn(buttonVariants({ size: "lg" }), "min-h-16 text-[1em]")}>
             {t("nav.patient_home")}
           </Link>
@@ -125,30 +134,51 @@ export function ExerciseScreen() {
 
   const { template, progress, cue_level } = current;
   const canAdvance = result?.next_action === "next_item" || result?.next_action === "suggest_break";
+  const ratio = progress.total > 0 ? Math.min(1, progress.index / progress.total) : 0;
+  const stim = template.stimulus;
+  const bigText = !stim?.image && !stim?.emoji && stim?.text;
 
   return (
     <div className="flex flex-1 flex-col gap-4">
-      <div className="flex items-center justify-between">
-        <span className="text-muted-foreground">
-          {t("exercise.progress", { index: progress.index, total: progress.total })}
-        </span>
-        <span className="text-muted-foreground">
-          {t("exercise.level")}: {template.level} · {t("exercise.cue")}:{" "}
-          {result?.next_cue?.level ?? cue_level}
-        </span>
+      <div className="flex flex-col gap-2">
+        <div className="flex flex-wrap items-center justify-between gap-2">
+          <span className="font-semibold">
+            {t("exercise.progress", { index: progress.index, total: progress.total })}
+          </span>
+          <div className="flex flex-wrap gap-2">
+            <span className={chipCls}>{t("exercise.level_chip", { level: template.level })}</span>
+            <span className={chipCls}>
+              {t("exercise.cue_chip", { level: result?.next_cue?.level ?? cue_level })}
+            </span>
+          </div>
+        </div>
+        <div
+          role="progressbar"
+          aria-label={t("exercise.progress_label")}
+          aria-valuemin={0}
+          aria-valuemax={progress.total}
+          aria-valuenow={progress.index}
+          className="bg-muted h-3 w-full overflow-hidden rounded-full"
+        >
+          <div className="bg-primary h-full rounded-full" style={{ width: `${ratio * 100}%` }} />
+        </div>
       </div>
 
-      <div className="flex flex-col items-center gap-3 py-2 text-center">
-        {template.stimulus?.image ? (
+      <div className="bg-card shadow-soft flex flex-col items-center gap-3 rounded-2xl border px-5 py-6 text-center">
+        {stim?.image ? (
           // eslint-disable-next-line @next/next/no-img-element
-          <img src={template.stimulus.image} alt="" className="max-h-56 rounded-xl" />
+          <img src={stim.image} alt="" className="max-h-56 rounded-xl" />
+        ) : bigText ? (
+          <span className="text-primary-deep text-[2.2em] leading-tight font-bold">
+            {stim?.text}
+          </span>
         ) : (
-          <span aria-hidden className="text-[120px] leading-none">
-            {template.stimulus?.emoji ?? "❓"}
+          <span aria-hidden className="text-[96px] leading-none">
+            {stim?.emoji ?? "❓"}
           </span>
         )}
-        {template.stimulus?.text && (
-          <span className="text-[1.6em] font-bold">{template.stimulus.text}</span>
+        {!bigText && stim?.text && (
+          <span className="text-[1.6em] leading-tight font-bold">{stim.text}</span>
         )}
         <p className="text-[28px] leading-snug font-medium">{template.prompt_text}</p>
       </div>
@@ -157,16 +187,19 @@ export function ExerciseScreen() {
         <div className="flex flex-col gap-2">
           <ResultBanner result={result.result} text={result.feedback_text} />
           {result.recognized_text && (
-            <p className="text-muted-foreground text-[0.85em]">
+            <p className="text-muted-foreground flex items-center gap-2 px-1 text-[0.85em]">
+              <Ear aria-hidden className="size-[1em] shrink-0" />
               {t("exercise.heard")}: {result.recognized_text}
             </p>
           )}
           {result.next_cue && (
-            <div className="flex items-start gap-3 rounded-2xl border-2 border-sky-700 bg-sky-50 px-4 py-3 text-sky-950">
-              <Lightbulb aria-hidden className="mt-1 size-[1.4em] shrink-0" />
-              <span>
-                <strong>{t("exercise.cue_label", { level: result.next_cue.level })}:</strong>{" "}
-                {result.next_cue.text}
+            <div className="flex items-start gap-3 rounded-2xl border border-sky-200 bg-sky-50 px-4 py-3 text-sky-950">
+              <Lightbulb aria-hidden className="mt-1 size-[1.4em] shrink-0 text-sky-700" />
+              <span className="flex flex-col gap-1">
+                <span className="inline-flex self-start rounded-full bg-sky-100 px-2.5 py-0.5 text-[0.8em] font-semibold text-sky-900">
+                  {t("exercise.cue_label", { level: result.next_cue.level })}
+                </span>
+                <span>{result.next_cue.text}</span>
               </span>
             </div>
           )}
@@ -178,7 +211,7 @@ export function ExerciseScreen() {
       {nextM.isError && <ErrorCard error={nextM.error} onRetry={() => nextM.mutate()} />}
       <MicErrorNotice error={recorder.error} />
 
-      <div className="flex flex-col items-center gap-3 py-2">
+      <div className="flex flex-col items-center gap-4 py-2">
         <StatusPill status={status} />
         <MicButton status={status} level={recorder.level} onPress={() => void onMic()} />
       </div>
@@ -200,7 +233,7 @@ export function ExerciseScreen() {
           placeholder={t("exercise.text_placeholder")}
           aria-label={t("exercise.text_placeholder")}
           disabled={busy}
-          className="border-input bg-background min-h-16 flex-1 rounded-xl border-2 px-4"
+          className="field min-h-16 flex-1 rounded-2xl px-4"
         />
         <Button type="submit" variant="outline" disabled={busy} className="min-h-16 px-5">
           {t("common.send")}

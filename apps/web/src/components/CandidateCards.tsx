@@ -29,12 +29,12 @@ export function CandidateCards({
           type="button"
           disabled={disabled}
           onClick={() => onSelect(c.key)}
-          className="bg-card focus-visible:ring-ring flex min-h-32 flex-col items-center justify-center gap-2 rounded-2xl border-2 px-3 py-4 text-center text-[1.2em] font-semibold shadow-sm outline-none hover:bg-teal-50 focus-visible:ring-4 disabled:opacity-50 dark:hover:bg-teal-950"
+          className="bg-card shadow-soft hover:border-primary hover:bg-accent focus-visible:ring-ring flex min-h-36 flex-col items-center justify-center gap-2 rounded-2xl border-2 px-3 py-4 text-center text-[1.2em] font-semibold outline-none focus-visible:ring-4 active:translate-y-px disabled:opacity-50"
         >
-          <span aria-hidden className="text-[2.2em] leading-none">
+          <span aria-hidden className="text-[2.4em] leading-none">
             {c.emoji ?? "💬"}
           </span>
-          <span>{c.label}</span>
+          <span className="leading-tight">{c.label}</span>
         </button>
       ))}
       {onOther && (
@@ -42,7 +42,7 @@ export function CandidateCards({
           type="button"
           disabled={disabled}
           onClick={onOther}
-          className="bg-muted focus-visible:ring-ring flex min-h-32 flex-col items-center justify-center gap-2 rounded-2xl border-2 border-dashed px-3 py-4 text-center text-[1.2em] font-semibold outline-none focus-visible:ring-4 disabled:opacity-50"
+          className="bg-muted/60 text-foreground hover:border-primary hover:bg-accent focus-visible:ring-ring flex min-h-36 flex-col items-center justify-center gap-2 rounded-2xl border-2 border-dashed px-3 py-4 text-center text-[1.2em] font-semibold outline-none focus-visible:ring-4 disabled:opacity-50"
         >
           <LayoutGrid aria-hidden className="size-[2em]" />
           <span>{t("say.other")}</span>

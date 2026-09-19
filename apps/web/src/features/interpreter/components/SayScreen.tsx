@@ -1,6 +1,6 @@
 "use client";
 
-import { LayoutGrid, MessageSquareText, RotateCcw, Users } from "lucide-react";
+import { Ear, LayoutGrid, MessageSquareText, RotateCcw, Users } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
@@ -22,6 +22,7 @@ import { cn } from "@/lib/utils";
 import { useConfirm, useGuess } from "../hooks";
 import type { ConfirmResponse, GuessResponse } from "../types";
 
+// Spoken sentence as a hero card (teal gradient, white text) + family note card.
 export function SpokenResult({
   spoken_text,
   family_note,
@@ -35,18 +36,21 @@ export function SpokenResult({
     <div className="flex flex-col gap-3">
       <div
         className={cn(
-          "rounded-2xl border-2 border-teal-700 bg-teal-50 px-5 py-4 text-teal-950 dark:bg-teal-950 dark:text-teal-50",
+          "bg-hero shadow-lift rounded-2xl px-5 py-4 text-white",
           compact ? "text-[1.3em]" : "text-[1.8em] leading-snug",
         )}
       >
-        <MessageSquareText aria-hidden className="mb-1 size-[1em]" />
+        <p className="mb-1 flex items-center gap-1.5 text-[0.6em] font-semibold tracking-wide text-white/85 uppercase">
+          <MessageSquareText aria-hidden className="size-[1.2em]" />
+          {t("say.said")}
+        </p>
         <p className="font-bold">{spoken_text}</p>
       </div>
       {family_note && (
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <Users aria-hidden className="size-[1.2em]" />
+              <Users aria-hidden className="text-primary size-[1.2em]" />
               {t("say.family_note")}
             </CardTitle>
           </CardHeader>
@@ -135,7 +139,10 @@ export function SayScreen({
       {mirror && (
         <Card>
           <CardHeader>
-            <CardTitle className="text-[1.1em]">{t("c.say.latest")}</CardTitle>
+            <CardTitle className="flex items-center gap-2 text-[1.1em]">
+              <Ear aria-hidden className="text-primary size-[1.1em]" />
+              {t("c.say.latest")}
+            </CardTitle>
           </CardHeader>
           <CardContent>
             {latest.isPending ? (
@@ -174,11 +181,12 @@ export function SayScreen({
       ) : guess ? (
         <div className="flex flex-col gap-2">
           {guess.raw_transcript && (
-            <p className="text-muted-foreground text-[0.85em]">
+            <p className="text-muted-foreground flex items-center gap-2 px-1 text-[0.85em]">
+              <Ear aria-hidden className="size-[1em] shrink-0" />
               {t("say.heard")}: {guess.raw_transcript}
             </p>
           )}
-          <p className="text-[1.2em] font-medium">{t("say.pick")}</p>
+          <p className="text-[1.2em] font-semibold">{t("say.pick")}</p>
           <CandidateCards
             candidates={guess.candidates}
             disabled={busy}
@@ -189,14 +197,18 @@ export function SayScreen({
           />
         </div>
       ) : (
-        <p className="text-[1.3em] font-medium">{mirror ? t("c.say.intro") : t("say.intro")}</p>
+        <div className="bg-card shadow-soft rounded-2xl border px-5 py-4">
+          <p className="text-[1.3em] leading-snug font-medium">
+            {mirror ? t("c.say.intro") : t("say.intro")}
+          </p>
+        </div>
       )}
 
       {guessM.isError && <ErrorCard error={guessM.error} />}
       {confirmM.isError && <ErrorCard error={confirmM.error} />}
       <MicErrorNotice error={recorder.error} />
 
-      <div className="flex flex-col items-center gap-3 py-2">
+      <div className="flex flex-col items-center gap-4 py-2">
         <StatusPill status={status} />
         <MicButton
           status={status}

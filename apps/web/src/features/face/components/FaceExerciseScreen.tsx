@@ -241,13 +241,24 @@ export function FaceExerciseScreen() {
 
   return (
     <div className="flex flex-1 flex-col gap-4">
+      <div className="flex items-center justify-between gap-3">
+        <h1 className="flex items-center gap-2 text-[1.3em] font-bold">
+          <ScanFace aria-hidden className="text-primary size-[1em] shrink-0" />
+          {t("face.title")}
+        </h1>
+        {step === "exercise" && (
+          <span className="bg-muted ring-border inline-flex items-center rounded-full px-3 py-0.5 text-[0.8em] font-semibold ring-1 ring-inset">
+            {t("face.step", { index: exIdx + 1, total: EXERCISE_ORDER.length })}
+          </span>
+        )}
+      </div>
       <div className={cn("relative", !showVideo && "hidden")}>
         <video
           ref={videoRef}
           autoPlay
           playsInline
           muted
-          className="aspect-[4/3] w-full -scale-x-100 rounded-2xl bg-black object-cover"
+          className="shadow-soft aspect-[4/3] w-full -scale-x-100 rounded-2xl bg-black object-cover"
         />
         {status === "running" && (
           <div
@@ -282,7 +293,7 @@ export function FaceExerciseScreen() {
           {error && (
             <div
               role="alert"
-              className="flex items-start gap-3 rounded-2xl border-2 border-amber-600 bg-amber-50 px-4 py-3 text-amber-950"
+              className="flex items-start gap-3 rounded-2xl border border-amber-300 bg-amber-50 px-4 py-3 text-amber-950"
             >
               <CameraOff aria-hidden className="mt-1 size-[1.4em] shrink-0" />
               <span>{t(`face.error.${error}` as I18nKey)}</span>
@@ -320,7 +331,7 @@ export function FaceExerciseScreen() {
             {calibFailed && (
               <div
                 role="alert"
-                className="flex items-start gap-3 rounded-2xl border-2 border-amber-600 bg-amber-50 px-4 py-3 text-amber-950"
+                className="flex items-start gap-3 rounded-2xl border border-amber-300 bg-amber-50 px-4 py-3 text-amber-950"
               >
                 <TriangleAlert aria-hidden className="mt-1 size-[1.4em] shrink-0" />
                 <span>{t("face.calib.failed")}</span>
@@ -337,18 +348,13 @@ export function FaceExerciseScreen() {
 
       {step === "exercise" && (
         <div className="flex flex-col gap-4">
-          <div className="flex items-center justify-between">
-            <span className="text-muted-foreground">
-              {t("face.step", { index: exIdx + 1, total: EXERCISE_ORDER.length })}
-            </span>
-            {reusedBaseline && baseline && (
-              <span className="text-muted-foreground text-[0.8em]">
-                {t("face.calib.reused", { days: baselineAgeDays(baseline) })}
-              </span>
-            )}
-          </div>
+          {reusedBaseline && baseline && (
+            <p className="text-muted-foreground text-[0.8em]">
+              {t("face.calib.reused", { days: baselineAgeDays(baseline) })}
+            </p>
+          )}
 
-          <div className="flex flex-col items-center gap-2 text-center">
+          <div className="bg-card shadow-soft flex flex-col items-center gap-2 rounded-2xl border px-5 py-5 text-center">
             <HoldRing
               progress={Math.min(1, snap.rep.holdMs / HOLD_TARGET_MS)}
               emoji={EMOJI[exKey]}
@@ -428,9 +434,11 @@ export function FaceExerciseScreen() {
 
 function Stat({ label, value, sub }: { label: string; value: string; sub?: string }) {
   return (
-    <div className="bg-card flex flex-col rounded-2xl border-2 px-4 py-3">
-      <span className="text-muted-foreground">{label}</span>
-      <span className="text-[2em] leading-tight font-bold">{value}</span>
+    <div className="bg-card shadow-soft flex flex-col rounded-2xl border px-4 py-3">
+      <span className="text-muted-foreground text-[0.85em]">{label}</span>
+      <span className="text-primary-deep text-[2em] leading-tight font-bold tabular-nums">
+        {value}
+      </span>
       {sub && <span className="text-muted-foreground text-[0.85em]">{sub}</span>}
     </div>
   );
@@ -460,7 +468,7 @@ function ProgressBar({
         aria-valuemin={0}
         aria-valuemax={100}
         aria-valuenow={Math.round(v * 100)}
-        className="bg-muted relative h-6 w-full overflow-hidden rounded-full border-2"
+        className="bg-muted relative h-6 w-full overflow-hidden rounded-full border"
       >
         <div className="bg-primary h-full rounded-full" style={{ width: `${v * 100}%` }} />
         {marker !== undefined && (
@@ -522,8 +530,10 @@ function Summary({
     <div className="flex flex-col gap-4">
       <Card>
         <CardHeader>
-          <CardTitle className="flex items-center gap-2 text-[1.3em]">
-            <Trophy aria-hidden className="size-[1.3em]" />
+          <CardTitle className="flex items-center gap-3 text-[1.3em]">
+            <span className="inline-flex size-[2em] shrink-0 items-center justify-center rounded-full bg-amber-50 text-amber-700">
+              <Trophy aria-hidden className="size-[1.1em]" />
+            </span>
             {t("face.summary.title")}
           </CardTitle>
         </CardHeader>

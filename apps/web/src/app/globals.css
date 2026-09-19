@@ -35,6 +35,11 @@
   --color-secondary: var(--secondary);
   --color-primary-foreground: var(--primary-foreground);
   --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-deep: var(--primary-deep);
+  --color-highlight: var(--highlight);
+  --color-highlight-foreground: var(--highlight-foreground);
+  --color-highlight-hover: var(--highlight-hover);
   --color-popover-foreground: var(--popover-foreground);
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
@@ -42,97 +47,160 @@
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) * 1.4);
-  --radius-2xl: calc(var(--radius) * 1.8);
-  --radius-3xl: calc(var(--radius) * 2.2);
-  --radius-4xl: calc(var(--radius) * 2.6);
+  /* Cards: 12px in role panels, 16px in patient screens (`.patient-ui` overrides --radius-card). */
+  --radius-xl: var(--radius-card);
+  --radius-2xl: var(--radius-tile);
+  --radius-3xl: calc(var(--radius-tile) + 4px);
+  --radius-4xl: calc(var(--radius-tile) + 8px);
+}
+
+@theme {
+  /* Soft elevation used by cards, tiles and the floating help pill. */
+  --shadow-soft: 0 1px 2px rgb(0 0 0 / 0.05), 0 8px 24px rgb(15 118 110 / 0.08);
+  --shadow-lift: 0 2px 4px rgb(0 0 0 / 0.06), 0 16px 40px rgb(15 118 110 / 0.14);
+  --animate-mic-pulse: mic-pulse 1.6s ease-out infinite;
+
+  @keyframes mic-pulse {
+    0% {
+      transform: scale(1);
+      opacity: 0.55;
+    }
+    100% {
+      transform: scale(1.45);
+      opacity: 0;
+    }
+  }
 }
 
 :root {
-  /* system font stack: no network fetch at build time (offline-safe) */
+  /* System font stack: no network fetch at build time (offline-safe). Inter is used only if installed. */
   --font-sans:
-    ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, "Helvetica Neue", Arial,
     "Noto Sans", sans-serif;
   --font-geist-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  /* brand teal #0f766e (manifest theme_color) */
-  --primary: oklch(0.51 0.096 186);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+
+  /* Warm off-white page, white cards, ink text. */
+  --background: #faf9f6;
+  --foreground: #1f2933;
+  --card: #ffffff;
+  --card-foreground: #1f2933;
+  --popover: #ffffff;
+  --popover-foreground: #1f2933;
+
+  /* Brand teal (manifest theme_color) with a deeper hover and a hero-gradient end stop. */
+  --primary: #0f766e;
+  --primary-hover: #115e59;
+  --primary-deep: #134e4a;
+  --primary-foreground: #ffffff;
+
+  /* Amber accent — CTAs and highlights only. */
+  --highlight: #d97706;
+  --highlight-hover: #b45309;
+  --highlight-foreground: #ffffff;
+
+  --secondary: #eef2f1;
+  --secondary-foreground: #1f2933;
+  --muted: #f3f1ec;
+  --muted-foreground: #6b7280;
+  --accent: #e6f4f2;
+  --accent-foreground: #134e4a;
+  --destructive: #b91c1c;
+  --border: #e5e1d8;
+  --input: #d9d4ca;
+  --ring: #0f766e;
+
+  --chart-1: #2a78d6;
+  --chart-2: #eb6834;
+  --chart-3: #1baf7a;
+  --chart-4: #eda100;
+  --chart-5: #6b7280;
+
+  --radius: 0.75rem;
+  --radius-card: 12px;
+  --radius-tile: 16px;
+
+  --sidebar: #ffffff;
+  --sidebar-foreground: #1f2933;
+  --sidebar-primary: #0f766e;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #e6f4f2;
+  --sidebar-accent-foreground: #134e4a;
+  --sidebar-border: #e5e1d8;
+  --sidebar-ring: #0f766e;
 }
 
+/* Dark mode is not required for the demo; class-based only (never auto), kept for future work. */
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.78 0.12 186);
-  --primary-foreground: oklch(0.145 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  --background: #141b1a;
+  --foreground: #f4f3ef;
+  --card: #1c2523;
+  --card-foreground: #f4f3ef;
+  --popover: #1c2523;
+  --popover-foreground: #f4f3ef;
+  --primary: #5eead4;
+  --primary-hover: #99f6e4;
+  --primary-deep: #134e4a;
+  --primary-foreground: #0b1514;
+  --highlight: #fbbf24;
+  --highlight-hover: #fcd34d;
+  --highlight-foreground: #1f1300;
+  --secondary: #24302e;
+  --secondary-foreground: #f4f3ef;
+  --muted: #24302e;
+  --muted-foreground: #a3a8a6;
+  --accent: #1e3a36;
+  --accent-foreground: #ccfbf1;
+  --destructive: #f87171;
+  --border: rgb(255 255 255 / 12%);
+  --input: rgb(255 255 255 / 16%);
+  --ring: #5eead4;
+  --sidebar: #1c2523;
+  --sidebar-foreground: #f4f3ef;
+  --sidebar-primary: #5eead4;
+  --sidebar-primary-foreground: #0b1514;
+  --sidebar-accent: #24302e;
+  --sidebar-accent-foreground: #f4f3ef;
+  --sidebar-border: rgb(255 255 255 / 12%);
+  --sidebar-ring: #5eead4;
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
-  body {
-    @apply bg-background text-foreground;
-  }
   html {
     @apply font-sans;
+    -webkit-tap-highlight-color: transparent;
   }
+  body {
+    @apply bg-background text-foreground;
+    text-rendering: optimizeLegibility;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-semibold tracking-tight;
+  }
+  /* Visible keyboard focus everywhere (WCAG AA); components add their own rings on top. */
+  :focus-visible {
+    outline: 3px solid var(--ring);
+    outline-offset: 2px;
+  }
+  ::selection {
+    background: #ccfbf1;
+    color: #134e4a;
+  }
+}
+
+/* Form controls in role panels (patient screens override size via .patient-ui). */
+@utility field {
+  @apply border-input bg-card text-foreground placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-ring/30 min-h-10 rounded-lg border px-3 shadow-none transition-[border-color,box-shadow] outline-none focus-visible:ring-3;
+}
+
+/* Hero gradient (login, landing, patient greeting). */
+@utility bg-hero {
+  background-image: linear-gradient(135deg, var(--primary) 0%, var(--primary-deep) 100%);
 }
 
 /* Patient UI (/p/*), TZ §3: font ≥ 22px, controls ≥ 64px, high contrast, minimal motion. */
@@ -153,8 +221,10 @@
   --text-base--line-height: 1.5;
   --text-lg--line-height: 1.5;
   --text-xl--line-height: 1.5;
-  --muted-foreground: oklch(0.35 0 0);
-  --border: oklch(0.7 0 0);
+  --muted-foreground: #4b5563;
+  --border: #cfc9bd;
+  --input: #b9b2a5;
+  --radius-card: 16px;
 }
 .patient-ui button,
 .patient-ui [role="button"],
@@ -165,7 +235,92 @@
   min-width: 64px;
   font-size: 1em;
 }
-.patient-ui * {
+/* Minimal motion: everything static except elements that carry state (mic pulse, spinners). */
+.patient-ui *:not([data-motion]) {
   transition-duration: 0s !important;
   animation-duration: 0s !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Clinician report (react-markdown output): readable prose without the typography plugin. */
+.report-prose {
+  max-width: 68ch;
+  line-height: 1.65;
+}
+.report-prose h1 {
+  font-size: 1.375rem;
+  margin: 1.25rem 0 0.5rem;
+}
+.report-prose h2 {
+  font-size: 1.125rem;
+  margin: 1.25rem 0 0.375rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid var(--border);
+}
+.report-prose h3 {
+  font-size: 1rem;
+  margin: 1rem 0 0.25rem;
+}
+.report-prose p {
+  margin: 0.5rem 0;
+}
+.report-prose ul,
+.report-prose ol {
+  margin: 0.5rem 0;
+  padding-left: 1.5rem;
+}
+.report-prose ul {
+  list-style: disc;
+}
+.report-prose ol {
+  list-style: decimal;
+}
+.report-prose li {
+  margin: 0.2rem 0;
+}
+.report-prose strong {
+  color: var(--primary-deep);
+}
+.report-prose blockquote {
+  margin: 0.75rem 0;
+  padding: 0.25rem 1rem;
+  border-left: 3px solid var(--primary);
+  color: var(--muted-foreground);
+}
+.report-prose table {
+  width: 100%;
+  margin: 0.75rem 0;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+}
+.report-prose th,
+.report-prose td {
+  border: 1px solid var(--border);
+  padding: 0.375rem 0.625rem;
+  text-align: left;
+}
+.report-prose th {
+  background: var(--muted);
+  font-weight: 600;
+}
+.report-prose hr {
+  margin: 1rem 0;
+  border-color: var(--border);
+}
+.report-prose code {
+  font-family: var(--font-geist-mono);
+  font-size: 0.875em;
+  background: var(--muted);
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
 }

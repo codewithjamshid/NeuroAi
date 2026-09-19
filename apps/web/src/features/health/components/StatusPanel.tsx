@@ -29,7 +29,7 @@ function SummaryRows({ data }: { data: unknown }) {
     <ul className="mb-3 flex flex-col gap-1.5">
       {rows.map(([name, v]) => (
         <li key={name} className="flex flex-wrap items-center gap-2">
-          <span className="font-medium">{name}</span>
+          <span className="font-mono font-medium">{name}</span>
           {"mode" in v && (
             <Badge variant="secondary">
               {t("status.mode")}: {String(v.mode)}
@@ -50,7 +50,7 @@ function StateBadge({ query }: { query: UseQueryResult<unknown, Error> }) {
   if (query.isPending) {
     return (
       <Badge variant="outline" className="gap-1.5">
-        <CircleDashed aria-hidden className="animate-spin" />
+        <CircleDashed aria-hidden data-motion className="animate-spin" />
         {t("status.loading")}
       </Badge>
     );
@@ -65,7 +65,7 @@ function StateBadge({ query }: { query: UseQueryResult<unknown, Error> }) {
     );
   }
   return (
-    <Badge variant="outline" className="gap-1.5 border-teal-700 text-teal-800 dark:text-teal-300">
+    <Badge variant="outline" className="gap-1.5 border-teal-300 bg-teal-50 text-teal-900">
       <CircleCheck aria-hidden />
       {t("status.ok")}
     </Badge>
@@ -93,7 +93,7 @@ function EndpointCard({
       </CardHeader>
       <CardContent>
         <SummaryRows data={query.data} />
-        <pre className="bg-muted max-h-80 overflow-auto rounded-md p-3 font-mono text-xs">
+        <pre className="bg-muted max-h-72 overflow-auto rounded-lg border p-3 font-mono text-xs leading-relaxed">
           {query.data !== undefined ? JSON.stringify(query.data, null, 2) : "—"}
         </pre>
         {updated && (

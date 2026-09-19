@@ -1,7 +1,7 @@
 "use client";
 
 import { useMutation } from "@tanstack/react-query";
-import { Send, ShieldAlert } from "lucide-react";
+import { Bot, Dumbbell, Send, ShieldAlert, User } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -97,28 +97,38 @@ export function TalkScreen() {
       {risk && risk.level === "high" && (
         <div
           role="alert"
-          className="flex items-start gap-3 rounded-2xl border-2 border-red-700 bg-red-50 px-4 py-3 text-red-950"
+          className="flex items-start gap-3 rounded-2xl border border-red-300 bg-red-50 px-4 py-3 text-red-950"
         >
-          <ShieldAlert aria-hidden className="mt-1 size-[1.4em] shrink-0" />
+          <ShieldAlert aria-hidden className="mt-1 size-[1.4em] shrink-0 text-red-800" />
           <span>{t("talk.risk_high")}</span>
         </div>
       )}
 
-      <section aria-live="polite" className="flex-1">
+      <section aria-live="polite" className="flex flex-1 flex-col gap-2">
         {reply?.patient_message?.text && (
-          <p className="text-muted-foreground mb-2 text-[0.85em]">
-            {t("talk.you")}: {reply.patient_message.text}
+          <p className="text-muted-foreground flex items-start gap-2 px-1 text-[0.85em]">
+            <User aria-hidden className="mt-1 size-[1em] shrink-0" />
+            <span>
+              {t("talk.you")}: {reply.patient_message.text}
+            </span>
           </p>
         )}
-        <RichText
-          text={reply?.ai_message.text ?? t("talk.intro")}
-          className="text-[28px] leading-snug font-medium"
-        />
+        <div className="bg-card shadow-soft rounded-2xl border px-5 py-4">
+          <p className="text-primary-deep mb-1 flex items-center gap-1.5 text-[0.7em] font-semibold tracking-wide uppercase">
+            <Bot aria-hidden className="size-[1.2em]" />
+            {t("talk.ai_label")}
+          </p>
+          <RichText
+            text={reply?.ai_message.text ?? t("talk.intro")}
+            className="text-[28px] leading-snug font-medium"
+          />
+        </div>
+        {!reply && <p className="text-muted-foreground px-1 text-[0.85em]">{t("talk.tip")}</p>}
       </section>
 
       {reply?.needs_confirmation && reply.candidates.length > 0 && (
         <div className="flex flex-col gap-2">
-          <p className="font-medium">{t("talk.confirm_prompt")}</p>
+          <p className="font-semibold">{t("talk.confirm_prompt")}</p>
           <CandidateCards
             candidates={reply.candidates}
             disabled={busy}
@@ -129,7 +139,11 @@ export function TalkScreen() {
       )}
 
       {reply?.suggested_action === "start_exercise" && (
-        <Link href="/p/exercise" className={cn(buttonVariants({ variant: "outline" }), "min-h-16")}>
+        <Link
+          href="/p/exercise"
+          className={cn(buttonVariants({ variant: "outline" }), "min-h-16 gap-2 text-[1em]")}
+        >
+          <Dumbbell aria-hidden className="size-6" />
           {t("talk.go_exercise")}
         </Link>
       )}
@@ -137,7 +151,7 @@ export function TalkScreen() {
       {turnError ? <ErrorCard error={turnError} /> : null}
       <MicErrorNotice error={recorder.error} />
 
-      <div className="flex flex-col items-center gap-3 py-2">
+      <div className="flex flex-col items-center gap-4 py-2">
         <StatusPill status={status} />
         <MicButton
           status={status}
@@ -163,7 +177,7 @@ export function TalkScreen() {
           placeholder={t("talk.text_placeholder")}
           aria-label={t("talk.text_placeholder")}
           disabled={!session || busy}
-          className="border-input bg-background min-h-16 flex-1 rounded-xl border-2 px-4"
+          className="field min-h-16 flex-1 rounded-2xl px-4"
         />
         <Button type="submit" disabled={!session || busy} className="min-h-16 gap-2 px-5">
           <Send aria-hidden className="size-6" />

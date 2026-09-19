@@ -11,9 +11,9 @@ export function MicErrorNotice({ error }: { error: AudioErrorCode | null }) {
   return (
     <div
       role="alert"
-      className="flex items-start gap-3 rounded-2xl border-2 border-amber-600 bg-amber-50 px-4 py-3 text-amber-950"
+      className="flex items-start gap-3 rounded-2xl border border-amber-300 bg-amber-50 px-4 py-3 text-amber-950"
     >
-      <MicOff aria-hidden className="mt-1 size-[1.4em] shrink-0" />
+      <MicOff aria-hidden className="mt-1 size-[1.4em] shrink-0 text-amber-800" />
       <span>{t(`audio.error.${error}`)}</span>
     </div>
   );

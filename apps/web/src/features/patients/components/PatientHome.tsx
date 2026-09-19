@@ -1,6 +1,14 @@
 "use client";
 
-import { CheckSquare, ClipboardCheck, Dumbbell, Pill, Square } from "lucide-react";
+import {
+  CalendarCheck,
+  CheckSquare,
+  ClipboardCheck,
+  Dumbbell,
+  Pill,
+  Smile,
+  Square,
+} from "lucide-react";
 import { useState } from "react";
 
 import { BigButton } from "@/components/BigButton";
@@ -39,7 +47,12 @@ export function PatientHome() {
 
   return (
     <div className="flex flex-col gap-6">
-      <h1 className="text-[1.5em] font-bold">{t("p.hello", { name: firstName })}</h1>
+      <section className="bg-hero shadow-soft flex flex-col gap-1 rounded-2xl px-5 py-5 text-white">
+        <h1 className="text-[1.5em] leading-tight font-bold">
+          {t("p.hello", { name: firstName })}
+        </h1>
+        <p className="text-[0.85em] text-white/85">{t("app.tagline")}</p>
+      </section>
 
       <div className="grid gap-4">
         <BigButton href="/p/talk" emoji="🗣️" label={t("p.talk")} hint={t("p.talk.hint")} />
@@ -54,7 +67,10 @@ export function PatientHome() {
 
       <Card>
         <CardHeader>
-          <CardTitle className="text-[1.2em]">{t("p.today")}</CardTitle>
+          <CardTitle className="flex items-center gap-2 text-[1.2em]">
+            <CalendarCheck aria-hidden className="text-primary size-[1.1em]" />
+            {t("p.today")}
+          </CardTitle>
         </CardHeader>
         <CardContent>
           {pidError ? (
@@ -75,21 +91,28 @@ export function PatientHome() {
                   <li
                     key={item.id}
                     className={cn(
-                      "flex items-center gap-3 rounded-xl border px-3 py-2",
-                      item.done && "bg-muted",
+                      "flex items-center gap-3 rounded-xl border px-3 py-2.5",
+                      item.done ? "bg-muted/60" : "bg-card",
                     )}
                   >
                     {item.done ? (
-                      <CheckSquare aria-hidden className="size-[1.4em] shrink-0 text-teal-800" />
+                      <CheckSquare aria-hidden className="text-primary size-[1.4em] shrink-0" />
                     ) : (
-                      <Square aria-hidden className="size-[1.4em] shrink-0" />
+                      <Square aria-hidden className="text-muted-foreground size-[1.4em] shrink-0" />
                     )}
-                    <Icon aria-hidden className="size-[1.2em] shrink-0" />
-                    <span className="flex-1">
+                    <span className="bg-accent text-accent-foreground inline-flex size-[1.8em] shrink-0 items-center justify-center rounded-lg">
+                      <Icon aria-hidden className="size-[1em]" />
+                    </span>
+                    <span className="min-w-0 flex-1 leading-snug">
                       {item.title}
                       {item.time ? ` · ${item.time}` : ""}
                     </span>
-                    <span className="text-muted-foreground text-[0.85em]">
+                    <span
+                      className={cn(
+                        "shrink-0 rounded-full px-2.5 py-0.5 text-[0.7em] font-semibold",
+                        item.done ? "bg-green-50 text-green-900" : "bg-amber-50 text-amber-900",
+                      )}
+                    >
                       {item.done ? t("p.today.done") : t("p.today.pending")}
                     </span>
                   </li>
@@ -102,7 +125,10 @@ export function PatientHome() {
 
       <Card>
         <CardHeader>
-          <CardTitle className="text-[1.2em]">{t("p.mood.title")}</CardTitle>
+          <CardTitle className="flex items-center gap-2 text-[1.2em]">
+            <Smile aria-hidden className="text-primary size-[1.1em]" />
+            {t("p.mood.title")}
+          </CardTitle>
         </CardHeader>
         <CardContent className="flex flex-col gap-3">
           <div className="grid grid-cols-5 gap-2">
@@ -118,18 +144,23 @@ export function PatientHome() {
                   mood.mutate(score);
                 }}
                 className={cn(
-                  "focus-visible:ring-ring flex min-h-20 flex-col items-center justify-center rounded-xl border-2 outline-none focus-visible:ring-4 disabled:opacity-50",
-                  picked === score && "border-teal-700 bg-teal-50 dark:bg-teal-950",
+                  "bg-card hover:border-primary hover:bg-accent focus-visible:ring-ring flex min-h-20 flex-col items-center justify-center gap-1 rounded-2xl border-2 px-1 outline-none focus-visible:ring-4 active:translate-y-px disabled:opacity-50",
+                  picked === score && "border-primary bg-accent",
                 )}
               >
                 <span aria-hidden className="text-[1.8em] leading-none">
                   {emoji}
                 </span>
-                <span className="text-[0.7em]">{t(`mood.${score}`)}</span>
+                <span className="text-[0.65em] leading-tight">{t(`mood.${score}`)}</span>
               </button>
             ))}
           </div>
-          {mood.isSuccess && <p role="status">{t("p.mood.thanks")}</p>}
+          {mood.isSuccess && (
+            <p role="status" className="text-primary-deep flex items-center gap-2 font-medium">
+              <CheckSquare aria-hidden className="size-[1.2em]" />
+              {t("p.mood.thanks")}
+            </p>
+          )}
           {mood.isError && <ErrorCard error={mood.error} />}
         </CardContent>
       </Card>

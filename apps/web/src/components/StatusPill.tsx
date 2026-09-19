@@ -7,10 +7,10 @@ import { t } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 
 const meta: Record<AudioStatus, { Icon: typeof Mic; cls: string }> = {
-  idle: { Icon: Mic, cls: "bg-muted text-foreground" },
-  listening: { Icon: Ear, cls: "bg-sky-100 text-sky-950" },
-  thinking: { Icon: Brain, cls: "bg-amber-100 text-amber-950" },
-  speaking: { Icon: Volume2, cls: "bg-teal-100 text-teal-950" },
+  idle: { Icon: Mic, cls: "bg-muted text-foreground ring-border" },
+  listening: { Icon: Ear, cls: "bg-sky-50 text-sky-950 ring-sky-200" },
+  thinking: { Icon: Brain, cls: "bg-amber-50 text-amber-950 ring-amber-200" },
+  speaking: { Icon: Volume2, cls: "bg-teal-50 text-teal-950 ring-teal-200" },
 };
 
 // Voice-turn status (TZ §8.1): "Eshityapman… / O'ylayapman… / Gapiryapman…" — icon + text.
@@ -21,7 +21,7 @@ export function StatusPill({ status, className }: { status: AudioStatus; classNa
       role="status"
       aria-live="polite"
       className={cn(
-        "inline-flex items-center gap-2 rounded-full px-4 py-2 font-medium",
+        "inline-flex items-center gap-2 rounded-full px-4 py-2 font-semibold ring-1 ring-inset",
         cls,
         className,
       )}

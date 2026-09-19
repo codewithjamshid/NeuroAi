@@ -1,6 +1,6 @@
 "use client";
 
-import { RotateCcw } from "lucide-react";
+import { ArrowLeft, LayoutGrid, RotateCcw } from "lucide-react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useMemo, useState } from "react";
@@ -26,6 +26,15 @@ const DEFAULT_BODY: BodyZone[] = [
   { key: "pain:leg", label: "Oyoq", emoji: "🦵" },
   { key: "pain:back", label: "Orqa", emoji: "🔙" },
 ];
+
+function SectionTitle({ children }: { children: React.ReactNode }) {
+  return (
+    <h2 className="text-muted-foreground flex items-center gap-3 text-[0.85em] font-semibold tracking-wide uppercase">
+      <span className="shrink-0">{children}</span>
+      <span aria-hidden className="bg-border h-px flex-1" />
+    </h2>
+  );
+}
 
 export function BoardScreen({ backHref = "/p/say" }: { backHref?: string }) {
   const params = useSearchParams();
@@ -93,8 +102,9 @@ export function BoardScreen({ backHref = "/p/say" }: { backHref?: string }) {
         </Button>
         <Link
           href={backHref}
-          className={cn(buttonVariants({ variant: "ghost" }), "min-h-16 text-[1em]")}
+          className={cn(buttonVariants({ variant: "ghost" }), "min-h-16 gap-2 text-[1em]")}
         >
+          <ArrowLeft aria-hidden className="size-6" />
           {t("board.back")}
         </Link>
       </div>
@@ -106,11 +116,18 @@ export function BoardScreen({ backHref = "/p/say" }: { backHref?: string }) {
   return (
     <div className="flex flex-col gap-5">
       <div className="flex items-center justify-between gap-3">
-        <h1 className="text-[1.4em] font-bold">{t("board.title")}</h1>
+        <div className="flex min-w-0 flex-col gap-0.5">
+          <h1 className="flex items-center gap-2 text-[1.4em] font-bold">
+            <LayoutGrid aria-hidden className="text-primary size-[1em] shrink-0" />
+            {t("board.title")}
+          </h1>
+          <p className="text-muted-foreground text-[0.8em]">{t("board.hint")}</p>
+        </div>
         <Link
           href={backHref}
-          className={cn(buttonVariants({ variant: "outline" }), "min-h-16 text-[1em]")}
+          className={cn(buttonVariants({ variant: "outline" }), "min-h-16 gap-2 text-[1em]")}
         >
+          <ArrowLeft aria-hidden className="size-6" />
           {t("board.back")}
         </Link>
       </div>
@@ -127,9 +144,7 @@ export function BoardScreen({ backHref = "/p/say" }: { backHref?: string }) {
       ) : (
         groups.map(([group, items]) => (
           <section key={group} className="flex flex-col gap-2">
-            <h2 className="text-muted-foreground text-[0.9em] font-semibold uppercase">
-              {tk(`board.group.${group}`)}
-            </h2>
+            <SectionTitle>{tk(`board.group.${group}`)}</SectionTitle>
             <div className="grid grid-cols-3 gap-2 sm:grid-cols-4 md:grid-cols-5">
               {items.map((item) => (
                 <Pictogram
@@ -147,9 +162,7 @@ export function BoardScreen({ backHref = "/p/say" }: { backHref?: string }) {
       )}
 
       <section className="flex flex-col gap-2">
-        <h2 className="text-muted-foreground text-[0.9em] font-semibold uppercase">
-          {t("board.body_map")}
-        </h2>
+        <SectionTitle>{t("board.body_map")}</SectionTitle>
         <div className="grid grid-cols-3 gap-2">
           {bodyMap.map((z) => (
             <Pictogram

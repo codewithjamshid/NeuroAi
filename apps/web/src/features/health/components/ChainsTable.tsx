@@ -1,9 +1,10 @@
 "use client";
 
-import { CircleCheck, CircleDashed, CircleOff, CircleX } from "lucide-react";
+import { ChevronRight, CircleCheck, CircleDashed, CircleOff, CircleX } from "lucide-react";
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { t } from "@/lib/i18n";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { t, tk } from "@/lib/i18n";
+import { cn } from "@/lib/utils";
 
 import type { ChainName, ProviderStatus, ProvidersHealthResponse } from "../api";
 
@@ -19,15 +20,21 @@ function configuredOf(p: ProviderStatus): boolean | null {
   return null;
 }
 
-function Circuit({ value }: { value: string | null | undefined }) {
-  if (!value) return <span className="text-muted-foreground">—</span>;
-  const Icon = value === "closed" ? CircleCheck : value === "half_open" ? CircleDashed : CircleX;
-  return (
-    <span className="inline-flex items-center gap-1">
-      <Icon aria-hidden className="size-3.5" />
-      {value}
-    </span>
-  );
+// Chip look per circuit state (icon + text, never colour alone).
+function chipMeta(circuit: string | null | undefined, configured: boolean | null) {
+  if (configured === false) {
+    return { Icon: CircleOff, cls: "border-border bg-muted text-muted-foreground" };
+  }
+  switch (circuit) {
+    case "closed":
+      return { Icon: CircleCheck, cls: "border-green-200 bg-green-50 text-green-900" };
+    case "half_open":
+      return { Icon: CircleDashed, cls: "border-amber-200 bg-amber-50 text-amber-900" };
+    case "open":
+      return { Icon: CircleX, cls: "border-red-200 bg-red-50 text-red-900" };
+    default:
+      return { Icon: CircleCheck, cls: "border-border bg-card text-foreground" };
+  }
 }
 
 // Fallback chains (TZ §4.4): order = priority. Renders nothing if the payload has no chains yet.
@@ -40,58 +47,52 @@ export function ChainsTable({ data }: { data: ProvidersHealthResponse | undefine
     <Card>
       <CardHeader>
         <CardTitle>{t("status.chains")}</CardTitle>
+        <CardDescription>{t("status.chain.order_hint")}</CardDescription>
       </CardHeader>
       <CardContent className="grid gap-4 sm:grid-cols-2">
-        {chains.map((chain) => (
-          <div key={chain}>
-            <h3 className="mb-1 font-mono font-semibold uppercase">{chain}</h3>
-            <table className="w-full text-left text-xs">
-              <thead className="text-muted-foreground">
-                <tr>
-                  <th className="py-1 pr-2 font-medium">{t("status.chain.name")}</th>
-                  <th className="py-1 pr-2 font-medium">{t("status.chain.configured")}</th>
-                  <th className="py-1 pr-2 font-medium">{t("status.chain.status")}</th>
-                  <th className="py-1 pr-2 font-medium">{t("status.chain.circuit")}</th>
-                  <th className="py-1 font-medium">{t("status.chain.latency")}</th>
-                </tr>
-              </thead>
-              <tbody>
-                {(data[chain] as ProviderStatus[]).map((p, i) => {
+        {chains.map((chain) => {
+          const rows = data[chain] as ProviderStatus[];
+          return (
+            <div key={chain} className="flex flex-col gap-2">
+              <h3 className="text-muted-foreground font-mono text-xs font-semibold tracking-wide uppercase">
+                {chain}
+              </h3>
+              <ol className="flex flex-wrap items-center gap-1.5">
+                {rows.map((p, i) => {
                   const conf = configuredOf(p);
+                  const { Icon, cls } = chipMeta(p.circuit, conf);
+                  const stateText = p.circuit
+                    ? tk(`status.circuit.${p.circuit}`)
+                    : conf === false
+                      ? t("common.no")
+                      : (p.status ?? "—");
                   return (
-                    <tr key={`${p.name}-${i}`} className="border-t">
-                      <td className="py-1 pr-2 font-mono">
-                        {i + 1}. {p.name}
-                      </td>
-                      <td className="py-1 pr-2">
-                        {conf === null ? (
-                          "—"
-                        ) : conf ? (
-                          <span className="inline-flex items-center gap-1">
-                            <CircleCheck aria-hidden className="size-3.5" />
-                            {t("common.yes")}
-                          </span>
-                        ) : (
-                          <span className="inline-flex items-center gap-1">
-                            <CircleOff aria-hidden className="size-3.5" />
-                            {t("common.no")}
-                          </span>
+                    <li key={`${p.name}-${i}`} className="flex items-center gap-1.5">
+                      <span
+                        className={cn(
+                          "inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-xs",
+                          cls,
                         )}
-                      </td>
-                      <td className="py-1 pr-2">{p.status ?? "—"}</td>
-                      <td className="py-1 pr-2">
-                        <Circuit value={p.circuit} />
-                      </td>
-                      <td className="py-1">
-                        {typeof p.latency_ms === "number" ? `${p.latency_ms} ms` : "—"}
-                      </td>
-                    </tr>
+                        title={`${t("status.chain.status")}: ${p.status ?? "—"}`}
+                      >
+                        <span className="font-mono opacity-70">{i + 1}</span>
+                        <span className="font-mono font-semibold">{p.name}</span>
+                        <Icon aria-hidden className="size-3.5" />
+                        <span>{stateText}</span>
+                        {typeof p.latency_ms === "number" && (
+                          <span className="tabular-nums opacity-70">· {p.latency_ms} ms</span>
+                        )}
+                      </span>
+                      {i < rows.length - 1 && (
+                        <ChevronRight aria-hidden className="text-muted-foreground size-3.5" />
+                      )}
+                    </li>
                   );
                 })}
-              </tbody>
-            </table>
-          </div>
-        ))}
+              </ol>
+            </div>
+          );
+        })}
       </CardContent>
     </Card>
   );

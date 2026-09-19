@@ -1,6 +1,15 @@
 "use client";
 
-import { FileText, X } from "lucide-react";
+import {
+  Calendar,
+  ChevronRight,
+  FileText,
+  Flag,
+  Languages,
+  MessageSquareText,
+  TriangleAlert,
+  X,
+} from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 import Markdown from "react-markdown";
@@ -15,7 +24,7 @@ import {
   useRedFlagMutation,
   useRedFlags,
 } from "@/features/patients/hooks";
-import type { RedFlagStatus } from "@/features/patients/types";
+import type { RedFlag, RedFlagStatus } from "@/features/patients/types";
 import { useTranscript } from "@/features/sessions/hooks";
 import { t, tk } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
@@ -35,27 +44,72 @@ import { DashboardCharts } from "./DashboardCharts";
 const TABS = ["overview", "sessions", "flags", "protocol", "medications", "report"] as const;
 type Tab = (typeof TABS)[number];
 const FLAG_STATUSES: RedFlagStatus[] = ["open", "acknowledged", "resolved"];
-const inputCls = "border-input bg-background min-h-9 rounded-md border px-2";
+const inputCls = "field min-h-9 px-2";
+const th =
+  "bg-muted text-muted-foreground sticky top-0 z-10 px-3 py-2 text-xs font-semibold uppercase tracking-wide";
+const row = "odd:bg-card even:bg-muted/40 hover:bg-accent/60 border-t transition-colors";
+
+function MetaChip({ Icon, children }: { Icon: typeof Calendar; children: React.ReactNode }) {
+  return (
+    <span className="bg-card ring-border inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-medium ring-1 ring-inset">
+      <Icon aria-hidden className="text-primary size-3.5" />
+      {children}
+    </span>
+  );
+}
+
+// Severity: icon + text, subtle tints (never colour alone).
+function SeverityBadge({ severity }: { severity: RedFlag["severity"] }) {
+  const cls =
+    severity === "high"
+      ? "border-red-200 bg-red-50 text-red-900"
+      : severity === "medium"
+        ? "border-amber-200 bg-amber-50 text-amber-900"
+        : "border-border bg-muted text-foreground";
+  const Icon = severity === "high" ? TriangleAlert : Flag;
+  return (
+    <Badge variant="outline" className={cn("gap-1", cls)}>
+      <Icon aria-hidden />
+      {tk(`flag.severity.${severity}`)}
+    </Badge>
+  );
+}
 
 export function PatientDetail({ patientId }: { patientId: string }) {
   const [tab, setTab] = useState<Tab>("overview");
   const patient = usePatient(patientId);
 
   return (
-    <div className="flex flex-col gap-4">
-      <div className="flex flex-wrap items-center justify-between gap-3">
-        <div>
-          <Link href="/d" className="text-muted-foreground text-xs hover:underline">
-            ← {t("d.patients.title")}
+    <div className="flex flex-col gap-5">
+      <div className="flex flex-col gap-2">
+        <nav
+          aria-label="breadcrumb"
+          className="text-muted-foreground flex items-center gap-1 text-xs"
+        >
+          <Link href="/d" className="hover:text-foreground hover:underline">
+            {t("d.patients.title")}
           </Link>
-          <h1 className="text-2xl font-semibold">
+          <ChevronRight aria-hidden className="size-3.5" />
+          <span className="text-foreground truncate">
+            {patient.data?.full_name ?? (patient.isError ? t("d.patient.unknown") : "…")}
+          </span>
+        </nav>
+        <div className="flex flex-wrap items-center gap-3">
+          <h1 className="text-2xl">
             {patient.data?.full_name ?? (patient.isError ? t("d.patient.unknown") : "…")}
           </h1>
           {patient.data && (
-            <p className="text-muted-foreground">
-              {patient.data.birth_year ?? "—"} · {patient.data.aphasia_type ?? "—"} ·{" "}
-              {patient.data.dialect ?? "—"}
-            </p>
+            <div className="flex flex-wrap gap-1.5">
+              <MetaChip Icon={Calendar}>
+                {patient.data.birth_year ?? "—"} · {t("d.patient.meta.birth")}
+              </MetaChip>
+              <MetaChip Icon={MessageSquareText}>
+                {patient.data.aphasia_type ? tk(`aphasia.${patient.data.aphasia_type}`) : "—"}
+              </MetaChip>
+              <MetaChip Icon={Languages}>
+                {patient.data.dialect ? tk(`dialect.${patient.data.dialect}`) : "—"}
+              </MetaChip>
+            </div>
           )}
         </div>
       </div>
@@ -70,10 +124,10 @@ export function PatientDetail({ patientId }: { patientId: string }) {
             aria-selected={tab === k}
             onClick={() => setTab(k)}
             className={cn(
-              "-mb-px rounded-t-md border-b-2 px-3 py-2 font-medium",
+              "focus-visible:ring-ring -mb-px rounded-t-md border-b-2 px-3 py-2 font-medium transition-colors outline-none focus-visible:ring-2",
               tab === k
-                ? "border-primary text-primary"
-                : "text-muted-foreground hover:text-foreground border-transparent",
+                ? "border-primary text-primary-deep"
+                : "text-muted-foreground hover:text-foreground hover:border-border border-transparent",
             )}
           >
             {t(`d.tab.${k}`)}
@@ -118,35 +172,31 @@ function SessionsTab({ patientId }: { patientId: string }) {
       ) : q.data.length === 0 ? (
         <EmptyState />
       ) : (
-        <div className="overflow-x-auto rounded-lg border">
+        <div className="bg-card shadow-soft max-h-[70vh] overflow-auto rounded-xl border">
           <table className="w-full text-left">
-            <thead className="bg-muted text-muted-foreground">
+            <thead>
               <tr>
-                <th className="px-3 py-2 font-medium">{t("d.col.started")}</th>
-                <th className="px-3 py-2 font-medium">{t("d.col.mode")}</th>
-                <th className="px-3 py-2 font-medium">{t("d.col.accuracy")}</th>
-                <th className="px-3 py-2 font-medium">{t("d.col.summary")}</th>
+                <th className={th}>{t("d.col.started")}</th>
+                <th className={th}>{t("d.col.mode")}</th>
+                <th className={th}>{t("d.col.accuracy")}</th>
+                <th className={th}>{t("d.col.summary")}</th>
               </tr>
             </thead>
             <tbody>
               {q.data.map((s) => (
-                <tr
-                  key={s.id}
-                  className="hover:bg-muted/50 cursor-pointer border-t"
-                  onClick={() => setOpen(s.id)}
-                >
-                  <td className="px-3 py-2 whitespace-nowrap">
+                <tr key={s.id} className={cn(row, "cursor-pointer")} onClick={() => setOpen(s.id)}>
+                  <td className="px-3 py-2.5 whitespace-nowrap">
                     {new Date(s.started_at).toLocaleString()}
                   </td>
-                  <td className="px-3 py-2">
+                  <td className="px-3 py-2.5">
                     <Badge variant="secondary">{tk(`session.mode.${s.mode}`)}</Badge>
                   </td>
-                  <td className="px-3 py-2">
+                  <td className="px-3 py-2.5 tabular-nums">
                     {s.accuracy === null || s.accuracy === undefined
                       ? "—"
                       : `${Math.round(s.accuracy * 100)}%`}
                   </td>
-                  <td className="text-muted-foreground max-w-md truncate px-3 py-2">
+                  <td className="text-muted-foreground max-w-md truncate px-3 py-2.5">
                     {summaryOf(s.summary) || "—"}
                   </td>
                 </tr>
@@ -166,10 +216,13 @@ function TranscriptDrawer({ sessionId, onClose }: { sessionId: string; onClose: 
     <aside
       role="dialog"
       aria-label={t("d.transcript.title")}
-      className="bg-background fixed inset-y-0 right-0 z-50 flex w-full max-w-lg flex-col gap-3 overflow-y-auto border-l p-4 shadow-xl"
+      className="bg-background fixed inset-y-0 right-0 z-50 flex w-full max-w-lg flex-col gap-3 overflow-y-auto border-l p-4 shadow-2xl"
     >
       <div className="flex items-center justify-between">
-        <h2 className="text-lg font-semibold">{t("d.transcript.title")}</h2>
+        <h2 className="flex items-center gap-2 text-lg">
+          <MessageSquareText aria-hidden className="text-primary size-5" />
+          {t("d.transcript.title")}
+        </h2>
         <Button variant="ghost" size="icon" aria-label={t("common.close")} onClick={onClose}>
           <X aria-hidden />
         </Button>
@@ -181,17 +234,19 @@ function TranscriptDrawer({ sessionId, onClose }: { sessionId: string; onClose: 
       ) : (
         <>
           {summaryOf(q.data.session.summary) && (
-            <p className="bg-muted rounded-md p-2">{summaryOf(q.data.session.summary)}</p>
+            <p className="bg-accent text-accent-foreground rounded-xl px-3 py-2">
+              {summaryOf(q.data.session.summary)}
+            </p>
           )}
           <ul className="flex flex-col gap-2">
             {q.data.messages.map((m) => (
               <li
                 key={m.id}
                 className={cn(
-                  "max-w-[90%] rounded-lg px-3 py-2",
+                  "max-w-[90%] rounded-xl px-3 py-2",
                   m.role === "patient"
-                    ? "self-end bg-teal-50 dark:bg-teal-950"
-                    : "bg-muted self-start",
+                    ? "bg-primary/10 self-end rounded-br-sm"
+                    : "bg-card self-start rounded-bl-sm border",
                 )}
               >
                 <p className="text-muted-foreground text-xs">
@@ -219,24 +274,15 @@ function FlagsTab({ patientId }: { patientId: string }) {
   if (q.data.length === 0) return <EmptyState text={t("d.flags.empty")} />;
   return (
     <div className="flex flex-col gap-2">
+      <p className="text-muted-foreground text-xs">{t("d.flags.note")}</p>
       {m.isError && <ErrorCard error={m.error} />}
       {q.data.map((f) => (
-        <Card key={f.id} size="sm">
+        <Card key={f.id} size="sm" className={cn(f.status === "open" && "ring-red-200")}>
           <CardContent className="flex flex-wrap items-center gap-3">
-            <Badge
-              variant={
-                f.severity === "high"
-                  ? "destructive"
-                  : f.severity === "medium"
-                    ? "secondary"
-                    : "outline"
-              }
-            >
-              {tk(`flag.severity.${f.severity}`)}
-            </Badge>
+            <SeverityBadge severity={f.severity} />
             <span className="font-medium">{tk(`flag.category.${f.category}`)}</span>
-            <span className="text-muted-foreground flex-1">{f.evidence ?? "—"}</span>
-            <span className="text-muted-foreground text-xs">
+            <span className="text-muted-foreground min-w-0 flex-1">{f.evidence ?? "—"}</span>
+            <span className="text-muted-foreground text-xs whitespace-nowrap">
               {new Date(f.created_at).toLocaleString()}
             </span>
             <select
@@ -270,7 +316,7 @@ function ProtocolTab({ patientId }: { patientId: string }) {
     <div className="flex flex-col gap-4">
       <Card size="sm">
         <CardContent className="flex flex-wrap items-end gap-2">
-          <label className="flex flex-col gap-1">
+          <label className="flex min-w-56 flex-col gap-1">
             <span className="font-medium">{t("d.protocol.template")}</span>
             <select
               className={inputCls}
@@ -312,7 +358,7 @@ function ProtocolTab({ patientId }: { patientId: string }) {
       ) : (
         <Card size="sm">
           <CardHeader>
-            <CardTitle className="flex items-center gap-2">
+            <CardTitle className="flex flex-wrap items-center gap-2">
               {q.data.title}
               <Badge variant="outline">{tk(`protocol.status.${q.data.status}`)}</Badge>
               {q.data.start_date && (
@@ -321,36 +367,38 @@ function ProtocolTab({ patientId }: { patientId: string }) {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <table className="w-full text-left">
-              <thead className="text-muted-foreground">
-                <tr>
-                  <th className="py-1 pr-3 font-medium">{t("d.protocol.kind")}</th>
-                  <th className="py-1 pr-3 font-medium">{t("d.protocol.category")}</th>
-                  <th className="py-1 pr-3 font-medium">{t("exercise.level")}</th>
-                  <th className="py-1 pr-3 font-medium">{t("d.protocol.frequency")}</th>
-                  <th className="py-1 pr-3 font-medium">{t("d.protocol.duration")}</th>
-                </tr>
-              </thead>
-              <tbody>
-                {q.data.items.map((it) => (
-                  <tr key={it.id} className="border-t">
-                    <td className="py-1 pr-3">{tk(`protocol.kind.${it.kind}`)}</td>
-                    <td className="py-1 pr-3">
-                      {it.category ? tk(`exercise.category.${it.category}`) : "—"}
-                    </td>
-                    <td className="py-1 pr-3">{it.level ?? "—"}</td>
-                    <td className="py-1 pr-3">
-                      {it.frequency
-                        ? `${String((it.frequency as { times_per_day?: unknown }).times_per_day ?? "")} ${t("d.protocol.per_day")}`
-                        : "—"}
-                    </td>
-                    <td className="py-1 pr-3">
-                      {it.duration_min ? `${it.duration_min} ${t("common.min")}` : "—"}
-                    </td>
+            <div className="overflow-x-auto rounded-lg border">
+              <table className="w-full text-left">
+                <thead>
+                  <tr>
+                    <th className={th}>{t("d.protocol.kind")}</th>
+                    <th className={th}>{t("d.protocol.category")}</th>
+                    <th className={th}>{t("exercise.level")}</th>
+                    <th className={th}>{t("d.protocol.frequency")}</th>
+                    <th className={th}>{t("d.protocol.duration")}</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  {q.data.items.map((it) => (
+                    <tr key={it.id} className={row}>
+                      <td className="px-3 py-2">{tk(`protocol.kind.${it.kind}`)}</td>
+                      <td className="px-3 py-2">
+                        {it.category ? tk(`exercise.category.${it.category}`) : "—"}
+                      </td>
+                      <td className="px-3 py-2">{it.level ?? "—"}</td>
+                      <td className="px-3 py-2">
+                        {it.frequency
+                          ? `${String((it.frequency as { times_per_day?: unknown }).times_per_day ?? "")} ${t("d.protocol.per_day")}`
+                          : "—"}
+                      </td>
+                      <td className="px-3 py-2">
+                        {it.duration_min ? `${it.duration_min} ${t("common.min")}` : "—"}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </CardContent>
         </Card>
       )}
@@ -428,11 +476,11 @@ function MedicationsTab({ patientId }: { patientId: string }) {
           {q.data.map((m) => (
             <li
               key={m.id}
-              className="flex flex-wrap items-center gap-3 rounded-lg border px-3 py-2"
+              className="bg-card shadow-soft flex flex-wrap items-center gap-3 rounded-xl border px-3 py-2.5"
             >
               <span className="font-medium">{m.name}</span>
               <span className="text-muted-foreground">{m.dose ?? ""}</span>
-              <span className="text-muted-foreground text-xs">
+              <span className="text-muted-foreground font-mono text-xs">
                 {Array.isArray((m.schedule as { times?: unknown })?.times)
                   ? ((m.schedule as { times: string[] }).times ?? []).join(", ")
                   : ""}
@@ -453,7 +501,7 @@ function ReportTab({ patientId }: { patientId: string }) {
   const shown = gen.data ?? q.data?.find((r) => r.id === openId) ?? null;
   return (
     <div className="flex flex-col gap-4">
-      <div className="flex flex-wrap items-center gap-2">
+      <div className="flex flex-wrap items-center gap-3">
         <Button
           disabled={gen.isPending}
           onClick={() => gen.mutate("7d")}
@@ -464,21 +512,26 @@ function ReportTab({ patientId }: { patientId: string }) {
         </Button>
         <span className="text-muted-foreground text-xs">{t("d.report.hint")}</span>
       </div>
+      {gen.isPending && <LoadingCard text={t("d.report.generating")} />}
       {gen.isError && <ErrorCard error={gen.error} />}
       {shown && (
         <Card>
           <CardHeader>
             <CardTitle className="flex flex-wrap items-center gap-2">
+              <FileText aria-hidden className="text-primary size-4" />
               {t("d.report.period")}: {shown.period_start} → {shown.period_end}
               {shown.generated_by && <Badge variant="outline">{shown.generated_by}</Badge>}
+              <Badge variant="outline" className="border-amber-200 bg-amber-50 text-amber-900">
+                {t("d.report.for_review")}
+              </Badge>
             </CardTitle>
           </CardHeader>
-          <CardContent className="prose prose-sm dark:prose-invert max-w-none [&_h1]:text-xl [&_h2]:text-lg [&_h2]:font-semibold [&_li]:ml-4 [&_li]:list-disc [&_p]:my-2 [&_table]:my-2 [&_td]:border [&_td]:px-2 [&_th]:border [&_th]:px-2">
+          <CardContent className="report-prose text-[0.95rem]">
             <Markdown>{shown.content_md}</Markdown>
           </CardContent>
         </Card>
       )}
-      <h2 className="font-semibold">{t("d.report.previous")}</h2>
+      <h2 className="text-base">{t("d.report.previous")}</h2>
       {q.isPending ? (
         <LoadingCard />
       ) : q.isError ? (
@@ -491,12 +544,17 @@ function ReportTab({ patientId }: { patientId: string }) {
             <li key={r.id}>
               <button
                 type="button"
-                className={cn(buttonVariants({ variant: "ghost", size: "sm" }), "justify-start")}
+                className={cn(
+                  buttonVariants({ variant: "ghost", size: "sm" }),
+                  "justify-start gap-2",
+                  openId === r.id && !gen.data && "bg-accent text-accent-foreground",
+                )}
                 onClick={() => {
                   gen.reset();
                   setOpenId(r.id);
                 }}
               >
+                <FileText aria-hidden />
                 {r.period_start} → {r.period_end} {r.generated_by ? `· ${r.generated_by}` : ""}
               </button>
             </li>
