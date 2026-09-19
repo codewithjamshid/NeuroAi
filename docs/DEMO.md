@@ -52,6 +52,6 @@ Ovozli navbat o'lchovi: matn → javob + Navoiy audio ≈ 5.4 s (LLM 2.2 s + TTS
 
 ## Ma'lum cheklovlar (halol aytiladi)
 
-- Ovoz chiqishi brauzer TTS (o'zbek ovozi bo'lmasa — turk/standart); Navoiy worker'da tuzalgach almashadi.
+- Ovoz chiqishi Navoiy (ofis worker, ngrok); worker uzilsa brauzer TTS (o'zbek ovozi yo'q — sifat past).
 - Yuz mashqi natijasi bazaga nisbatan; ovoz hissiyoti o'chirilgan (worker `voice_emotion: disabled`).
 - PHQ, eslatmalar, kunlik Telegram xulosa, PIN rejimi — TZ P1/P2, "tez orada".
