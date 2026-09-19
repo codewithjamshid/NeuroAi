@@ -6,10 +6,7 @@
     "instruction": "Keng tabassum qiling va 3 soniya ushlab turing. 5 marta takrorlang.",
     "emoji": "😀",
     "blendshape": "mouthSmileLeft",
-    "blendshapes": [
-      "mouthSmileLeft",
-      "mouthSmileRight"
-    ],
+    "blendshapes": ["mouthSmileLeft", "mouthSmileRight"],
     "threshold": 0.5,
     "target_reps": 5,
     "hold_s": 3,
@@ -22,11 +19,7 @@
     "instruction": "Ikkala qoshingizni yuqoriga ko'taring va 3 soniya ushlab turing. 5 marta.",
     "emoji": "🤨",
     "blendshape": "browInnerUp",
-    "blendshapes": [
-      "browInnerUp",
-      "browOuterUpLeft",
-      "browOuterUpRight"
-    ],
+    "blendshapes": ["browInnerUp", "browOuterUpLeft", "browOuterUpRight"],
     "threshold": 0.5,
     "target_reps": 5,
     "hold_s": 3,
@@ -39,10 +32,7 @@
     "instruction": "Ikkala ko'zingizni qattiq yuming va 3 soniya ushlab turing. 5 marta.",
     "emoji": "😣",
     "blendshape": "eyeBlinkLeft",
-    "blendshapes": [
-      "eyeBlinkLeft",
-      "eyeBlinkRight"
-    ],
+    "blendshapes": ["eyeBlinkLeft", "eyeBlinkRight"],
     "threshold": 0.5,
     "target_reps": 5,
     "hold_s": 3,
@@ -55,9 +45,7 @@
     "instruction": "Lablaringizni oldinga cho'chchaytiring va 3 soniya ushlab turing. 5 marta.",
     "emoji": "😗",
     "blendshape": "mouthPucker",
-    "blendshapes": [
-      "mouthPucker"
-    ],
+    "blendshapes": ["mouthPucker"],
     "threshold": 0.5,
     "target_reps": 5,
     "hold_s": 3,
@@ -70,9 +58,7 @@
     "instruction": "Ikkala lunjingizni havo bilan shishiring va 3 soniya ushlab turing. 5 marta.",
     "emoji": "😤",
     "blendshape": "cheekPuff",
-    "blendshapes": [
-      "cheekPuff"
-    ],
+    "blendshapes": ["cheekPuff"],
     "threshold": 0.5,
     "target_reps": 5,
     "hold_s": 3,

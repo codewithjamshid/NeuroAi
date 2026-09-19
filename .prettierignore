@@ -13,3 +13,5 @@ uv.lock
 apps/web/public/sw.js
 packages/shared/src/generated
 docs/TZ.md
+# LLM promptlari TZ Ilova A dan so'zma-so'z — formatlanmaydi
+apps/api/app/ai/prompts/*.md

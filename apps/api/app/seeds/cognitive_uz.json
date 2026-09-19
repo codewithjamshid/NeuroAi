@@ -12,9 +12,7 @@
       "kind": "llm_judge",
       "max": 1
     },
-    "tags": [
-      "orientation"
-    ]
+    "tags": ["orientation"]
   },
   {
     "key": "orientation_month",
@@ -29,9 +27,7 @@
       "kind": "llm_judge",
       "max": 1
     },
-    "tags": [
-      "orientation"
-    ]
+    "tags": ["orientation"]
   },
   {
     "key": "orientation_year",
@@ -46,9 +42,7 @@
       "kind": "llm_judge",
       "max": 1
     },
-    "tags": [
-      "orientation"
-    ]
+    "tags": ["orientation"]
   },
   {
     "key": "orientation_place",
@@ -63,9 +57,7 @@
       "kind": "llm_judge",
       "max": 1
     },
-    "tags": [
-      "orientation"
-    ]
+    "tags": ["orientation"]
   },
   {
     "key": "memory_set1",
@@ -75,20 +67,14 @@
     "prompt_text": "Uchta so'zni eslab qoling: olma, kalit, stol. Keyinroq so'rayman.",
     "recall_prompt": "Boya aytgan uchta so'zni eslang.",
     "expected": {
-      "answers": [
-        "olma",
-        "kalit",
-        "stol"
-      ]
+      "answers": ["olma", "kalit", "stol"]
     },
     "delay_s": 120,
     "scoring": {
       "kind": "recall",
       "max": 3
     },
-    "tags": [
-      "memory"
-    ]
+    "tags": ["memory"]
   },
   {
     "key": "memory_set2",
@@ -98,20 +84,14 @@
     "prompt_text": "Uchta so'zni eslab qoling: gul, soat, non. Keyinroq so'rayman.",
     "recall_prompt": "Boya aytgan uchta so'zni eslang.",
     "expected": {
-      "answers": [
-        "gul",
-        "soat",
-        "non"
-      ]
+      "answers": ["gul", "soat", "non"]
     },
     "delay_s": 120,
     "scoring": {
       "kind": "recall",
       "max": 3
     },
-    "tags": [
-      "memory"
-    ]
+    "tags": ["memory"]
   },
   {
     "key": "memory_set3",
@@ -121,20 +101,14 @@
     "prompt_text": "Uchta so'zni eslab qoling: it, kitob, choy. Keyinroq so'rayman.",
     "recall_prompt": "Boya aytgan uchta so'zni eslang.",
     "expected": {
-      "answers": [
-        "it",
-        "kitob",
-        "choy"
-      ]
+      "answers": ["it", "kitob", "choy"]
     },
     "delay_s": 120,
     "scoring": {
       "kind": "recall",
       "max": 3
     },
-    "tags": [
-      "memory"
-    ]
+    "tags": ["memory"]
   },
   {
     "key": "fluency_fruits",
@@ -149,9 +123,7 @@
     "scoring": {
       "kind": "llm_count"
     },
-    "tags": [
-      "fluency"
-    ]
+    "tags": ["fluency"]
   },
   {
     "key": "fluency_animals",
@@ -166,9 +138,7 @@
     "scoring": {
       "kind": "llm_count"
     },
-    "tags": [
-      "fluency"
-    ]
+    "tags": ["fluency"]
   },
   {
     "key": "fluency_cities",
@@ -183,9 +153,7 @@
     "scoring": {
       "kind": "llm_count"
     },
-    "tags": [
-      "fluency"
-    ]
+    "tags": ["fluency"]
   },
   {
     "key": "serial_20_3",
@@ -194,18 +162,13 @@
     "level": 2,
     "prompt_text": "20 dan 3 tadan ayirib boring: 20, 17, …",
     "expected": {
-      "answers": [
-        "17 14 11 8 5",
-        "o'n yetti o'n to'rt o'n bir sakkiz besh"
-      ]
+      "answers": ["17 14 11 8 5", "o'n yetti o'n to'rt o'n bir sakkiz besh"]
     },
     "scoring": {
       "kind": "steps",
       "max": 5
     },
-    "tags": [
-      "calculation"
-    ]
+    "tags": ["calculation"]
   },
   {
     "key": "routine_morning",
@@ -214,20 +177,12 @@
     "level": 1,
     "prompt_text": "Ertalab turganda nima qilamiz?",
     "expected": {
-      "keywords": [
-        "yuvinamiz",
-        "nonushta",
-        "choy",
-        "tish",
-        "kiyinamiz"
-      ]
+      "keywords": ["yuvinamiz", "nonushta", "choy", "tish", "kiyinamiz"]
     },
     "scoring": {
       "kind": "llm_judge",
       "max": 1
     },
-    "tags": [
-      "routine"
-    ]
+    "tags": ["routine"]
   }
 ]

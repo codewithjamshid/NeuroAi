@@ -5,14 +5,14 @@ Manba haqiqat: `docs/TZ.md` (API shakllari §4.6, sxemalar Ilova B, promptlar Il
 
 ## Kesiladi (halol "tez orada" bilan)
 
-| Nima | Sabab |
-| --- | --- |
-| T-07/T-08/T-10 yuz (MediaPipe, FSI, fusion) | Faqat **stretch**: alohida frontend agent `/p/exercise/face` (worker + FSI + reps); backend faqat `POST /sessions/{id}/face-metrics` saqlaydi. `PatientState` — soddalashtirilgan (nutq + kayfiyat + kalit so'z) |
-| T-16 PHQ-2/9 | Kayfiyat 1–5 qoladi, PHQ yo'q |
-| T-18 barqarorlik, Playwright | Faqat asosiy xato holatlari UI (mikrofon yo'q, provayder yo'q) |
-| T-19 P2 (MedGemma, qo'l, admin, ru, push, WS) | Yo'q |
-| Bemor PIN rejimi, SSE streaming, audio retention cron, 20:00 kunlik xulosa cron, eslatmalar | Yo'q; Telegram faqat bayroq xabari + havola kodi |
-| Parvarishchi telefoni | Xuddi shu laptopda 2-tab (`/c/say` polling 2 s) — cloudflared ixtiyoriy |
+| Nima                                                                                        | Sabab                                                                                                                                                                                                            |
+| ------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| T-07/T-08/T-10 yuz (MediaPipe, FSI, fusion)                                                 | Faqat **stretch**: alohida frontend agent `/p/exercise/face` (worker + FSI + reps); backend faqat `POST /sessions/{id}/face-metrics` saqlaydi. `PatientState` — soddalashtirilgan (nutq + kayfiyat + kalit so'z) |
+| T-16 PHQ-2/9                                                                                | Kayfiyat 1–5 qoladi, PHQ yo'q                                                                                                                                                                                    |
+| T-18 barqarorlik, Playwright                                                                | Faqat asosiy xato holatlari UI (mikrofon yo'q, provayder yo'q)                                                                                                                                                   |
+| T-19 P2 (MedGemma, qo'l, admin, ru, push, WS)                                               | Yo'q                                                                                                                                                                                                             |
+| Bemor PIN rejimi, SSE streaming, audio retention cron, 20:00 kunlik xulosa cron, eslatmalar | Yo'q; Telegram faqat bayroq xabari + havola kodi                                                                                                                                                                 |
+| Parvarishchi telefoni                                                                       | Xuddi shu laptopda 2-tab (`/c/say` polling 2 s) — cloudflared ixtiyoriy                                                                                                                                          |
 
 ## Qoladi (demo ssenariysi §11.2 bo'yicha)
 
@@ -40,13 +40,13 @@ Manba haqiqat: `docs/TZ.md` (API shakllari §4.6, sxemalar Ilova B, promptlar Il
 
 ## Fayl egaligi (parallel agentlar to'qnashmasligi uchun)
 
-| Egasi | Yo'llar |
-| --- | --- |
-| backend-core | `apps/api/app/modules/{auth,users,patients,protocols,sessions}/`, `app/db/registry.py`, `alembic/versions/`, `app/api/deps.py`, `scripts/seed.py`, `tests/test_auth*.py`, `tests/test_models*.py` |
-| providers | `apps/api/app/ai/providers/**`, `app/ai/chains.py`, `app/ai/audio.py`, `app/modules/health/`, `tests/test_providers*.py` |
-| content | `apps/api/app/seeds/*.json`, `app/ai/prompts/*.md`, `app/core/uz_text.py`, `app/modules/exercises/scoring.py`, `app/modules/safety/keywords_uz.py`, `tests/test_scoring*.py`, `tests/test_prompts_guardrails.py`, `tests/test_keywords*.py` |
-| web | `apps/web/**` |
-| Keyingi to'lqin | `modules/{companion,interpreter,exercises(router/service),safety,notifications,clinician,caregiver,reports}`, `scripts/demo_data.py` |
+| Egasi           | Yo'llar                                                                                                                                                                                                                                     |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| backend-core    | `apps/api/app/modules/{auth,users,patients,protocols,sessions}/`, `app/db/registry.py`, `alembic/versions/`, `app/api/deps.py`, `scripts/seed.py`, `tests/test_auth*.py`, `tests/test_models*.py`                                           |
+| providers       | `apps/api/app/ai/providers/**`, `app/ai/chains.py`, `app/ai/audio.py`, `app/modules/health/`, `tests/test_providers*.py`                                                                                                                    |
+| content         | `apps/api/app/seeds/*.json`, `app/ai/prompts/*.md`, `app/core/uz_text.py`, `app/modules/exercises/scoring.py`, `app/modules/safety/keywords_uz.py`, `tests/test_scoring*.py`, `tests/test_prompts_guardrails.py`, `tests/test_keywords*.py` |
+| web             | `apps/web/**`                                                                                                                                                                                                                               |
+| Keyingi to'lqin | `modules/{companion,interpreter,exercises(router/service),safety,notifications,clinician,caregiver,reports}`, `scripts/demo_data.py`                                                                                                        |
 
 Umumiy fayllar: `app/api/v1/router.py` **avto-discovery** qiladi (`app.modules.<name>.router:router`) — tahrirlanmaydi; `app/main.py` tahrirlanmaydi (`/media/tts` static allaqachon mount qilingan); `app/db/registry.py` — backend-core to'ldiradi; `pyproject.toml`/`uv.lock`/`package.json` — bog'liqliklar orkestrator tomonidan oldindan qo'shilgan (`bcrypt pyjwt google-genai openai static-ffmpeg rapidfuzz`; web: `recharts react-markdown @mediapipe/tasks-vision`), **`uv add`/`pnpm add` qilinmaydi**; kerak bo'lsa hisobotda so'raladi.
 

@@ -33,6 +33,11 @@ function pctTick(v: number): string {
   return `${Math.round(v * 100)}%`;
 }
 
+// The API reports adherence as percentages (0–100); charts and tiles work in fractions (0–1).
+function asFraction<T extends number | null | undefined>(v: T): T {
+  return (typeof v === "number" && v > 1 ? v / 100 : v) as T;
+}
+
 type Key = keyof Omit<DashboardDay, "date">;
 
 function MetricChart({
@@ -124,11 +129,18 @@ function MetricChart({
 }
 
 export function DashboardCharts({ data }: { data: Dashboard }) {
-  const days = data.days ?? [];
+  const days = (data.days ?? []).map((d) => ({
+    ...d,
+    adherence_exercise: asFraction(d.adherence_exercise),
+    adherence_medication: asFraction(d.adherence_medication),
+  }));
   const flagDates = (data.flags ?? [])
     .map((f) => (f.created_at ?? "").slice(0, 10))
     .filter((d) => days.some((x) => x.date === d));
-  const adherence = data.adherence_week ?? {};
+  const adherence = {
+    exercise: asFraction(data.adherence_week?.exercise),
+    medication: asFraction(data.adherence_week?.medication),
+  };
 
   return (
     <div className="flex flex-col gap-4">

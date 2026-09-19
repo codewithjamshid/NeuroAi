@@ -28,11 +28,7 @@
       "emoji": "💧",
       "group": "asosiy",
       "spoken": "Men suv ichmoqchiman.",
-      "aliases": [
-        "suv",
-        "ichmoqchiman",
-        "chanqadim"
-      ]
+      "aliases": ["suv", "ichmoqchiman", "chanqadim"]
     },
     {
       "key": "food",
@@ -40,12 +36,7 @@
       "emoji": "🍽️",
       "group": "asosiy",
       "spoken": "Men ovqat yemoqchiman.",
-      "aliases": [
-        "ovqat",
-        "yemoqchiman",
-        "qornim och",
-        "och"
-      ]
+      "aliases": ["ovqat", "yemoqchiman", "qornim och", "och"]
     },
     {
       "key": "tea",
@@ -53,10 +44,7 @@
       "emoji": "🍵",
       "group": "asosiy",
       "spoken": "Men choy ichmoqchiman.",
-      "aliases": [
-        "choy",
-        "chay"
-      ]
+      "aliases": ["choy", "chay"]
     },
     {
       "key": "bread",
@@ -64,9 +52,7 @@
       "emoji": "🍞",
       "group": "asosiy",
       "spoken": "Menga non bering.",
-      "aliases": [
-        "non"
-      ]
+      "aliases": ["non"]
     },
     {
       "key": "fruit",
@@ -74,11 +60,7 @@
       "emoji": "🍎",
       "group": "asosiy",
       "spoken": "Men meva yemoqchiman.",
-      "aliases": [
-        "meva",
-        "olma",
-        "uzum"
-      ]
+      "aliases": ["meva", "olma", "uzum"]
     },
     {
       "key": "toilet",
@@ -86,11 +68,7 @@
       "emoji": "🚻",
       "group": "asosiy",
       "spoken": "Men hojatxonaga bormoqchiman.",
-      "aliases": [
-        "hojatxona",
-        "hojat",
-        "tualet"
-      ]
+      "aliases": ["hojatxona", "hojat", "tualet"]
     },
     {
       "key": "bathroom_help",
@@ -98,9 +76,7 @@
       "emoji": "🧑‍🦽",
       "group": "asosiy",
       "spoken": "Hojatxonaga borishga yordam kerak.",
-      "aliases": [
-        "hojatxonaga yordam"
-      ]
+      "aliases": ["hojatxonaga yordam"]
     },
     {
       "key": "medicine",
@@ -108,10 +84,7 @@
       "emoji": "💊",
       "group": "asosiy",
       "spoken": "Dori vaqti bo'ldi, dorimni bering.",
-      "aliases": [
-        "dori",
-        "tabletka"
-      ]
+      "aliases": ["dori", "tabletka"]
     },
     {
       "key": "sleep",
@@ -119,11 +92,7 @@
       "emoji": "🛏️",
       "group": "asosiy",
       "spoken": "Men uxlamoqchiman.",
-      "aliases": [
-        "uxla",
-        "uyqu",
-        "charchadim"
-      ]
+      "aliases": ["uxla", "uyqu", "charchadim"]
     },
     {
       "key": "wash",
@@ -131,11 +100,7 @@
       "emoji": "🚿",
       "group": "asosiy",
       "spoken": "Men yuvinmoqchiman.",
-      "aliases": [
-        "yuvin",
-        "cho'mil",
-        "dush"
-      ]
+      "aliases": ["yuvin", "cho'mil", "dush"]
     },
     {
       "key": "clothes",
@@ -143,11 +108,7 @@
       "emoji": "👕",
       "group": "asosiy",
       "spoken": "Kiyimimni almashtirmoqchiman.",
-      "aliases": [
-        "kiyim",
-        "ko'ylak",
-        "kiyin"
-      ]
+      "aliases": ["kiyim", "ko'ylak", "kiyin"]
     },
     {
       "key": "glasses",
@@ -155,10 +116,7 @@
       "emoji": "👓",
       "group": "asosiy",
       "spoken": "Ko'zoynagimni bering.",
-      "aliases": [
-        "ko'zoynak",
-        "oynak"
-      ]
+      "aliases": ["ko'zoynak", "oynak"]
     },
     {
       "key": "light",
@@ -166,12 +124,7 @@
       "emoji": "💡",
       "group": "asosiy",
       "spoken": "Chiroqni yoqing yoki o'chiring.",
-      "aliases": [
-        "chiroq",
-        "svet",
-        "yoqing",
-        "o'chiring"
-      ]
+      "aliases": ["chiroq", "svet", "yoqing", "o'chiring"]
     },
     {
       "key": "window",
@@ -179,10 +132,7 @@
       "emoji": "🪟",
       "group": "asosiy",
       "spoken": "Derazani oching yoki yoping.",
-      "aliases": [
-        "deraza",
-        "oyna"
-      ]
+      "aliases": ["deraza", "oyna"]
     },
     {
       "key": "tv",
@@ -190,11 +140,7 @@
       "emoji": "📺",
       "group": "asosiy",
       "spoken": "Televizorni yoqing.",
-      "aliases": [
-        "televizor",
-        "telvizor",
-        "kino"
-      ]
+      "aliases": ["televizor", "telvizor", "kino"]
     },
     {
       "key": "phone",
@@ -202,10 +148,7 @@
       "emoji": "📞",
       "group": "asosiy",
       "spoken": "Telefonni bering, qo'ng'iroq qilmoqchiman.",
-      "aliases": [
-        "telefon",
-        "qo'ng'iroq"
-      ]
+      "aliases": ["telefon", "qo'ng'iroq"]
     },
     {
       "key": "music",
@@ -213,11 +156,7 @@
       "emoji": "🎵",
       "group": "asosiy",
       "spoken": "Musiqa qo'yib bering.",
-      "aliases": [
-        "musiqa",
-        "qo'shiq",
-        "ashula"
-      ]
+      "aliases": ["musiqa", "qo'shiq", "ashula"]
     },
     {
       "key": "outside",
@@ -225,12 +164,7 @@
       "emoji": "🌳",
       "group": "asosiy",
       "spoken": "Men tashqariga chiqmoqchiman.",
-      "aliases": [
-        "tashqari",
-        "ko'cha",
-        "havo",
-        "sayr"
-      ]
+      "aliases": ["tashqari", "ko'cha", "havo", "sayr"]
     },
     {
       "key": "sit",
@@ -238,10 +172,7 @@
       "emoji": "🪑",
       "group": "asosiy",
       "spoken": "Men o'tirmoqchiman.",
-      "aliases": [
-        "o'tir",
-        "o'tirmoqchiman"
-      ]
+      "aliases": ["o'tir", "o'tirmoqchiman"]
     },
     {
       "key": "lie",
@@ -249,10 +180,7 @@
       "emoji": "🛌",
       "group": "asosiy",
       "spoken": "Men yotmoqchiman.",
-      "aliases": [
-        "yot",
-        "yotmoqchiman"
-      ]
+      "aliases": ["yot", "yotmoqchiman"]
     },
     {
       "key": "position",
@@ -260,11 +188,7 @@
       "emoji": "🔄",
       "group": "asosiy",
       "spoken": "Meni o'girib qo'ying, joyimni o'zgartiring.",
-      "aliases": [
-        "o'gir",
-        "yonbosh",
-        "joyim"
-      ]
+      "aliases": ["o'gir", "yonbosh", "joyim"]
     },
     {
       "key": "pray",
@@ -272,10 +196,7 @@
       "emoji": "🤲",
       "group": "asosiy",
       "spoken": "Namoz o'qimoqchiman, tahorat kerak.",
-      "aliases": [
-        "namoz",
-        "tahorat"
-      ]
+      "aliases": ["namoz", "tahorat"]
     },
     {
       "key": "quiet",
@@ -283,11 +204,7 @@
       "emoji": "🤫",
       "group": "asosiy",
       "spoken": "Iltimos, jimroq bo'ling.",
-      "aliases": [
-        "jim",
-        "shovqin",
-        "sekin"
-      ]
+      "aliases": ["jim", "shovqin", "sekin"]
     },
     {
       "key": "pain",
@@ -295,11 +212,7 @@
       "emoji": "🤕",
       "group": "tana",
       "spoken": "Og'riyapti.",
-      "aliases": [
-        "og'ri",
-        "og'riq",
-        "ogri"
-      ]
+      "aliases": ["og'ri", "og'riq", "ogri"]
     },
     {
       "key": "cold",
@@ -307,12 +220,7 @@
       "emoji": "🥶",
       "group": "tana",
       "spoken": "Menga sovuq, ko'rpa bering.",
-      "aliases": [
-        "sovuq",
-        "sovq",
-        "muzla",
-        "ko'rpa"
-      ]
+      "aliases": ["sovuq", "sovq", "muzla", "ko'rpa"]
     },
     {
       "key": "hot",
@@ -320,11 +228,7 @@
       "emoji": "🥵",
       "group": "tana",
       "spoken": "Menga issiq bo'lyapti.",
-      "aliases": [
-        "issiq",
-        "isiq",
-        "terla"
-      ]
+      "aliases": ["issiq", "isiq", "terla"]
     },
     {
       "key": "tired",
@@ -332,11 +236,7 @@
       "emoji": "😮‍💨",
       "group": "tana",
       "spoken": "Men charchadim, dam olmoqchiman.",
-      "aliases": [
-        "charcha",
-        "holsiz",
-        "dam"
-      ]
+      "aliases": ["charcha", "holsiz", "dam"]
     },
     {
       "key": "dizzy",
@@ -344,11 +244,7 @@
       "emoji": "😵",
       "group": "tana",
       "spoken": "Boshim aylanyapti.",
-      "aliases": [
-        "bosh aylan",
-        "boshim aylan",
-        "aylanyapti"
-      ]
+      "aliases": ["bosh aylan", "boshim aylan", "aylanyapti"]
     },
     {
       "key": "nausea",
@@ -356,11 +252,7 @@
       "emoji": "🤢",
       "group": "tana",
       "spoken": "Ko'nglim aynayapti.",
-      "aliases": [
-        "ko'ngl",
-        "ayna",
-        "qusgim"
-      ]
+      "aliases": ["ko'ngl", "ayna", "qusgim"]
     },
     {
       "key": "sad",
@@ -368,11 +260,7 @@
       "emoji": "😢",
       "group": "his",
       "spoken": "Men xafaman.",
-      "aliases": [
-        "xafa",
-        "yig'la",
-        "g'amgin"
-      ]
+      "aliases": ["xafa", "yig'la", "g'amgin"]
     },
     {
       "key": "happy",
@@ -380,11 +268,7 @@
       "emoji": "😊",
       "group": "his",
       "spoken": "Men xursandman.",
-      "aliases": [
-        "xursand",
-        "quvon",
-        "yaxshiman"
-      ]
+      "aliases": ["xursand", "quvon", "yaxshiman"]
     },
     {
       "key": "scared",
@@ -392,10 +276,7 @@
       "emoji": "😨",
       "group": "his",
       "spoken": "Men qo'rqyapman.",
-      "aliases": [
-        "qo'rq",
-        "qurq"
-      ]
+      "aliases": ["qo'rq", "qurq"]
     },
     {
       "key": "alone",
@@ -403,11 +284,7 @@
       "emoji": "🙍",
       "group": "oila",
       "spoken": "Meni biroz yolg'iz qoldiring.",
-      "aliases": [
-        "yolg'iz",
-        "yolgiz",
-        "o'zim"
-      ]
+      "aliases": ["yolg'iz", "yolgiz", "o'zim"]
     },
     {
       "key": "company",
@@ -415,11 +292,7 @@
       "emoji": "👥",
       "group": "oila",
       "spoken": "Yonimda o'tiring.",
-      "aliases": [
-        "yonimda",
-        "o'tiring",
-        "birga"
-      ]
+      "aliases": ["yonimda", "o'tiring", "birga"]
     },
     {
       "key": "yes",
@@ -427,12 +300,7 @@
       "emoji": "✅",
       "group": "javob",
       "spoken": "Ha.",
-      "aliases": [
-        "ha",
-        "xa",
-        "to'g'ri",
-        "mayli"
-      ]
+      "aliases": ["ha", "xa", "to'g'ri", "mayli"]
     },
     {
       "key": "no",
@@ -440,12 +308,7 @@
       "emoji": "❌",
       "group": "javob",
       "spoken": "Yo'q.",
-      "aliases": [
-        "yo'q",
-        "yoq",
-        "kerakmas",
-        "xohlamayman"
-      ]
+      "aliases": ["yo'q", "yoq", "kerakmas", "xohlamayman"]
     },
     {
       "key": "thanks",
@@ -453,10 +316,7 @@
       "emoji": "🙏",
       "group": "javob",
       "spoken": "Rahmat.",
-      "aliases": [
-        "rahmat",
-        "raxmat"
-      ]
+      "aliases": ["rahmat", "raxmat"]
     },
     {
       "key": "wait",
@@ -464,11 +324,7 @@
       "emoji": "⏳",
       "group": "javob",
       "spoken": "Biroz kutib turing.",
-      "aliases": [
-        "kut",
-        "shoshma",
-        "hozir"
-      ]
+      "aliases": ["kut", "shoshma", "hozir"]
     },
     {
       "key": "help",
@@ -476,10 +332,7 @@
       "emoji": "🆘",
       "group": "javob",
       "spoken": "Menga yordam kering.",
-      "aliases": [
-        "yordam",
-        "keling"
-      ]
+      "aliases": ["yordam", "keling"]
     },
     {
       "key": "doctor",
@@ -487,11 +340,7 @@
       "emoji": "👨‍⚕️",
       "group": "javob",
       "spoken": "Vrachni chaqiring.",
-      "aliases": [
-        "vrach",
-        "doktor",
-        "shifokor"
-      ]
+      "aliases": ["vrach", "doktor", "shifokor"]
     }
   ],
   "person_template": {

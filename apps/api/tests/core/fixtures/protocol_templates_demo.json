@@ -4,10 +4,28 @@
     "title": "Motor afaziya, 1-oy",
     "description": "Nutq L1 kuniga 2×10 daqiqa, yuz 1×5 daqiqa, kognitiv 1×5 daqiqa",
     "items": [
-      {"kind": "exercise", "category": "speech", "level": 1, "frequency": {"times_per_day": 2, "times": ["10:00", "17:00"]}, "duration_min": 10},
-      {"kind": "exercise", "category": "face", "level": 1, "frequency": {"times_per_day": 1, "times": ["11:00"]}, "duration_min": 5},
-      {"kind": "exercise", "category": "cognitive", "level": 1, "frequency": {"times_per_day": 1}, "duration_min": 5},
-      {"kind": "checkin", "frequency": {"times_per_day": 1, "times": ["09:00"]}}
+      {
+        "kind": "exercise",
+        "category": "speech",
+        "level": 1,
+        "frequency": { "times_per_day": 2, "times": ["10:00", "17:00"] },
+        "duration_min": 10
+      },
+      {
+        "kind": "exercise",
+        "category": "face",
+        "level": 1,
+        "frequency": { "times_per_day": 1, "times": ["11:00"] },
+        "duration_min": 5
+      },
+      {
+        "kind": "exercise",
+        "category": "cognitive",
+        "level": 1,
+        "frequency": { "times_per_day": 1 },
+        "duration_min": 5
+      },
+      { "kind": "checkin", "frequency": { "times_per_day": 1, "times": ["09:00"] } }
     ]
   },
   {
@@ -15,8 +33,20 @@
     "title": "Sensor afaziya, 1-oy",
     "description": "Tushunish va takrorlash ustun",
     "items": [
-      {"kind": "exercise", "category": "speech", "level": 1, "frequency": {"times_per_day": 2}, "duration_min": 10},
-      {"kind": "exercise", "category": "cognitive", "level": 1, "frequency": {"times_per_day": 1}, "duration_min": 5}
+      {
+        "kind": "exercise",
+        "category": "speech",
+        "level": 1,
+        "frequency": { "times_per_day": 2 },
+        "duration_min": 10
+      },
+      {
+        "kind": "exercise",
+        "category": "cognitive",
+        "level": 1,
+        "frequency": { "times_per_day": 1 },
+        "duration_min": 5
+      }
     ]
   },
   {
@@ -24,8 +54,20 @@
     "title": "Dizartriya, 1-oy",
     "description": "Takrorlash + yuz/lab mashqlari ustun",
     "items": [
-      {"kind": "exercise", "category": "speech", "level": 1, "frequency": {"times_per_day": 2}, "duration_min": 10},
-      {"kind": "exercise", "category": "face", "level": 1, "frequency": {"times_per_day": 2}, "duration_min": 5}
+      {
+        "kind": "exercise",
+        "category": "speech",
+        "level": 1,
+        "frequency": { "times_per_day": 2 },
+        "duration_min": 10
+      },
+      {
+        "kind": "exercise",
+        "category": "face",
+        "level": 1,
+        "frequency": { "times_per_day": 2 },
+        "duration_min": 5
+      }
     ]
   },
   {
@@ -33,8 +75,20 @@
     "title": "Kognitiv fokus",
     "description": "Orientatsiya, xotira ustun",
     "items": [
-      {"kind": "exercise", "category": "cognitive", "level": 1, "frequency": {"times_per_day": 2}, "duration_min": 10},
-      {"kind": "exercise", "category": "speech", "level": 1, "frequency": {"times_per_day": 1}, "duration_min": 5}
+      {
+        "kind": "exercise",
+        "category": "cognitive",
+        "level": 1,
+        "frequency": { "times_per_day": 2 },
+        "duration_min": 10
+      },
+      {
+        "kind": "exercise",
+        "category": "speech",
+        "level": 1,
+        "frequency": { "times_per_day": 1 },
+        "duration_min": 5
+      }
     ]
   }
 ]

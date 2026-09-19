@@ -1,7 +1,6 @@
 # NeuroAI — Texnik topshiriq (TZ) v1.0
 
 **Loyiha:** NeuroAI — insultdan keyingi bemorlar uchun 24/7 multimodal reabilitatsiya hamrohi
-**Muallif / mahsulot egasi:** Azizbek Atoyev
 **Tadbir:** National AI Hackathon, Xorazm, "Sog'liqni saqlash" yo'nalishi (4 kun)
 **Sana:** 2026-09-19
 **Holat:** Ishlab chiqishga tayyor (Claude Code uchun)

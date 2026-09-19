@@ -11,18 +11,8 @@
         "level": 1,
         "frequency": {
           "times_per_day": 1,
-          "days": [
-            1,
-            2,
-            3,
-            4,
-            5,
-            6,
-            7
-          ],
-          "times": [
-            "09:00"
-          ]
+          "days": [1, 2, 3, 4, 5, 6, 7],
+          "times": ["09:00"]
         },
         "duration_min": 1,
         "params": {}
@@ -34,26 +24,12 @@
         "level": 1,
         "frequency": {
           "times_per_day": 2,
-          "days": [
-            1,
-            2,
-            3,
-            4,
-            5,
-            6,
-            7
-          ],
-          "times": [
-            "10:00",
-            "17:00"
-          ]
+          "days": [1, 2, 3, 4, 5, 6, 7],
+          "times": ["10:00", "17:00"]
         },
         "duration_min": 10,
         "params": {
-          "subtypes": [
-            "naming",
-            "repetition"
-          ]
+          "subtypes": ["naming", "repetition"]
         }
       },
       {
@@ -63,26 +39,12 @@
         "level": 1,
         "frequency": {
           "times_per_day": 1,
-          "days": [
-            1,
-            2,
-            3,
-            4,
-            5,
-            6,
-            7
-          ],
-          "times": [
-            "11:00"
-          ]
+          "days": [1, 2, 3, 4, 5, 6, 7],
+          "times": ["11:00"]
         },
         "duration_min": 5,
         "params": {
-          "subtypes": [
-            "face_smile",
-            "face_brows",
-            "face_pucker"
-          ]
+          "subtypes": ["face_smile", "face_brows", "face_pucker"]
         }
       },
       {
@@ -92,25 +54,12 @@
         "level": 1,
         "frequency": {
           "times_per_day": 1,
-          "days": [
-            1,
-            2,
-            3,
-            4,
-            5,
-            6,
-            7
-          ],
-          "times": [
-            "16:00"
-          ]
+          "days": [1, 2, 3, 4, 5, 6, 7],
+          "times": ["16:00"]
         },
         "duration_min": 5,
         "params": {
-          "subtypes": [
-            "orientation",
-            "memory"
-          ]
+          "subtypes": ["orientation", "memory"]
         }
       }
     ],
@@ -128,18 +77,8 @@
         "level": 1,
         "frequency": {
           "times_per_day": 1,
-          "days": [
-            1,
-            2,
-            3,
-            4,
-            5,
-            6,
-            7
-          ],
-          "times": [
-            "09:00"
-          ]
+          "days": [1, 2, 3, 4, 5, 6, 7],
+          "times": ["09:00"]
         },
         "duration_min": 1,
         "params": {}
@@ -151,26 +90,12 @@
         "level": 1,
         "frequency": {
           "times_per_day": 2,
-          "days": [
-            1,
-            2,
-            3,
-            4,
-            5,
-            6,
-            7
-          ],
-          "times": [
-            "10:00",
-            "17:00"
-          ]
+          "days": [1, 2, 3, 4, 5, 6, 7],
+          "times": ["10:00", "17:00"]
         },
         "duration_min": 10,
         "params": {
-          "subtypes": [
-            "repetition",
-            "reading"
-          ]
+          "subtypes": ["repetition", "reading"]
         }
       },
       {
@@ -180,24 +105,12 @@
         "level": 2,
         "frequency": {
           "times_per_day": 1,
-          "days": [
-            1,
-            2,
-            3,
-            4,
-            5,
-            6,
-            7
-          ],
-          "times": [
-            "12:00"
-          ]
+          "days": [1, 2, 3, 4, 5, 6, 7],
+          "times": ["12:00"]
         },
         "duration_min": 5,
         "params": {
-          "subtypes": [
-            "completion"
-          ]
+          "subtypes": ["completion"]
         }
       },
       {
@@ -207,25 +120,12 @@
         "level": 1,
         "frequency": {
           "times_per_day": 1,
-          "days": [
-            1,
-            2,
-            3,
-            4,
-            5,
-            6,
-            7
-          ],
-          "times": [
-            "11:00"
-          ]
+          "days": [1, 2, 3, 4, 5, 6, 7],
+          "times": ["11:00"]
         },
         "duration_min": 5,
         "params": {
-          "subtypes": [
-            "face_smile",
-            "face_cheeks"
-          ]
+          "subtypes": ["face_smile", "face_cheeks"]
         }
       },
       {
@@ -235,24 +135,12 @@
         "level": 1,
         "frequency": {
           "times_per_day": 1,
-          "days": [
-            1,
-            2,
-            3,
-            4,
-            5,
-            6,
-            7
-          ],
-          "times": [
-            "16:00"
-          ]
+          "days": [1, 2, 3, 4, 5, 6, 7],
+          "times": ["16:00"]
         },
         "duration_min": 5,
         "params": {
-          "subtypes": [
-            "orientation"
-          ]
+          "subtypes": ["orientation"]
         }
       }
     ],
@@ -270,18 +158,8 @@
         "level": 1,
         "frequency": {
           "times_per_day": 1,
-          "days": [
-            1,
-            2,
-            3,
-            4,
-            5,
-            6,
-            7
-          ],
-          "times": [
-            "09:00"
-          ]
+          "days": [1, 2, 3, 4, 5, 6, 7],
+          "times": ["09:00"]
         },
         "duration_min": 1,
         "params": {}
@@ -293,26 +171,12 @@
         "level": 2,
         "frequency": {
           "times_per_day": 2,
-          "days": [
-            1,
-            2,
-            3,
-            4,
-            5,
-            6,
-            7
-          ],
-          "times": [
-            "10:00",
-            "17:00"
-          ]
+          "days": [1, 2, 3, 4, 5, 6, 7],
+          "times": ["10:00", "17:00"]
         },
         "duration_min": 10,
         "params": {
-          "subtypes": [
-            "repetition",
-            "automatic"
-          ]
+          "subtypes": ["repetition", "automatic"]
         }
       },
       {
@@ -322,27 +186,12 @@
         "level": 1,
         "frequency": {
           "times_per_day": 2,
-          "days": [
-            1,
-            2,
-            3,
-            4,
-            5,
-            6,
-            7
-          ],
-          "times": [
-            "11:00",
-            "18:00"
-          ]
+          "days": [1, 2, 3, 4, 5, 6, 7],
+          "times": ["11:00", "18:00"]
         },
         "duration_min": 5,
         "params": {
-          "subtypes": [
-            "face_pucker",
-            "face_cheeks",
-            "face_smile"
-          ]
+          "subtypes": ["face_pucker", "face_cheeks", "face_smile"]
         }
       },
       {
@@ -352,24 +201,12 @@
         "level": 1,
         "frequency": {
           "times_per_day": 1,
-          "days": [
-            1,
-            2,
-            3,
-            4,
-            5,
-            6,
-            7
-          ],
-          "times": [
-            "15:00"
-          ]
+          "days": [1, 2, 3, 4, 5, 6, 7],
+          "times": ["15:00"]
         },
         "duration_min": 5,
         "params": {
-          "subtypes": [
-            "reading"
-          ]
+          "subtypes": ["reading"]
         }
       }
     ],
@@ -387,18 +224,8 @@
         "level": 1,
         "frequency": {
           "times_per_day": 1,
-          "days": [
-            1,
-            2,
-            3,
-            4,
-            5,
-            6,
-            7
-          ],
-          "times": [
-            "09:00"
-          ]
+          "days": [1, 2, 3, 4, 5, 6, 7],
+          "times": ["09:00"]
         },
         "duration_min": 1,
         "params": {}
@@ -410,26 +237,12 @@
         "level": 1,
         "frequency": {
           "times_per_day": 2,
-          "days": [
-            1,
-            2,
-            3,
-            4,
-            5,
-            6,
-            7
-          ],
-          "times": [
-            "10:00",
-            "17:00"
-          ]
+          "days": [1, 2, 3, 4, 5, 6, 7],
+          "times": ["10:00", "17:00"]
         },
         "duration_min": 5,
         "params": {
-          "subtypes": [
-            "orientation",
-            "memory"
-          ]
+          "subtypes": ["orientation", "memory"]
         }
       },
       {
@@ -439,25 +252,12 @@
         "level": 2,
         "frequency": {
           "times_per_day": 1,
-          "days": [
-            1,
-            2,
-            3,
-            4,
-            5,
-            6,
-            7
-          ],
-          "times": [
-            "12:00"
-          ]
+          "days": [1, 2, 3, 4, 5, 6, 7],
+          "times": ["12:00"]
         },
         "duration_min": 5,
         "params": {
-          "subtypes": [
-            "fluency",
-            "serial_subtraction"
-          ]
+          "subtypes": ["fluency", "serial_subtraction"]
         }
       },
       {
@@ -467,24 +267,12 @@
         "level": 1,
         "frequency": {
           "times_per_day": 1,
-          "days": [
-            1,
-            2,
-            3,
-            4,
-            5,
-            6,
-            7
-          ],
-          "times": [
-            "16:00"
-          ]
+          "days": [1, 2, 3, 4, 5, 6, 7],
+          "times": ["16:00"]
         },
         "duration_min": 5,
         "params": {
-          "subtypes": [
-            "naming"
-          ]
+          "subtypes": ["naming"]
         }
       }
     ],

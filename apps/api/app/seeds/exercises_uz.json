@@ -9,19 +9,13 @@
       "emoji": "🍞"
     },
     "expected": {
-      "answers": [
-        "non",
-        "нон"
-      ]
+      "answers": ["non", "нон"]
     },
     "cues": {
       "semantic": "Buni yeymiz. Tandirda pishadi. Har kuni dasturxonda bo'ladi.",
       "phonemic": "no…"
     },
-    "tags": [
-      "food",
-      "daily"
-    ]
+    "tags": ["food", "daily"]
   },
   {
     "key": "naming_l1_suv",
@@ -33,19 +27,13 @@
       "emoji": "💧"
     },
     "expected": {
-      "answers": [
-        "suv",
-        "сув"
-      ]
+      "answers": ["suv", "сув"]
     },
     "cues": {
       "semantic": "Buni ichamiz. Chanqaganda kerak. Daryoda oqadi.",
       "phonemic": "su…"
     },
-    "tags": [
-      "drink",
-      "daily"
-    ]
+    "tags": ["drink", "daily"]
   },
   {
     "key": "naming_l1_choy",
@@ -57,19 +45,13 @@
       "emoji": "🍵"
     },
     "expected": {
-      "answers": [
-        "choy",
-        "чой"
-      ]
+      "answers": ["choy", "чой"]
     },
     "cues": {
       "semantic": "Bu ichiladi. Issiq bo'ladi. Ertalab non bilan ichamiz.",
       "phonemic": "cho…"
     },
-    "tags": [
-      "food",
-      "daily"
-    ]
+    "tags": ["food", "daily"]
   },
   {
     "key": "naming_l1_olma",
@@ -81,18 +63,13 @@
       "emoji": "🍎"
     },
     "expected": {
-      "answers": [
-        "olma",
-        "олма"
-      ]
+      "answers": ["olma", "олма"]
     },
     "cues": {
       "semantic": "Bu meva. Qizil yoki yashil bo'ladi. Daraxtda o'sadi.",
       "phonemic": "ol…"
     },
-    "tags": [
-      "fruit"
-    ]
+    "tags": ["fruit"]
   },
   {
     "key": "naming_l1_uy",
@@ -104,18 +81,13 @@
       "emoji": "🏠"
     },
     "expected": {
-      "answers": [
-        "uy",
-        "уй"
-      ]
+      "answers": ["uy", "уй"]
     },
     "cues": {
       "semantic": "Bunda yashaymiz. Tomi va eshigi bor.",
       "phonemic": "u…"
     },
-    "tags": [
-      "home"
-    ]
+    "tags": ["home"]
   },
   {
     "key": "naming_l1_it",
@@ -127,18 +99,13 @@
       "emoji": "🐕"
     },
     "expected": {
-      "answers": [
-        "it",
-        "ит"
-      ]
+      "answers": ["it", "ит"]
     },
     "cues": {
       "semantic": "Bu hayvon. Vov-vov deydi. Uyni qo'riqlaydi.",
       "phonemic": "i…"
     },
-    "tags": [
-      "animal"
-    ]
+    "tags": ["animal"]
   },
   {
     "key": "naming_l1_mushuk",
@@ -150,18 +117,13 @@
       "emoji": "🐈"
     },
     "expected": {
-      "answers": [
-        "mushuk",
-        "мушук"
-      ]
+      "answers": ["mushuk", "мушук"]
     },
     "cues": {
       "semantic": "Bu hayvon. Miyov deydi. Sichqon tutadi.",
       "phonemic": "mu…"
     },
-    "tags": [
-      "animal"
-    ]
+    "tags": ["animal"]
   },
   {
     "key": "naming_l1_gul",
@@ -173,18 +135,13 @@
       "emoji": "🌸"
     },
     "expected": {
-      "answers": [
-        "gul",
-        "гул"
-      ]
+      "answers": ["gul", "гул"]
     },
     "cues": {
       "semantic": "Bu chiroyli. Bog'da o'sadi. Hidi yoqimli.",
       "phonemic": "gu…"
     },
-    "tags": [
-      "nature"
-    ]
+    "tags": ["nature"]
   },
   {
     "key": "naming_l1_koz",
@@ -196,18 +153,13 @@
       "emoji": "👁️"
     },
     "expected": {
-      "answers": [
-        "ko'z",
-        "кўз"
-      ]
+      "answers": ["ko'z", "кўз"]
     },
     "cues": {
       "semantic": "Bu bilan ko'ramiz. Yuzda ikkita bo'ladi.",
       "phonemic": "ko'…"
     },
-    "tags": [
-      "body"
-    ]
+    "tags": ["body"]
   },
   {
     "key": "naming_l1_qol",
@@ -219,18 +171,13 @@
       "emoji": "✋"
     },
     "expected": {
-      "answers": [
-        "qo'l",
-        "қўл"
-      ]
+      "answers": ["qo'l", "қўл"]
     },
     "cues": {
       "semantic": "Bu bilan ushlaymiz. Beshta barmog'i bor.",
       "phonemic": "qo'…"
     },
-    "tags": [
-      "body"
-    ]
+    "tags": ["body"]
   },
   {
     "key": "naming_l1_kitob",
@@ -242,19 +189,13 @@
       "emoji": "📚"
     },
     "expected": {
-      "answers": [
-        "kitob",
-        "китоб"
-      ]
+      "answers": ["kitob", "китоб"]
     },
     "cues": {
       "semantic": "Buni o'qiymiz. Varaqlari bor. Maktabda kerak.",
       "phonemic": "ki…"
     },
-    "tags": [
-      "home",
-      "school"
-    ]
+    "tags": ["home", "school"]
   },
   {
     "key": "naming_l1_osh",
@@ -266,20 +207,13 @@
       "emoji": "🍚"
     },
     "expected": {
-      "answers": [
-        "osh",
-        "ош",
-        "palov",
-        "палов"
-      ]
+      "answers": ["osh", "ош", "palov", "палов"]
     },
     "cues": {
       "semantic": "Bu taom. Guruch va sabzidan pishiriladi. Qozonda damlanadi.",
       "phonemic": "o…"
     },
-    "tags": [
-      "food"
-    ]
+    "tags": ["food"]
   },
   {
     "key": "naming_l1_tuz",
@@ -291,18 +225,13 @@
       "emoji": "🧂"
     },
     "expected": {
-      "answers": [
-        "tuz",
-        "туз"
-      ]
+      "answers": ["tuz", "туз"]
     },
     "cues": {
       "semantic": "Buni ovqatga solamiz. Sho'r ta'mi bor. Oq rangda.",
       "phonemic": "tu…"
     },
-    "tags": [
-      "food"
-    ]
+    "tags": ["food"]
   },
   {
     "key": "naming_l1_sut",
@@ -314,18 +243,13 @@
       "emoji": "🥛"
     },
     "expected": {
-      "answers": [
-        "sut",
-        "сут"
-      ]
+      "answers": ["sut", "сут"]
     },
     "cues": {
       "semantic": "Buni ichamiz. Oq rangda. Sigir beradi.",
       "phonemic": "su…"
     },
-    "tags": [
-      "drink"
-    ]
+    "tags": ["drink"]
   },
   {
     "key": "naming_l1_nok",
@@ -337,18 +261,13 @@
       "emoji": "🍐"
     },
     "expected": {
-      "answers": [
-        "nok",
-        "нок"
-      ]
+      "answers": ["nok", "нок"]
     },
     "cues": {
       "semantic": "Bu meva. Shirin va suvli. Olmaga o'xshaydi, lekin cho'ziq.",
       "phonemic": "no…"
     },
-    "tags": [
-      "fruit"
-    ]
+    "tags": ["fruit"]
   },
   {
     "key": "naming_l1_ot",
@@ -360,18 +279,13 @@
       "emoji": "🐎"
     },
     "expected": {
-      "answers": [
-        "ot",
-        "от"
-      ]
+      "answers": ["ot", "от"]
     },
     "cues": {
       "semantic": "Bu hayvon. Odam unga minadi. Tez chopadi.",
       "phonemic": "o…"
     },
-    "tags": [
-      "animal"
-    ]
+    "tags": ["animal"]
   },
   {
     "key": "naming_l1_quyosh",
@@ -383,18 +297,13 @@
       "emoji": "☀️"
     },
     "expected": {
-      "answers": [
-        "quyosh",
-        "қуёш"
-      ]
+      "answers": ["quyosh", "қуёш"]
     },
     "cues": {
       "semantic": "Bu osmonda. Kunduzi yoritadi. Issiq beradi.",
       "phonemic": "qu…"
     },
-    "tags": [
-      "nature"
-    ]
+    "tags": ["nature"]
   },
   {
     "key": "naming_l1_oy",
@@ -406,18 +315,13 @@
       "emoji": "🌙"
     },
     "expected": {
-      "answers": [
-        "oy",
-        "ой"
-      ]
+      "answers": ["oy", "ой"]
     },
     "cues": {
       "semantic": "Bu osmonda. Kechasi ko'rinadi. Yulduzlar bilan birga.",
       "phonemic": "o…"
     },
-    "tags": [
-      "nature"
-    ]
+    "tags": ["nature"]
   },
   {
     "key": "naming_l1_ona",
@@ -429,22 +333,13 @@
       "emoji": "👩"
     },
     "expected": {
-      "answers": [
-        "ona",
-        "она",
-        "oyi",
-        "aya",
-        "ойи",
-        "ая"
-      ]
+      "answers": ["ona", "она", "oyi", "aya", "ойи", "ая"]
     },
     "cues": {
       "semantic": "Bu oila a'zosi. Bizni tuqqan ayol. Farzandlarini yaxshi ko'radi.",
       "phonemic": "o…"
     },
-    "tags": [
-      "family"
-    ]
+    "tags": ["family"]
   },
   {
     "key": "naming_l1_ota",
@@ -456,20 +351,13 @@
       "emoji": "👨"
     },
     "expected": {
-      "answers": [
-        "ota",
-        "ота",
-        "dada",
-        "дада"
-      ]
+      "answers": ["ota", "ота", "dada", "дада"]
     },
     "cues": {
       "semantic": "Bu oila a'zosi. Onaning turmush o'rtog'i. Bola uni dada deydi.",
       "phonemic": "o…"
     },
-    "tags": [
-      "family"
-    ]
+    "tags": ["family"]
   },
   {
     "key": "naming_l1_bola",
@@ -481,18 +369,13 @@
       "emoji": "👶"
     },
     "expected": {
-      "answers": [
-        "bola",
-        "бола"
-      ]
+      "answers": ["bola", "бола"]
     },
     "cues": {
       "semantic": "Bu kichkina odam. Hali katta bo'lmagan. Ona-otasi bor.",
       "phonemic": "bo…"
     },
-    "tags": [
-      "family"
-    ]
+    "tags": ["family"]
   },
   {
     "key": "naming_l1_tish",
@@ -504,18 +387,13 @@
       "emoji": "🦷"
     },
     "expected": {
-      "answers": [
-        "tish",
-        "тиш"
-      ]
+      "answers": ["tish", "тиш"]
     },
     "cues": {
       "semantic": "Bu og'izda. Oq rangda. Bu bilan chaynaymiz.",
       "phonemic": "ti…"
     },
-    "tags": [
-      "body"
-    ]
+    "tags": ["body"]
   },
   {
     "key": "naming_l1_oyoq",
@@ -527,18 +405,13 @@
       "emoji": "🦶"
     },
     "expected": {
-      "answers": [
-        "oyoq",
-        "оёқ"
-      ]
+      "answers": ["oyoq", "оёқ"]
     },
     "cues": {
       "semantic": "Bu bilan yuramiz. Ikkita bo'ladi. Unga poyabzal kiyamiz.",
       "phonemic": "o…"
     },
-    "tags": [
-      "body"
-    ]
+    "tags": ["body"]
   },
   {
     "key": "naming_l1_uzum",
@@ -550,18 +423,13 @@
       "emoji": "🍇"
     },
     "expected": {
-      "answers": [
-        "uzum",
-        "узум"
-      ]
+      "answers": ["uzum", "узум"]
     },
     "cues": {
       "semantic": "Bu meva. Boshcha bo'lib o'sadi. Undan mayiz qilinadi.",
       "phonemic": "u…"
     },
-    "tags": [
-      "fruit"
-    ]
+    "tags": ["fruit"]
   },
   {
     "key": "naming_l1_tuxum",
@@ -573,18 +441,13 @@
       "emoji": "🥚"
     },
     "expected": {
-      "answers": [
-        "tuxum",
-        "тухум"
-      ]
+      "answers": ["tuxum", "тухум"]
     },
     "cues": {
       "semantic": "Tovuq beradi. Po'sti bor. Qaynatib yeymiz.",
       "phonemic": "tu…"
     },
-    "tags": [
-      "food"
-    ]
+    "tags": ["food"]
   },
   {
     "key": "naming_l1_qoshiq",
@@ -596,18 +459,13 @@
       "emoji": "🥄"
     },
     "expected": {
-      "answers": [
-        "qoshiq",
-        "қошиқ"
-      ]
+      "answers": ["qoshiq", "қошиқ"]
     },
     "cues": {
       "semantic": "Bu bilan ovqat yeymiz. Sho'rva ichishda kerak.",
       "phonemic": "qo…"
     },
-    "tags": [
-      "kitchen"
-    ]
+    "tags": ["kitchen"]
   },
   {
     "key": "naming_l1_stol",
@@ -619,19 +477,13 @@
       "emoji": "🪑🍽️"
     },
     "expected": {
-      "answers": [
-        "stol",
-        "стол"
-      ]
+      "answers": ["stol", "стол"]
     },
     "cues": {
       "semantic": "Ustida ovqat yeymiz. To'rtta oyog'i bor. Stul yonida turadi.",
       "phonemic": "sto…"
     },
-    "tags": [
-      "home",
-      "needs_image"
-    ]
+    "tags": ["home", "needs_image"]
   },
   {
     "key": "naming_l1_eshik",
@@ -643,18 +495,13 @@
       "emoji": "🚪"
     },
     "expected": {
-      "answers": [
-        "eshik",
-        "эшик"
-      ]
+      "answers": ["eshik", "эшик"]
     },
     "cues": {
       "semantic": "Uyga bundan kiramiz. Ochiladi va yopiladi. Kaliti bor.",
       "phonemic": "e…"
     },
-    "tags": [
-      "home"
-    ]
+    "tags": ["home"]
   },
   {
     "key": "naming_l1_soat",
@@ -666,18 +513,13 @@
       "emoji": "⌚"
     },
     "expected": {
-      "answers": [
-        "soat",
-        "соат"
-      ]
+      "answers": ["soat", "соат"]
     },
     "cues": {
       "semantic": "Bu vaqtni ko'rsatadi. Qo'lga taqiladi. Chiq-chiq qiladi.",
       "phonemic": "so…"
     },
-    "tags": [
-      "home"
-    ]
+    "tags": ["home"]
   },
   {
     "key": "naming_l1_kalit",
@@ -689,18 +531,13 @@
       "emoji": "🔑"
     },
     "expected": {
-      "answers": [
-        "kalit",
-        "калит"
-      ]
+      "answers": ["kalit", "калит"]
     },
     "cues": {
       "semantic": "Bu bilan eshikni ochamiz. Kichkina, temirdan. Qulfga solinadi.",
       "phonemic": "ka…"
     },
-    "tags": [
-      "home"
-    ]
+    "tags": ["home"]
   },
   {
     "key": "naming_l2_telefon",
@@ -712,19 +549,13 @@
       "emoji": "📱"
     },
     "expected": {
-      "answers": [
-        "telefon",
-        "телефон"
-      ]
+      "answers": ["telefon", "телефон"]
     },
     "cues": {
       "semantic": "Bu bilan gaplashamiz. Uzoqdagi odamga qo'ng'iroq qilamiz.",
       "phonemic": "te…"
     },
-    "tags": [
-      "home",
-      "tech"
-    ]
+    "tags": ["home", "tech"]
   },
   {
     "key": "naming_l2_mashina",
@@ -736,20 +567,13 @@
       "emoji": "🚗"
     },
     "expected": {
-      "answers": [
-        "mashina",
-        "машина",
-        "avtomobil",
-        "автомобиль"
-      ]
+      "answers": ["mashina", "машина", "avtomobil", "автомобиль"]
     },
     "cues": {
       "semantic": "Bunda yuramiz. To'rtta g'ildiragi bor. Yo'lda yuradi.",
       "phonemic": "ma…"
     },
-    "tags": [
-      "transport"
-    ]
+    "tags": ["transport"]
   },
   {
     "key": "naming_l2_kartoshka",
@@ -761,19 +585,13 @@
       "emoji": "🥔"
     },
     "expected": {
-      "answers": [
-        "kartoshka",
-        "картошка"
-      ]
+      "answers": ["kartoshka", "картошка"]
     },
     "cues": {
       "semantic": "Bu sabzavot. Yer ostida o'sadi. Qovurib yeymiz.",
       "phonemic": "kar…"
     },
-    "tags": [
-      "food",
-      "vegetable"
-    ]
+    "tags": ["food", "vegetable"]
   },
   {
     "key": "naming_l2_pomidor",
@@ -785,19 +603,13 @@
       "emoji": "🍅"
     },
     "expected": {
-      "answers": [
-        "pomidor",
-        "помидор"
-      ]
+      "answers": ["pomidor", "помидор"]
     },
     "cues": {
       "semantic": "Bu sabzavot. Qizil, yumaloq. Salatga solamiz.",
       "phonemic": "po…"
     },
-    "tags": [
-      "food",
-      "vegetable"
-    ]
+    "tags": ["food", "vegetable"]
   },
   {
     "key": "naming_l2_tarvuz",
@@ -809,18 +621,13 @@
       "emoji": "🍉"
     },
     "expected": {
-      "answers": [
-        "tarvuz",
-        "тарвуз"
-      ]
+      "answers": ["tarvuz", "тарвуз"]
     },
     "cues": {
       "semantic": "Bu katta meva. Ichi qizil, urug'i qora. Yozda yeymiz.",
       "phonemic": "tar…"
     },
-    "tags": [
-      "fruit"
-    ]
+    "tags": ["fruit"]
   },
   {
     "key": "naming_l2_banan",
@@ -832,18 +639,13 @@
       "emoji": "🍌"
     },
     "expected": {
-      "answers": [
-        "banan",
-        "банан"
-      ]
+      "answers": ["banan", "банан"]
     },
     "cues": {
       "semantic": "Bu meva. Sariq, uzun. Po'stini archib yeymiz.",
       "phonemic": "ba…"
     },
-    "tags": [
-      "fruit"
-    ]
+    "tags": ["fruit"]
   },
   {
     "key": "naming_l2_koylak",
@@ -855,18 +657,13 @@
       "emoji": "👕"
     },
     "expected": {
-      "answers": [
-        "ko'ylak",
-        "кўйлак"
-      ]
+      "answers": ["ko'ylak", "кўйлак"]
     },
     "cues": {
       "semantic": "Buni kiyamiz. Tanaga kiyiladi. Yengi bor.",
       "phonemic": "ko'y…"
     },
-    "tags": [
-      "clothes"
-    ]
+    "tags": ["clothes"]
   },
   {
     "key": "naming_l2_qalam",
@@ -878,18 +675,13 @@
       "emoji": "✏️"
     },
     "expected": {
-      "answers": [
-        "qalam",
-        "қалам"
-      ]
+      "answers": ["qalam", "қалам"]
     },
     "cues": {
       "semantic": "Bu bilan yozamiz. Qog'ozga chizamiz. Uchi bor.",
       "phonemic": "qa…"
     },
-    "tags": [
-      "school"
-    ]
+    "tags": ["school"]
   },
   {
     "key": "naming_l2_shifokor",
@@ -901,22 +693,13 @@
       "emoji": "👨‍⚕️"
     },
     "expected": {
-      "answers": [
-        "shifokor",
-        "шифокор",
-        "vrach",
-        "doktor",
-        "врач",
-        "доктор"
-      ]
+      "answers": ["shifokor", "шифокор", "vrach", "doktor", "врач", "доктор"]
     },
     "cues": {
       "semantic": "Bu odam bemorlarni davolaydi. Oq xalat kiyadi. Kasalxonada ishlaydi.",
       "phonemic": "shi…"
     },
-    "tags": [
-      "people"
-    ]
+    "tags": ["people"]
   },
   {
     "key": "naming_l2_hamshira",
@@ -928,20 +711,13 @@
       "emoji": "👩‍⚕️"
     },
     "expected": {
-      "answers": [
-        "hamshira",
-        "ҳамшира",
-        "medsestra",
-        "медсестра"
-      ]
+      "answers": ["hamshira", "ҳамшира", "medsestra", "медсестра"]
     },
     "cues": {
       "semantic": "Bu ayol kasalxonada ishlaydi. Ukol qiladi. Vrachga yordam beradi.",
       "phonemic": "ham…"
     },
-    "tags": [
-      "people"
-    ]
+    "tags": ["people"]
   },
   {
     "key": "naming_l2_samolyot",
@@ -953,18 +729,13 @@
       "emoji": "✈️"
     },
     "expected": {
-      "answers": [
-        "samolyot",
-        "самолёт"
-      ]
+      "answers": ["samolyot", "самолёт"]
     },
     "cues": {
       "semantic": "Bu osmonda uchadi. Odamlarni uzoqqa olib boradi. Qanoti bor.",
       "phonemic": "sa…"
     },
-    "tags": [
-      "transport"
-    ]
+    "tags": ["transport"]
   },
   {
     "key": "naming_l2_velosiped",
@@ -976,19 +747,13 @@
       "emoji": "🚲"
     },
     "expected": {
-      "answers": [
-        "velosiped",
-        "велосипед",
-        "velik"
-      ]
+      "answers": ["velosiped", "велосипед", "velik"]
     },
     "cues": {
       "semantic": "Bunda yuramiz. Ikkita g'ildiragi bor. Oyoq bilan aylantiramiz.",
       "phonemic": "ve…"
     },
-    "tags": [
-      "transport"
-    ]
+    "tags": ["transport"]
   },
   {
     "key": "naming_l2_daraxt",
@@ -1000,18 +765,13 @@
       "emoji": "🌳"
     },
     "expected": {
-      "answers": [
-        "daraxt",
-        "дарахт"
-      ]
+      "answers": ["daraxt", "дарахт"]
     },
     "cues": {
       "semantic": "Bu bog'da o'sadi. Katta va baland. Barglari va shoxlari bor.",
       "phonemic": "da…"
     },
-    "tags": [
-      "nature"
-    ]
+    "tags": ["nature"]
   },
   {
     "key": "naming_l2_baliq",
@@ -1023,19 +783,13 @@
       "emoji": "🐟"
     },
     "expected": {
-      "answers": [
-        "baliq",
-        "балиқ"
-      ]
+      "answers": ["baliq", "балиқ"]
     },
     "cues": {
       "semantic": "Bu suvda yashaydi. Suzadi. Qovurib yeymiz.",
       "phonemic": "ba…"
     },
-    "tags": [
-      "animal",
-      "food"
-    ]
+    "tags": ["animal", "food"]
   },
   {
     "key": "naming_l2_tovuq",
@@ -1047,18 +801,13 @@
       "emoji": "🐔"
     },
     "expected": {
-      "answers": [
-        "tovuq",
-        "товуқ"
-      ]
+      "answers": ["tovuq", "товуқ"]
     },
     "cues": {
       "semantic": "Bu parranda. Tuxum beradi. Qo-qo deydi.",
       "phonemic": "to…"
     },
-    "tags": [
-      "animal"
-    ]
+    "tags": ["animal"]
   },
   {
     "key": "naming_l2_qovun",
@@ -1070,18 +819,13 @@
       "emoji": "🍈"
     },
     "expected": {
-      "answers": [
-        "qovun",
-        "қовун"
-      ]
+      "answers": ["qovun", "қовун"]
     },
     "cues": {
       "semantic": "Bu meva. Sariq, shirin. Yozda tarvuz bilan yeymiz.",
       "phonemic": "qo…"
     },
-    "tags": [
-      "fruit"
-    ]
+    "tags": ["fruit"]
   },
   {
     "key": "naming_l2_sabzi",
@@ -1093,18 +837,13 @@
       "emoji": "🥕"
     },
     "expected": {
-      "answers": [
-        "sabzi",
-        "сабзи"
-      ]
+      "answers": ["sabzi", "сабзи"]
     },
     "cues": {
       "semantic": "Bu sabzavot. Sariq, uzun. Oshga solamiz.",
       "phonemic": "sab…"
     },
-    "tags": [
-      "vegetable"
-    ]
+    "tags": ["vegetable"]
   },
   {
     "key": "naming_l2_piyoz",
@@ -1116,18 +855,13 @@
       "emoji": "🧅"
     },
     "expected": {
-      "answers": [
-        "piyoz",
-        "пиёз"
-      ]
+      "answers": ["piyoz", "пиёз"]
     },
     "cues": {
       "semantic": "Bu sabzavot. Achchiq. Kesganda ko'z yoshlanadi.",
       "phonemic": "pi…"
     },
-    "tags": [
-      "vegetable"
-    ]
+    "tags": ["vegetable"]
   },
   {
     "key": "naming_l2_bodring",
@@ -1139,18 +873,13 @@
       "emoji": "🥒"
     },
     "expected": {
-      "answers": [
-        "bodring",
-        "бодринг"
-      ]
+      "answers": ["bodring", "бодринг"]
     },
     "cues": {
       "semantic": "Bu sabzavot. Yashil, uzun. Salatga solamiz.",
       "phonemic": "bod…"
     },
-    "tags": [
-      "vegetable"
-    ]
+    "tags": ["vegetable"]
   },
   {
     "key": "naming_l2_limon",
@@ -1162,18 +891,13 @@
       "emoji": "🍋"
     },
     "expected": {
-      "answers": [
-        "limon",
-        "лимон"
-      ]
+      "answers": ["limon", "лимон"]
     },
     "cues": {
       "semantic": "Bu meva. Sariq, nordon. Choyga solamiz.",
       "phonemic": "li…"
     },
-    "tags": [
-      "fruit"
-    ]
+    "tags": ["fruit"]
   },
   {
     "key": "naming_l2_maktab",
@@ -1185,18 +909,13 @@
       "emoji": "🏫"
     },
     "expected": {
-      "answers": [
-        "maktab",
-        "мактаб"
-      ]
+      "answers": ["maktab", "мактаб"]
     },
     "cues": {
       "semantic": "Bolalar bu yerda o'qiydi. O'qituvchi dars beradi.",
       "phonemic": "mak…"
     },
-    "tags": [
-      "place"
-    ]
+    "tags": ["place"]
   },
   {
     "key": "naming_l2_masjid",
@@ -1208,18 +927,13 @@
       "emoji": "🕌"
     },
     "expected": {
-      "answers": [
-        "masjid",
-        "масжид"
-      ]
+      "answers": ["masjid", "масжид"]
     },
     "cues": {
       "semantic": "Bu yerda namoz o'qiladi. Minorasi bor. Juma kuni odam ko'p bo'ladi.",
       "phonemic": "mas…"
     },
-    "tags": [
-      "place"
-    ]
+    "tags": ["place"]
   },
   {
     "key": "naming_l2_dokon",
@@ -1231,20 +945,13 @@
       "emoji": "🏪"
     },
     "expected": {
-      "answers": [
-        "do'kon",
-        "дўкон",
-        "magazin",
-        "магазин"
-      ]
+      "answers": ["do'kon", "дўкон", "magazin", "магазин"]
     },
     "cues": {
       "semantic": "Bu yerdan narsa sotib olamiz. Non, sut, shakar sotiladi.",
       "phonemic": "do'…"
     },
-    "tags": [
-      "place"
-    ]
+    "tags": ["place"]
   },
   {
     "key": "naming_l2_televizor",
@@ -1256,19 +963,13 @@
       "emoji": "📺"
     },
     "expected": {
-      "answers": [
-        "televizor",
-        "телевизор"
-      ]
+      "answers": ["televizor", "телевизор"]
     },
     "cues": {
       "semantic": "Buni ko'ramiz. Kino va yangiliklar ko'rsatadi. Uyda turadi.",
       "phonemic": "te…"
     },
-    "tags": [
-      "home",
-      "tech"
-    ]
+    "tags": ["home", "tech"]
   },
   {
     "key": "naming_l2_avtobus",
@@ -1280,18 +981,13 @@
       "emoji": "🚌"
     },
     "expected": {
-      "answers": [
-        "avtobus",
-        "автобус"
-      ]
+      "answers": ["avtobus", "автобус"]
     },
     "cues": {
       "semantic": "Bu katta mashina. Ko'p odam unda yuradi. Bekatda to'xtaydi.",
       "phonemic": "av…"
     },
-    "tags": [
-      "transport"
-    ]
+    "tags": ["transport"]
   },
   {
     "key": "naming_l2_choynak",
@@ -1303,18 +999,13 @@
       "emoji": "🫖"
     },
     "expected": {
-      "answers": [
-        "choynak",
-        "чойнак"
-      ]
+      "answers": ["choynak", "чойнак"]
     },
     "cues": {
       "semantic": "Bunda choy damlaymiz. Jo'mragi bor. Issiq suv quyamiz.",
       "phonemic": "choy…"
     },
-    "tags": [
-      "kitchen"
-    ]
+    "tags": ["kitchen"]
   },
   {
     "key": "naming_l2_pichoq",
@@ -1326,18 +1017,13 @@
       "emoji": "🔪"
     },
     "expected": {
-      "answers": [
-        "pichoq",
-        "пичоқ"
-      ]
+      "answers": ["pichoq", "пичоқ"]
     },
     "cues": {
       "semantic": "Bu bilan non kesamiz. O'tkir. Ehtiyot bo'lish kerak.",
       "phonemic": "pi…"
     },
-    "tags": [
-      "kitchen"
-    ]
+    "tags": ["kitchen"]
   },
   {
     "key": "naming_l2_kozoynak",
@@ -1349,18 +1035,13 @@
       "emoji": "👓"
     },
     "expected": {
-      "answers": [
-        "ko'zoynak",
-        "кўзойнак"
-      ]
+      "answers": ["ko'zoynak", "кўзойнак"]
     },
     "cues": {
       "semantic": "Buni ko'zga taqamiz. Yaxshi ko'rish uchun kerak. Ikkita oynasi bor.",
       "phonemic": "ko'z…"
     },
-    "tags": [
-      "home"
-    ]
+    "tags": ["home"]
   },
   {
     "key": "naming_l2_soyabon",
@@ -1372,20 +1053,13 @@
       "emoji": "☂️"
     },
     "expected": {
-      "answers": [
-        "soyabon",
-        "соябон",
-        "zontik",
-        "зонтик"
-      ]
+      "answers": ["soyabon", "соябон", "zontik", "зонтик"]
     },
     "cues": {
       "semantic": "Yomg'irda ochamiz. Boshimiz ustida tutamiz. Ho'l bo'lmaymiz.",
       "phonemic": "so…"
     },
-    "tags": [
-      "home"
-    ]
+    "tags": ["home"]
   },
   {
     "key": "naming_l2_poyabzal",
@@ -1397,22 +1071,13 @@
       "emoji": "👞"
     },
     "expected": {
-      "answers": [
-        "poyabzal",
-        "поябзал",
-        "tufli",
-        "botinka",
-        "туфли",
-        "ботинка"
-      ]
+      "answers": ["poyabzal", "поябзал", "tufli", "botinka", "туфли", "ботинка"]
     },
     "cues": {
       "semantic": "Buni oyoqqa kiyamiz. Ko'chaga chiqqanda kerak. Bog'ichi bor.",
       "phonemic": "po…"
     },
-    "tags": [
-      "clothes"
-    ]
+    "tags": ["clothes"]
   },
   {
     "key": "repetition_l1_non",
@@ -1424,18 +1089,13 @@
       "text": "non"
     },
     "expected": {
-      "answers": [
-        "non",
-        "нон"
-      ]
+      "answers": ["non", "нон"]
     },
     "cues": {
       "semantic": "Yana bir bor tinglang va sekin takrorlang: non",
       "phonemic": "no…"
     },
-    "tags": [
-      "repetition"
-    ]
+    "tags": ["repetition"]
   },
   {
     "key": "repetition_l1_suv",
@@ -1447,18 +1107,13 @@
       "text": "suv"
     },
     "expected": {
-      "answers": [
-        "suv",
-        "сув"
-      ]
+      "answers": ["suv", "сув"]
     },
     "cues": {
       "semantic": "Yana bir bor tinglang va sekin takrorlang: suv",
       "phonemic": "su…"
     },
-    "tags": [
-      "repetition"
-    ]
+    "tags": ["repetition"]
   },
   {
     "key": "repetition_l1_choy",
@@ -1470,18 +1125,13 @@
       "text": "choy"
     },
     "expected": {
-      "answers": [
-        "choy",
-        "чой"
-      ]
+      "answers": ["choy", "чой"]
     },
     "cues": {
       "semantic": "Yana bir bor tinglang va sekin takrorlang: choy",
       "phonemic": "cho…"
     },
-    "tags": [
-      "repetition"
-    ]
+    "tags": ["repetition"]
   },
   {
     "key": "repetition_l1_olma",
@@ -1493,18 +1143,13 @@
       "text": "olma"
     },
     "expected": {
-      "answers": [
-        "olma",
-        "олма"
-      ]
+      "answers": ["olma", "олма"]
     },
     "cues": {
       "semantic": "Yana bir bor tinglang va sekin takrorlang: olma",
       "phonemic": "ol…"
     },
-    "tags": [
-      "repetition"
-    ]
+    "tags": ["repetition"]
   },
   {
     "key": "repetition_l1_uy",
@@ -1516,18 +1161,13 @@
       "text": "uy"
     },
     "expected": {
-      "answers": [
-        "uy",
-        "уй"
-      ]
+      "answers": ["uy", "уй"]
     },
     "cues": {
       "semantic": "Yana bir bor tinglang va sekin takrorlang: uy",
       "phonemic": "u…"
     },
-    "tags": [
-      "repetition"
-    ]
+    "tags": ["repetition"]
   },
   {
     "key": "repetition_l1_gul",
@@ -1539,18 +1179,13 @@
       "text": "gul"
     },
     "expected": {
-      "answers": [
-        "gul",
-        "гул"
-      ]
+      "answers": ["gul", "гул"]
     },
     "cues": {
       "semantic": "Yana bir bor tinglang va sekin takrorlang: gul",
       "phonemic": "gu…"
     },
-    "tags": [
-      "repetition"
-    ]
+    "tags": ["repetition"]
   },
   {
     "key": "repetition_l1_kitob",
@@ -1562,18 +1197,13 @@
       "text": "kitob"
     },
     "expected": {
-      "answers": [
-        "kitob",
-        "китоб"
-      ]
+      "answers": ["kitob", "китоб"]
     },
     "cues": {
       "semantic": "Yana bir bor tinglang va sekin takrorlang: kitob",
       "phonemic": "ki…"
     },
-    "tags": [
-      "repetition"
-    ]
+    "tags": ["repetition"]
   },
   {
     "key": "repetition_l1_sut",
@@ -1585,18 +1215,13 @@
       "text": "sut"
     },
     "expected": {
-      "answers": [
-        "sut",
-        "сут"
-      ]
+      "answers": ["sut", "сут"]
     },
     "cues": {
       "semantic": "Yana bir bor tinglang va sekin takrorlang: sut",
       "phonemic": "su…"
     },
-    "tags": [
-      "repetition"
-    ]
+    "tags": ["repetition"]
   },
   {
     "key": "repetition_l1_soat",
@@ -1608,18 +1233,13 @@
       "text": "soat"
     },
     "expected": {
-      "answers": [
-        "soat",
-        "соат"
-      ]
+      "answers": ["soat", "соат"]
     },
     "cues": {
       "semantic": "Yana bir bor tinglang va sekin takrorlang: soat",
       "phonemic": "so…"
     },
-    "tags": [
-      "repetition"
-    ]
+    "tags": ["repetition"]
   },
   {
     "key": "repetition_l1_kalit",
@@ -1631,18 +1251,13 @@
       "text": "kalit"
     },
     "expected": {
-      "answers": [
-        "kalit",
-        "калит"
-      ]
+      "answers": ["kalit", "калит"]
     },
     "cues": {
       "semantic": "Yana bir bor tinglang va sekin takrorlang: kalit",
       "phonemic": "ka…"
     },
-    "tags": [
-      "repetition"
-    ]
+    "tags": ["repetition"]
   },
   {
     "key": "repetition_l2_issiq_choy",
@@ -1654,18 +1269,13 @@
       "text": "issiq choy"
     },
     "expected": {
-      "answers": [
-        "issiq choy",
-        "иссиқ чой"
-      ]
+      "answers": ["issiq choy", "иссиқ чой"]
     },
     "cues": {
       "semantic": "Yana bir bor tinglang va sekin takrorlang: issiq choy",
       "phonemic": "is…"
     },
-    "tags": [
-      "repetition"
-    ]
+    "tags": ["repetition"]
   },
   {
     "key": "repetition_l2_katta_uy",
@@ -1677,18 +1287,13 @@
       "text": "katta uy"
     },
     "expected": {
-      "answers": [
-        "katta uy",
-        "катта уй"
-      ]
+      "answers": ["katta uy", "катта уй"]
     },
     "cues": {
       "semantic": "Yana bir bor tinglang va sekin takrorlang: katta uy",
       "phonemic": "ka…"
     },
-    "tags": [
-      "repetition"
-    ]
+    "tags": ["repetition"]
   },
   {
     "key": "repetition_l2_qizil_olma",
@@ -1700,18 +1305,13 @@
       "text": "qizil olma"
     },
     "expected": {
-      "answers": [
-        "qizil olma",
-        "қизил олма"
-      ]
+      "answers": ["qizil olma", "қизил олма"]
     },
     "cues": {
       "semantic": "Yana bir bor tinglang va sekin takrorlang: qizil olma",
       "phonemic": "qi…"
     },
-    "tags": [
-      "repetition"
-    ]
+    "tags": ["repetition"]
   },
   {
     "key": "repetition_l2_shirin_qovun",
@@ -1723,18 +1323,13 @@
       "text": "shirin qovun"
     },
     "expected": {
-      "answers": [
-        "shirin qovun",
-        "ширин қовун"
-      ]
+      "answers": ["shirin qovun", "ширин қовун"]
     },
     "cues": {
       "semantic": "Yana bir bor tinglang va sekin takrorlang: shirin qovun",
       "phonemic": "shi…"
     },
-    "tags": [
-      "repetition"
-    ]
+    "tags": ["repetition"]
   },
   {
     "key": "repetition_l2_oq_non",
@@ -1746,18 +1341,13 @@
       "text": "oq non"
     },
     "expected": {
-      "answers": [
-        "oq non",
-        "оқ нон"
-      ]
+      "answers": ["oq non", "оқ нон"]
     },
     "cues": {
       "semantic": "Yana bir bor tinglang va sekin takrorlang: oq non",
       "phonemic": "oq…"
     },
-    "tags": [
-      "repetition"
-    ]
+    "tags": ["repetition"]
   },
   {
     "key": "repetition_l2_sovuq_suv",
@@ -1769,18 +1359,13 @@
       "text": "sovuq suv"
     },
     "expected": {
-      "answers": [
-        "sovuq suv",
-        "совуқ сув"
-      ]
+      "answers": ["sovuq suv", "совуқ сув"]
     },
     "cues": {
       "semantic": "Yana bir bor tinglang va sekin takrorlang: sovuq suv",
       "phonemic": "so…"
     },
-    "tags": [
-      "repetition"
-    ]
+    "tags": ["repetition"]
   },
   {
     "key": "repetition_l2_yangi_kitob",
@@ -1792,18 +1377,13 @@
       "text": "yangi kitob"
     },
     "expected": {
-      "answers": [
-        "yangi kitob",
-        "янги китоб"
-      ]
+      "answers": ["yangi kitob", "янги китоб"]
     },
     "cues": {
       "semantic": "Yana bir bor tinglang va sekin takrorlang: yangi kitob",
       "phonemic": "yan…"
     },
-    "tags": [
-      "repetition"
-    ]
+    "tags": ["repetition"]
   },
   {
     "key": "repetition_l2_kichik_bola",
@@ -1815,18 +1395,13 @@
       "text": "kichik bola"
     },
     "expected": {
-      "answers": [
-        "kichik bola",
-        "кичик бола"
-      ]
+      "answers": ["kichik bola", "кичик бола"]
     },
     "cues": {
       "semantic": "Yana bir bor tinglang va sekin takrorlang: kichik bola",
       "phonemic": "ki…"
     },
-    "tags": [
-      "repetition"
-    ]
+    "tags": ["repetition"]
   },
   {
     "key": "repetition_l3_men_suv_ichmoqchiman",
@@ -1838,18 +1413,13 @@
       "text": "Men suv ichmoqchiman."
     },
     "expected": {
-      "answers": [
-        "Men suv ichmoqchiman.",
-        "Мен сув ичмоқчиман."
-      ]
+      "answers": ["Men suv ichmoqchiman.", "Мен сув ичмоқчиман."]
     },
     "cues": {
       "semantic": "Yana bir bor tinglang va sekin takrorlang: Men suv ichmoqchiman.",
       "phonemic": "men…"
     },
-    "tags": [
-      "repetition"
-    ]
+    "tags": ["repetition"]
   },
   {
     "key": "repetition_l3_bugun_havo_issiq",
@@ -1861,18 +1431,13 @@
       "text": "Bugun havo issiq."
     },
     "expected": {
-      "answers": [
-        "Bugun havo issiq.",
-        "Бугун ҳаво иссиқ."
-      ]
+      "answers": ["Bugun havo issiq.", "Бугун ҳаво иссиқ."]
     },
     "cues": {
       "semantic": "Yana bir bor tinglang va sekin takrorlang: Bugun havo issiq.",
       "phonemic": "bu…"
     },
-    "tags": [
-      "repetition"
-    ]
+    "tags": ["repetition"]
   },
   {
     "key": "repetition_l3_nabiram_maktabga_bordi",
@@ -1884,18 +1449,13 @@
       "text": "Nabiram maktabga bordi."
     },
     "expected": {
-      "answers": [
-        "Nabiram maktabga bordi.",
-        "Набирам мактабга борди."
-      ]
+      "answers": ["Nabiram maktabga bordi.", "Набирам мактабга борди."]
     },
     "cues": {
       "semantic": "Yana bir bor tinglang va sekin takrorlang: Nabiram maktabga bordi.",
       "phonemic": "na…"
     },
-    "tags": [
-      "repetition"
-    ]
+    "tags": ["repetition"]
   },
   {
     "key": "repetition_l3_choy_damlab_bering",
@@ -1907,18 +1467,13 @@
       "text": "Choy damlab bering."
     },
     "expected": {
-      "answers": [
-        "Choy damlab bering.",
-        "Чой дамлаб беринг."
-      ]
+      "answers": ["Choy damlab bering.", "Чой дамлаб беринг."]
     },
     "cues": {
       "semantic": "Yana bir bor tinglang va sekin takrorlang: Choy damlab bering.",
       "phonemic": "choy…"
     },
-    "tags": [
-      "repetition"
-    ]
+    "tags": ["repetition"]
   },
   {
     "key": "repetition_l3_boshim_ogriyapti",
@@ -1930,18 +1485,13 @@
       "text": "Boshim og'riyapti."
     },
     "expected": {
-      "answers": [
-        "Boshim og'riyapti.",
-        "Бошим оғрияпти."
-      ]
+      "answers": ["Boshim og'riyapti.", "Бошим оғрияпти."]
     },
     "cues": {
       "semantic": "Yana bir bor tinglang va sekin takrorlang: Boshim og'riyapti.",
       "phonemic": "bo…"
     },
-    "tags": [
-      "repetition"
-    ]
+    "tags": ["repetition"]
   },
   {
     "key": "repetition_l3_eshikni_yoping",
@@ -1953,18 +1503,13 @@
       "text": "Eshikni yoping."
     },
     "expected": {
-      "answers": [
-        "Eshikni yoping.",
-        "Эшикни ёпинг."
-      ]
+      "answers": ["Eshikni yoping.", "Эшикни ёпинг."]
     },
     "cues": {
       "semantic": "Yana bir bor tinglang va sekin takrorlang: Eshikni yoping.",
       "phonemic": "e…"
     },
-    "tags": [
-      "repetition"
-    ]
+    "tags": ["repetition"]
   },
   {
     "key": "repetition_l3_men_uxlamoqchiman",
@@ -1976,18 +1521,13 @@
       "text": "Men uxlamoqchiman."
     },
     "expected": {
-      "answers": [
-        "Men uxlamoqchiman.",
-        "Мен ухламоқчиман."
-      ]
+      "answers": ["Men uxlamoqchiman.", "Мен ухламоқчиман."]
     },
     "cues": {
       "semantic": "Yana bir bor tinglang va sekin takrorlang: Men uxlamoqchiman.",
       "phonemic": "men…"
     },
-    "tags": [
-      "repetition"
-    ]
+    "tags": ["repetition"]
   },
   {
     "key": "repetition_l3_rahmat_yaxshi",
@@ -1999,18 +1539,13 @@
       "text": "Rahmat, yaxshi."
     },
     "expected": {
-      "answers": [
-        "Rahmat, yaxshi.",
-        "Раҳмат, яхши."
-      ]
+      "answers": ["Rahmat, yaxshi.", "Раҳмат, яхши."]
     },
     "cues": {
       "semantic": "Yana bir bor tinglang va sekin takrorlang: Rahmat, yaxshi.",
       "phonemic": "rah…"
     },
-    "tags": [
-      "repetition"
-    ]
+    "tags": ["repetition"]
   },
   {
     "key": "completion_l2_non_bilan",
@@ -2022,18 +1557,13 @@
       "text": "Non bilan …"
     },
     "expected": {
-      "answers": [
-        "choy",
-        "чой"
-      ]
+      "answers": ["choy", "чой"]
     },
     "cues": {
       "semantic": "Ertalab non bilan issiq ichimlik ichamiz.",
       "phonemic": "cho…"
     },
-    "tags": [
-      "completion"
-    ]
+    "tags": ["completion"]
   },
   {
     "key": "completion_l2_qish_sovuq_yoz",
@@ -2045,18 +1575,13 @@
       "text": "Qish sovuq, yoz …"
     },
     "expected": {
-      "answers": [
-        "issiq",
-        "иссиқ"
-      ]
+      "answers": ["issiq", "иссиқ"]
     },
     "cues": {
       "semantic": "Yozda quyosh qattiq qizdiradi. Sovuqning teskarisi.",
       "phonemic": "is…"
     },
-    "tags": [
-      "completion"
-    ]
+    "tags": ["completion"]
   },
   {
     "key": "completion_l2_quyosh_kunduzi_oy",
@@ -2068,18 +1593,13 @@
       "text": "Quyosh kunduzi, oy …"
     },
     "expected": {
-      "answers": [
-        "kechasi",
-        "кечаси"
-      ]
+      "answers": ["kechasi", "кечаси"]
     },
     "cues": {
       "semantic": "Oy qachon ko'rinadi? Kunduzning teskarisi.",
       "phonemic": "ke…"
     },
-    "tags": [
-      "completion"
-    ]
+    "tags": ["completion"]
   },
   {
     "key": "completion_l2_kitobni",
@@ -2091,20 +1611,13 @@
       "text": "Kitobni …"
     },
     "expected": {
-      "answers": [
-        "o'qiymiz",
-        "ўқиймиз",
-        "o'qiyman",
-        "ўқийман"
-      ]
+      "answers": ["o'qiymiz", "ўқиймиз", "o'qiyman", "ўқийман"]
     },
     "cues": {
       "semantic": "Kitob bilan nima qilamiz? Ko'z bilan, harflarni.",
       "phonemic": "o'…"
     },
-    "tags": [
-      "completion"
-    ]
+    "tags": ["completion"]
   },
   {
     "key": "completion_l2_ovqatni",
@@ -2116,20 +1629,13 @@
       "text": "Ovqatni …"
     },
     "expected": {
-      "answers": [
-        "yeymiz",
-        "еймиз",
-        "yeyman",
-        "ейман"
-      ]
+      "answers": ["yeymiz", "еймиз", "yeyman", "ейман"]
     },
     "cues": {
       "semantic": "Ovqat bilan nima qilamiz? Og'iz bilan, qoshiq bilan.",
       "phonemic": "ye…"
     },
-    "tags": [
-      "completion"
-    ]
+    "tags": ["completion"]
   },
   {
     "key": "completion_l2_suvni",
@@ -2141,20 +1647,13 @@
       "text": "Suvni …"
     },
     "expected": {
-      "answers": [
-        "ichamiz",
-        "ичамиз",
-        "ichaman",
-        "ичаман"
-      ]
+      "answers": ["ichamiz", "ичамиз", "ichaman", "ичаман"]
     },
     "cues": {
       "semantic": "Suv bilan nima qilamiz? Chanqaganda.",
       "phonemic": "i…"
     },
-    "tags": [
-      "completion"
-    ]
+    "tags": ["completion"]
   },
   {
     "key": "completion_l3_eshikni",
@@ -2166,22 +1665,13 @@
       "text": "Eshikni …"
     },
     "expected": {
-      "answers": [
-        "ochamiz",
-        "очамиз",
-        "yopamiz",
-        "ёпамиз",
-        "ochaman",
-        "yopaman"
-      ]
+      "answers": ["ochamiz", "очамиз", "yopamiz", "ёпамиз", "ochaman", "yopaman"]
     },
     "cues": {
       "semantic": "Uyga kirishda eshikni nima qilamiz? Kalit bilan.",
       "phonemic": "o…"
     },
-    "tags": [
-      "completion"
-    ]
+    "tags": ["completion"]
   },
   {
     "key": "completion_l3_mashinani",
@@ -2193,20 +1683,13 @@
       "text": "Mashinani …"
     },
     "expected": {
-      "answers": [
-        "haydaymiz",
-        "ҳайдаймиз",
-        "haydayman",
-        "ҳайдайман"
-      ]
+      "answers": ["haydaymiz", "ҳайдаймиз", "haydayman", "ҳайдайман"]
     },
     "cues": {
       "semantic": "Mashina bilan nima qilamiz? Rulda o'tirib.",
       "phonemic": "hay…"
     },
-    "tags": [
-      "completion"
-    ]
+    "tags": ["completion"]
   },
   {
     "key": "completion_l2_kechasi_biz",
@@ -2218,20 +1701,13 @@
       "text": "Kechasi biz …"
     },
     "expected": {
-      "answers": [
-        "uxlaymiz",
-        "ухлаймиз",
-        "uxlayman",
-        "ухлайман"
-      ]
+      "answers": ["uxlaymiz", "ухлаймиз", "uxlayman", "ухлайман"]
     },
     "cues": {
       "semantic": "Kechasi yotoqda nima qilamiz? Ko'zni yumib.",
       "phonemic": "ux…"
     },
-    "tags": [
-      "completion"
-    ]
+    "tags": ["completion"]
   },
   {
     "key": "completion_l3_baliq_suvda",
@@ -2243,18 +1719,13 @@
       "text": "Baliq suvda …"
     },
     "expected": {
-      "answers": [
-        "suzadi",
-        "сузади"
-      ]
+      "answers": ["suzadi", "сузади"]
     },
     "cues": {
       "semantic": "Baliq suvda nima qiladi? Odam ham hovuzda shunday qiladi.",
       "phonemic": "su…"
     },
-    "tags": [
-      "completion"
-    ]
+    "tags": ["completion"]
   },
   {
     "key": "completion_l3_qushlar_osmonda",
@@ -2266,18 +1737,13 @@
       "text": "Qushlar osmonda …"
     },
     "expected": {
-      "answers": [
-        "uchadi",
-        "учади"
-      ]
+      "answers": ["uchadi", "учади"]
     },
     "cues": {
       "semantic": "Qushlar qanoti bilan nima qiladi? Samolyot ham shunday.",
       "phonemic": "u…"
     },
-    "tags": [
-      "completion"
-    ]
+    "tags": ["completion"]
   },
   {
     "key": "completion_l3_ertalab_quyosh",
@@ -2289,18 +1755,13 @@
       "text": "Ertalab quyosh …"
     },
     "expected": {
-      "answers": [
-        "chiqadi",
-        "чиқади"
-      ]
+      "answers": ["chiqadi", "чиқади"]
     },
     "cues": {
       "semantic": "Ertalab quyosh nima qiladi? Osmonda paydo bo'ladi.",
       "phonemic": "chi…"
     },
-    "tags": [
-      "completion"
-    ]
+    "tags": ["completion"]
   },
   {
     "key": "automatic_l1_counting",
@@ -2321,10 +1782,7 @@
       "semantic": "Bir, ikki, … davom eting. Barmoqlaringizni sanang.",
       "phonemic": "bir, ik…"
     },
-    "tags": [
-      "automatic",
-      "counting"
-    ]
+    "tags": ["automatic", "counting"]
   },
   {
     "key": "automatic_l1_weekdays",
@@ -2345,10 +1803,7 @@
       "semantic": "Hafta dushanbadan boshlanadi. Keyin seshanba…",
       "phonemic": "du…"
     },
-    "tags": [
-      "automatic",
-      "weekdays"
-    ]
+    "tags": ["automatic", "weekdays"]
   },
   {
     "key": "automatic_l1_months",
@@ -2369,10 +1824,7 @@
       "semantic": "Yil yanvardan boshlanadi. Keyin fevral…",
       "phonemic": "yan…"
     },
-    "tags": [
-      "automatic",
-      "months"
-    ]
+    "tags": ["automatic", "months"]
   },
   {
     "key": "automatic_l1_alphabet",
@@ -2384,20 +1836,13 @@
       "text": "A, B, D …"
     },
     "expected": {
-      "answers": [
-        "a b d e f g h",
-        "a be de e ef ge ha",
-        "а б в г д е"
-      ]
+      "answers": ["a b d e f g h", "a be de e ef ge ha", "а б в г д е"]
     },
     "cues": {
       "semantic": "Alifbo A harfidan boshlanadi. Keyin B…",
       "phonemic": "a, b…"
     },
-    "tags": [
-      "automatic",
-      "alphabet"
-    ]
+    "tags": ["automatic", "alphabet"]
   },
   {
     "key": "reading_l1_non",
@@ -2409,18 +1854,13 @@
       "text": "NON"
     },
     "expected": {
-      "answers": [
-        "non",
-        "нон"
-      ]
+      "answers": ["non", "нон"]
     },
     "cues": {
       "semantic": "Bu yeyiladi, tandirda pishadi.",
       "phonemic": "no…"
     },
-    "tags": [
-      "reading"
-    ]
+    "tags": ["reading"]
   },
   {
     "key": "reading_l1_suv",
@@ -2432,18 +1872,13 @@
       "text": "SUV"
     },
     "expected": {
-      "answers": [
-        "suv",
-        "сув"
-      ]
+      "answers": ["suv", "сув"]
     },
     "cues": {
       "semantic": "Bu ichiladi, daryoda oqadi.",
       "phonemic": "su…"
     },
-    "tags": [
-      "reading"
-    ]
+    "tags": ["reading"]
   },
   {
     "key": "reading_l1_choy",
@@ -2455,18 +1890,13 @@
       "text": "CHOY"
     },
     "expected": {
-      "answers": [
-        "choy",
-        "чой"
-      ]
+      "answers": ["choy", "чой"]
     },
     "cues": {
       "semantic": "Bu ichiladi, issiq bo'ladi.",
       "phonemic": "cho…"
     },
-    "tags": [
-      "reading"
-    ]
+    "tags": ["reading"]
   },
   {
     "key": "reading_l1_olma",
@@ -2478,18 +1908,13 @@
       "text": "OLMA"
     },
     "expected": {
-      "answers": [
-        "olma",
-        "олма"
-      ]
+      "answers": ["olma", "олма"]
     },
     "cues": {
       "semantic": "Bu meva, daraxtda o'sadi.",
       "phonemic": "ol…"
     },
-    "tags": [
-      "reading"
-    ]
+    "tags": ["reading"]
   },
   {
     "key": "reading_l2_men_choy_ichaman",
@@ -2501,18 +1926,13 @@
       "text": "Men choy ichaman."
     },
     "expected": {
-      "answers": [
-        "men choy ichaman",
-        "мен чой ичаман"
-      ]
+      "answers": ["men choy ichaman", "мен чой ичаман"]
     },
     "cues": {
       "semantic": "Birinchi so'z — men. Keyin ichimlik nomi.",
       "phonemic": "men…"
     },
-    "tags": [
-      "reading"
-    ]
+    "tags": ["reading"]
   },
   {
     "key": "reading_l2_bugun_havo_yaxshi",
@@ -2524,18 +1944,13 @@
       "text": "Bugun havo yaxshi."
     },
     "expected": {
-      "answers": [
-        "bugun havo yaxshi",
-        "бугун ҳаво яхши"
-      ]
+      "answers": ["bugun havo yaxshi", "бугун ҳаво яхши"]
     },
     "cues": {
       "semantic": "Birinchi so'z — bugun. Ob-havo haqida.",
       "phonemic": "bu…"
     },
-    "tags": [
-      "reading"
-    ]
+    "tags": ["reading"]
   },
   {
     "key": "reading_l2_nabiram_keldi",
@@ -2547,18 +1962,13 @@
       "text": "Nabiram keldi."
     },
     "expected": {
-      "answers": [
-        "nabiram keldi",
-        "набирам келди"
-      ]
+      "answers": ["nabiram keldi", "набирам келди"]
     },
     "cues": {
       "semantic": "Birinchi so'z — nabiram. U uyga keldi.",
       "phonemic": "na…"
     },
-    "tags": [
-      "reading"
-    ]
+    "tags": ["reading"]
   },
   {
     "key": "reading_l2_eshikni_yoping",
@@ -2570,17 +1980,12 @@
       "text": "Eshikni yoping."
     },
     "expected": {
-      "answers": [
-        "eshikni yoping",
-        "эшикни ёпинг"
-      ]
+      "answers": ["eshikni yoping", "эшикни ёпинг"]
     },
     "cues": {
       "semantic": "Birinchi so'z — eshikni. Uni yopish kerak.",
       "phonemic": "e…"
     },
-    "tags": [
-      "reading"
-    ]
+    "tags": ["reading"]
   }
 ]
