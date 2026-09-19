@@ -16,15 +16,15 @@ make health       # API + worker health
 
 ## Provayderlar (bugungi holat)
 
-| Vazifa         | Birinchi                         | Zaxira                          | Izoh                                                   |
-| -------------- | -------------------------------- | ------------------------------- | ------------------------------------------------------ |
-| LLM            | OpenAI `gpt-4o-mini` (1.3–2.6 s) | Gemini `gemini-3-flash-preview` | Gemini bepul tarif: 20 so'rov/daq                      |
-| STT            | Worker Kotib (ngrok)             | Gemini                          | Worker uzilsa 4 s ichida Gemini                        |
-| TTS            | Brauzer `speechSynthesis`        | —                               | Worker `/tts` hozircha stub; Gemini TTS 10/kun tugagan |
-| Ovoz hissiyoti | worker (`disabled`)              | null                            | Fusion ovozsiz ishlaydi                                |
+| Vazifa         | Birinchi                         | Zaxira                          | Izoh                                                |
+| -------------- | -------------------------------- | ------------------------------- | --------------------------------------------------- |
+| LLM            | OpenAI `gpt-4o-mini` (1.3–2.6 s) | Gemini `gemini-3-flash-preview` | Gemini bepul tarif: 20 so'rov/daq                   |
+| STT            | Worker Kotib (ngrok)             | Gemini                          | Worker uzilsa 4 s ichida Gemini                     |
+| TTS            | Worker Navoiy (ngrok, ~2–3.5 s)  | Brauzer `speechSynthesis`       | Gemini TTS 10/kun (o'chirilgan); OpenAI'da TTS yo'q |
+| Ovoz hissiyoti | worker (`disabled`)              | null                            | Fusion ovozsiz ishlaydi                             |
 
-`.env`: `AI_WORKER_URL`, `AI_WORKER_KEY` (ofis), `STT_PROVIDERS=worker,gemini,openai`, `TTS_PROVIDERS=browser`
-(Navoiy tuzalsa: `TTS_PROVIDERS=worker,browser`).
+`.env`: `AI_WORKER_URL`, `AI_WORKER_KEY` (ofis), `STT_PROVIDERS=worker,gemini,openai`, `TTS_PROVIDERS=worker,browser`.
+Ovozli navbat o'lchovi: matn → javob + Navoiy audio ≈ 5.4 s (LLM 2.2 s + TTS 3.1 s); ovozli kirishda + STT (Kotib).
 
 ## Oqim (§11.2) → URL
 
