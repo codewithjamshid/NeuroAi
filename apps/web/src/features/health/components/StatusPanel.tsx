@@ -9,6 +9,7 @@ import { ApiError, apiUrl } from "@/lib/api";
 import { t } from "@/lib/i18n";
 
 import { useHealth, useProvidersHealth } from "../hooks";
+import { ChainsTable } from "./ChainsTable";
 
 const REFRESH_MS = 5_000;
 
@@ -110,9 +111,12 @@ export function StatusPanel() {
   const providers = useProvidersHealth(REFRESH_MS);
 
   return (
-    <div className="grid gap-4 md:grid-cols-2">
-      <EndpointCard title={t("status.health")} path="/health" query={health} />
-      <EndpointCard title={t("status.providers")} path="/health/providers" query={providers} />
+    <div className="flex flex-col gap-4">
+      <ChainsTable data={providers.data} />
+      <div className="grid gap-4 md:grid-cols-2">
+        <EndpointCard title={t("status.health")} path="/health" query={health} />
+        <EndpointCard title={t("status.providers")} path="/health/providers" query={providers} />
+      </div>
     </div>
   );
 }

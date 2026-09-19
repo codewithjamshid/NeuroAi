@@ -107,6 +107,9 @@ migration: ## Yangi migratsiya: make migration m="users_patients"
 seed: ## Demo akkauntlar va kontent (T-02+)
 	cd $(API_DIR) && $(UV) run python scripts/seed.py
 
+demo: seed ## "Bobur aka" 14 kunlik demo ma'lumotlari (T-17)
+	cd $(API_DIR) && $(UV) run python scripts/demo_data.py
+
 # ---------- yordamchi ----------
 health: ## API va worker health'ni curl qiladi
 	@curl -sS http://localhost:$(API_PORT)/api/v1/health && echo

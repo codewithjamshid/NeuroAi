@@ -2,14 +2,25 @@ import asyncio
 import logging
 import time
 from datetime import UTC, datetime
+from typing import Any
 from urllib.parse import urlsplit
 
 from app import APP_NAME, __version__
+from app.ai.chains import get_chains, recent_calls
 from app.ai.worker.client import WorkerClientProtocol
 from app.core.config import Settings
-from app.modules.health.schemas import HealthResponse, ProvidersHealth, WorkerStatus
+from app.modules.health.schemas import (
+    ChainsStatus,
+    HealthResponse,
+    ProviderCallOut,
+    ProvidersHealth,
+    ProviderStatus,
+    WorkerStatus,
+)
 
 log = logging.getLogger(__name__)
+
+RECENT_CALLS_LIMIT = 20
 
 
 def get_health(settings: Settings) -> HealthResponse:
@@ -42,6 +53,29 @@ async def get_worker_status(client: WorkerClientProtocol, timeout_s: float) -> W
     )
 
 
+def _compact(entries: list[dict[str, Any]]) -> list[ProviderStatus]:
+    return [
+        ProviderStatus(
+            name=e["name"],
+            status=e["status"],
+            latency_ms=e["last_latency_ms"],
+            circuit=e["circuit"],
+        )
+        for e in entries
+    ]
+
+
 async def get_providers_health(settings: Settings, client: WorkerClientProtocol) -> ProvidersHealth:
     worker = await get_worker_status(client, settings.ai_worker_timeout_s)
-    return ProvidersHealth(worker=worker)  # llm/stt/tts/voice_emotion lists: T-04
+    status = get_chains(settings, client).status()
+    return ProvidersHealth(
+        worker=worker,
+        llm=_compact(status["llm"]),
+        stt=_compact(status["stt"]),
+        tts=_compact(status["tts"]),
+        voice_emotion=_compact(status["voice_emotion"]),
+        chains=ChainsStatus.model_validate(status),
+        recent_calls=[
+            ProviderCallOut.model_validate(r.to_dict()) for r in recent_calls(RECENT_CALLS_LIMIT)
+        ],
+    )

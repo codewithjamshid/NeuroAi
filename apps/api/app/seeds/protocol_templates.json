@@ -1,0 +1,493 @@
+[
+  {
+    "key": "motor_aphasia_m1",
+    "title": "Motor afaziya — 1-oy",
+    "description": "Nomlash va takrorlash (L1) kuniga 2 marta, yuz mashqlari va kognitiv blok kuniga 1 marta.",
+    "items": [
+      {
+        "kind": "checkin",
+        "title": "Kayfiyat (1–5)",
+        "category": "mood",
+        "level": 1,
+        "frequency": {
+          "times_per_day": 1,
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "times": [
+            "09:00"
+          ]
+        },
+        "duration_min": 1,
+        "params": {}
+      },
+      {
+        "kind": "exercise",
+        "title": "Nutq: nomlash va takrorlash",
+        "category": "speech",
+        "level": 1,
+        "frequency": {
+          "times_per_day": 2,
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "times": [
+            "10:00",
+            "17:00"
+          ]
+        },
+        "duration_min": 10,
+        "params": {
+          "subtypes": [
+            "naming",
+            "repetition"
+          ]
+        }
+      },
+      {
+        "kind": "exercise",
+        "title": "Yuz mashqlari",
+        "category": "face",
+        "level": 1,
+        "frequency": {
+          "times_per_day": 1,
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "times": [
+            "11:00"
+          ]
+        },
+        "duration_min": 5,
+        "params": {
+          "subtypes": [
+            "face_smile",
+            "face_brows",
+            "face_pucker"
+          ]
+        }
+      },
+      {
+        "kind": "exercise",
+        "title": "Kognitiv: orientatsiya va xotira",
+        "category": "cognitive",
+        "level": 1,
+        "frequency": {
+          "times_per_day": 1,
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "times": [
+            "16:00"
+          ]
+        },
+        "duration_min": 5,
+        "params": {
+          "subtypes": [
+            "orientation",
+            "memory"
+          ]
+        }
+      }
+    ],
+    "medications": []
+  },
+  {
+    "key": "sensory_aphasia_m1",
+    "title": "Sensor afaziya — 1-oy",
+    "description": "Tushunish va takrorlash ustun: takrorlash, o'qish, jumla tugatish; nomlash kamroq.",
+    "items": [
+      {
+        "kind": "checkin",
+        "title": "Kayfiyat (1–5)",
+        "category": "mood",
+        "level": 1,
+        "frequency": {
+          "times_per_day": 1,
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "times": [
+            "09:00"
+          ]
+        },
+        "duration_min": 1,
+        "params": {}
+      },
+      {
+        "kind": "exercise",
+        "title": "Nutq: takrorlash va o'qish",
+        "category": "speech",
+        "level": 1,
+        "frequency": {
+          "times_per_day": 2,
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "times": [
+            "10:00",
+            "17:00"
+          ]
+        },
+        "duration_min": 10,
+        "params": {
+          "subtypes": [
+            "repetition",
+            "reading"
+          ]
+        }
+      },
+      {
+        "kind": "exercise",
+        "title": "Nutq: jumla tugatish",
+        "category": "speech",
+        "level": 2,
+        "frequency": {
+          "times_per_day": 1,
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "times": [
+            "12:00"
+          ]
+        },
+        "duration_min": 5,
+        "params": {
+          "subtypes": [
+            "completion"
+          ]
+        }
+      },
+      {
+        "kind": "exercise",
+        "title": "Yuz mashqlari",
+        "category": "face",
+        "level": 1,
+        "frequency": {
+          "times_per_day": 1,
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "times": [
+            "11:00"
+          ]
+        },
+        "duration_min": 5,
+        "params": {
+          "subtypes": [
+            "face_smile",
+            "face_cheeks"
+          ]
+        }
+      },
+      {
+        "kind": "exercise",
+        "title": "Kognitiv: orientatsiya",
+        "category": "cognitive",
+        "level": 1,
+        "frequency": {
+          "times_per_day": 1,
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "times": [
+            "16:00"
+          ]
+        },
+        "duration_min": 5,
+        "params": {
+          "subtypes": [
+            "orientation"
+          ]
+        }
+      }
+    ],
+    "medications": []
+  },
+  {
+    "key": "dysarthria_m1",
+    "title": "Dizartriya — 1-oy",
+    "description": "Takrorlash va avtomatik qatorlar + yuz/lab mashqlari ustun.",
+    "items": [
+      {
+        "kind": "checkin",
+        "title": "Kayfiyat (1–5)",
+        "category": "mood",
+        "level": 1,
+        "frequency": {
+          "times_per_day": 1,
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "times": [
+            "09:00"
+          ]
+        },
+        "duration_min": 1,
+        "params": {}
+      },
+      {
+        "kind": "exercise",
+        "title": "Nutq: takrorlash va avtomatik qatorlar",
+        "category": "speech",
+        "level": 2,
+        "frequency": {
+          "times_per_day": 2,
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "times": [
+            "10:00",
+            "17:00"
+          ]
+        },
+        "duration_min": 10,
+        "params": {
+          "subtypes": [
+            "repetition",
+            "automatic"
+          ]
+        }
+      },
+      {
+        "kind": "exercise",
+        "title": "Yuz va lab mashqlari",
+        "category": "face",
+        "level": 1,
+        "frequency": {
+          "times_per_day": 2,
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "times": [
+            "11:00",
+            "18:00"
+          ]
+        },
+        "duration_min": 5,
+        "params": {
+          "subtypes": [
+            "face_pucker",
+            "face_cheeks",
+            "face_smile"
+          ]
+        }
+      },
+      {
+        "kind": "exercise",
+        "title": "Nutq: o'qish",
+        "category": "speech",
+        "level": 1,
+        "frequency": {
+          "times_per_day": 1,
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "times": [
+            "15:00"
+          ]
+        },
+        "duration_min": 5,
+        "params": {
+          "subtypes": [
+            "reading"
+          ]
+        }
+      }
+    ],
+    "medications": []
+  },
+  {
+    "key": "cognitive_focus",
+    "title": "Kognitiv yo'nalish",
+    "description": "Orientatsiya va xotira ustun; nutq nomlash yengil daraja.",
+    "items": [
+      {
+        "kind": "checkin",
+        "title": "Kayfiyat (1–5)",
+        "category": "mood",
+        "level": 1,
+        "frequency": {
+          "times_per_day": 1,
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "times": [
+            "09:00"
+          ]
+        },
+        "duration_min": 1,
+        "params": {}
+      },
+      {
+        "kind": "exercise",
+        "title": "Kognitiv: orientatsiya va xotira",
+        "category": "cognitive",
+        "level": 1,
+        "frequency": {
+          "times_per_day": 2,
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "times": [
+            "10:00",
+            "17:00"
+          ]
+        },
+        "duration_min": 5,
+        "params": {
+          "subtypes": [
+            "orientation",
+            "memory"
+          ]
+        }
+      },
+      {
+        "kind": "exercise",
+        "title": "Kognitiv: toifa fluentligi va hisob",
+        "category": "cognitive",
+        "level": 2,
+        "frequency": {
+          "times_per_day": 1,
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "times": [
+            "12:00"
+          ]
+        },
+        "duration_min": 5,
+        "params": {
+          "subtypes": [
+            "fluency",
+            "serial_subtraction"
+          ]
+        }
+      },
+      {
+        "kind": "exercise",
+        "title": "Nutq: nomlash",
+        "category": "speech",
+        "level": 1,
+        "frequency": {
+          "times_per_day": 1,
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "times": [
+            "16:00"
+          ]
+        },
+        "duration_min": 5,
+        "params": {
+          "subtypes": [
+            "naming"
+          ]
+        }
+      }
+    ],
+    "medications": []
+  }
+]

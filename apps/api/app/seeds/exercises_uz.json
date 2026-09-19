@@ -1,0 +1,2586 @@
+[
+  {
+    "key": "naming_l1_non",
+    "category": "speech",
+    "subtype": "naming",
+    "level": 1,
+    "prompt_text": "Bu nima?",
+    "stimulus": {
+      "emoji": "🍞"
+    },
+    "expected": {
+      "answers": [
+        "non",
+        "нон"
+      ]
+    },
+    "cues": {
+      "semantic": "Buni yeymiz. Tandirda pishadi. Har kuni dasturxonda bo'ladi.",
+      "phonemic": "no…"
+    },
+    "tags": [
+      "food",
+      "daily"
+    ]
+  },
+  {
+    "key": "naming_l1_suv",
+    "category": "speech",
+    "subtype": "naming",
+    "level": 1,
+    "prompt_text": "Bu nima?",
+    "stimulus": {
+      "emoji": "💧"
+    },
+    "expected": {
+      "answers": [
+        "suv",
+        "сув"
+      ]
+    },
+    "cues": {
+      "semantic": "Buni ichamiz. Chanqaganda kerak. Daryoda oqadi.",
+      "phonemic": "su…"
+    },
+    "tags": [
+      "drink",
+      "daily"
+    ]
+  },
+  {
+    "key": "naming_l1_choy",
+    "category": "speech",
+    "subtype": "naming",
+    "level": 1,
+    "prompt_text": "Bu nima?",
+    "stimulus": {
+      "emoji": "🍵"
+    },
+    "expected": {
+      "answers": [
+        "choy",
+        "чой"
+      ]
+    },
+    "cues": {
+      "semantic": "Bu ichiladi. Issiq bo'ladi. Ertalab non bilan ichamiz.",
+      "phonemic": "cho…"
+    },
+    "tags": [
+      "food",
+      "daily"
+    ]
+  },
+  {
+    "key": "naming_l1_olma",
+    "category": "speech",
+    "subtype": "naming",
+    "level": 1,
+    "prompt_text": "Bu nima?",
+    "stimulus": {
+      "emoji": "🍎"
+    },
+    "expected": {
+      "answers": [
+        "olma",
+        "олма"
+      ]
+    },
+    "cues": {
+      "semantic": "Bu meva. Qizil yoki yashil bo'ladi. Daraxtda o'sadi.",
+      "phonemic": "ol…"
+    },
+    "tags": [
+      "fruit"
+    ]
+  },
+  {
+    "key": "naming_l1_uy",
+    "category": "speech",
+    "subtype": "naming",
+    "level": 1,
+    "prompt_text": "Bu nima?",
+    "stimulus": {
+      "emoji": "🏠"
+    },
+    "expected": {
+      "answers": [
+        "uy",
+        "уй"
+      ]
+    },
+    "cues": {
+      "semantic": "Bunda yashaymiz. Tomi va eshigi bor.",
+      "phonemic": "u…"
+    },
+    "tags": [
+      "home"
+    ]
+  },
+  {
+    "key": "naming_l1_it",
+    "category": "speech",
+    "subtype": "naming",
+    "level": 1,
+    "prompt_text": "Bu nima?",
+    "stimulus": {
+      "emoji": "🐕"
+    },
+    "expected": {
+      "answers": [
+        "it",
+        "ит"
+      ]
+    },
+    "cues": {
+      "semantic": "Bu hayvon. Vov-vov deydi. Uyni qo'riqlaydi.",
+      "phonemic": "i…"
+    },
+    "tags": [
+      "animal"
+    ]
+  },
+  {
+    "key": "naming_l1_mushuk",
+    "category": "speech",
+    "subtype": "naming",
+    "level": 1,
+    "prompt_text": "Bu nima?",
+    "stimulus": {
+      "emoji": "🐈"
+    },
+    "expected": {
+      "answers": [
+        "mushuk",
+        "мушук"
+      ]
+    },
+    "cues": {
+      "semantic": "Bu hayvon. Miyov deydi. Sichqon tutadi.",
+      "phonemic": "mu…"
+    },
+    "tags": [
+      "animal"
+    ]
+  },
+  {
+    "key": "naming_l1_gul",
+    "category": "speech",
+    "subtype": "naming",
+    "level": 1,
+    "prompt_text": "Bu nima?",
+    "stimulus": {
+      "emoji": "🌸"
+    },
+    "expected": {
+      "answers": [
+        "gul",
+        "гул"
+      ]
+    },
+    "cues": {
+      "semantic": "Bu chiroyli. Bog'da o'sadi. Hidi yoqimli.",
+      "phonemic": "gu…"
+    },
+    "tags": [
+      "nature"
+    ]
+  },
+  {
+    "key": "naming_l1_koz",
+    "category": "speech",
+    "subtype": "naming",
+    "level": 1,
+    "prompt_text": "Bu nima?",
+    "stimulus": {
+      "emoji": "👁️"
+    },
+    "expected": {
+      "answers": [
+        "ko'z",
+        "кўз"
+      ]
+    },
+    "cues": {
+      "semantic": "Bu bilan ko'ramiz. Yuzda ikkita bo'ladi.",
+      "phonemic": "ko'…"
+    },
+    "tags": [
+      "body"
+    ]
+  },
+  {
+    "key": "naming_l1_qol",
+    "category": "speech",
+    "subtype": "naming",
+    "level": 1,
+    "prompt_text": "Bu nima?",
+    "stimulus": {
+      "emoji": "✋"
+    },
+    "expected": {
+      "answers": [
+        "qo'l",
+        "қўл"
+      ]
+    },
+    "cues": {
+      "semantic": "Bu bilan ushlaymiz. Beshta barmog'i bor.",
+      "phonemic": "qo'…"
+    },
+    "tags": [
+      "body"
+    ]
+  },
+  {
+    "key": "naming_l1_kitob",
+    "category": "speech",
+    "subtype": "naming",
+    "level": 1,
+    "prompt_text": "Bu nima?",
+    "stimulus": {
+      "emoji": "📚"
+    },
+    "expected": {
+      "answers": [
+        "kitob",
+        "китоб"
+      ]
+    },
+    "cues": {
+      "semantic": "Buni o'qiymiz. Varaqlari bor. Maktabda kerak.",
+      "phonemic": "ki…"
+    },
+    "tags": [
+      "home",
+      "school"
+    ]
+  },
+  {
+    "key": "naming_l1_osh",
+    "category": "speech",
+    "subtype": "naming",
+    "level": 1,
+    "prompt_text": "Bu nima?",
+    "stimulus": {
+      "emoji": "🍚"
+    },
+    "expected": {
+      "answers": [
+        "osh",
+        "ош",
+        "palov",
+        "палов"
+      ]
+    },
+    "cues": {
+      "semantic": "Bu taom. Guruch va sabzidan pishiriladi. Qozonda damlanadi.",
+      "phonemic": "o…"
+    },
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "key": "naming_l1_tuz",
+    "category": "speech",
+    "subtype": "naming",
+    "level": 1,
+    "prompt_text": "Bu nima?",
+    "stimulus": {
+      "emoji": "🧂"
+    },
+    "expected": {
+      "answers": [
+        "tuz",
+        "туз"
+      ]
+    },
+    "cues": {
+      "semantic": "Buni ovqatga solamiz. Sho'r ta'mi bor. Oq rangda.",
+      "phonemic": "tu…"
+    },
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "key": "naming_l1_sut",
+    "category": "speech",
+    "subtype": "naming",
+    "level": 1,
+    "prompt_text": "Bu nima?",
+    "stimulus": {
+      "emoji": "🥛"
+    },
+    "expected": {
+      "answers": [
+        "sut",
+        "сут"
+      ]
+    },
+    "cues": {
+      "semantic": "Buni ichamiz. Oq rangda. Sigir beradi.",
+      "phonemic": "su…"
+    },
+    "tags": [
+      "drink"
+    ]
+  },
+  {
+    "key": "naming_l1_nok",
+    "category": "speech",
+    "subtype": "naming",
+    "level": 1,
+    "prompt_text": "Bu nima?",
+    "stimulus": {
+      "emoji": "🍐"
+    },
+    "expected": {
+      "answers": [
+        "nok",
+        "нок"
+      ]
+    },
+    "cues": {
+      "semantic": "Bu meva. Shirin va suvli. Olmaga o'xshaydi, lekin cho'ziq.",
+      "phonemic": "no…"
+    },
+    "tags": [
+      "fruit"
+    ]
+  },
+  {
+    "key": "naming_l1_ot",
+    "category": "speech",
+    "subtype": "naming",
+    "level": 1,
+    "prompt_text": "Bu nima?",
+    "stimulus": {
+      "emoji": "🐎"
+    },
+    "expected": {
+      "answers": [
+        "ot",
+        "от"
+      ]
+    },
+    "cues": {
+      "semantic": "Bu hayvon. Odam unga minadi. Tez chopadi.",
+      "phonemic": "o…"
+    },
+    "tags": [
+      "animal"
+    ]
+  },
+  {
+    "key": "naming_l1_quyosh",
+    "category": "speech",
+    "subtype": "naming",
+    "level": 1,
+    "prompt_text": "Bu nima?",
+    "stimulus": {
+      "emoji": "☀️"
+    },
+    "expected": {
+      "answers": [
+        "quyosh",
+        "қуёш"
+      ]
+    },
+    "cues": {
+      "semantic": "Bu osmonda. Kunduzi yoritadi. Issiq beradi.",
+      "phonemic": "qu…"
+    },
+    "tags": [
+      "nature"
+    ]
+  },
+  {
+    "key": "naming_l1_oy",
+    "category": "speech",
+    "subtype": "naming",
+    "level": 1,
+    "prompt_text": "Bu nima?",
+    "stimulus": {
+      "emoji": "🌙"
+    },
+    "expected": {
+      "answers": [
+        "oy",
+        "ой"
+      ]
+    },
+    "cues": {
+      "semantic": "Bu osmonda. Kechasi ko'rinadi. Yulduzlar bilan birga.",
+      "phonemic": "o…"
+    },
+    "tags": [
+      "nature"
+    ]
+  },
+  {
+    "key": "naming_l1_ona",
+    "category": "speech",
+    "subtype": "naming",
+    "level": 1,
+    "prompt_text": "Bu nima?",
+    "stimulus": {
+      "emoji": "👩"
+    },
+    "expected": {
+      "answers": [
+        "ona",
+        "она",
+        "oyi",
+        "aya",
+        "ойи",
+        "ая"
+      ]
+    },
+    "cues": {
+      "semantic": "Bu oila a'zosi. Bizni tuqqan ayol. Farzandlarini yaxshi ko'radi.",
+      "phonemic": "o…"
+    },
+    "tags": [
+      "family"
+    ]
+  },
+  {
+    "key": "naming_l1_ota",
+    "category": "speech",
+    "subtype": "naming",
+    "level": 1,
+    "prompt_text": "Bu nima?",
+    "stimulus": {
+      "emoji": "👨"
+    },
+    "expected": {
+      "answers": [
+        "ota",
+        "ота",
+        "dada",
+        "дада"
+      ]
+    },
+    "cues": {
+      "semantic": "Bu oila a'zosi. Onaning turmush o'rtog'i. Bola uni dada deydi.",
+      "phonemic": "o…"
+    },
+    "tags": [
+      "family"
+    ]
+  },
+  {
+    "key": "naming_l1_bola",
+    "category": "speech",
+    "subtype": "naming",
+    "level": 1,
+    "prompt_text": "Bu nima?",
+    "stimulus": {
+      "emoji": "👶"
+    },
+    "expected": {
+      "answers": [
+        "bola",
+        "бола"
+      ]
+    },
+    "cues": {
+      "semantic": "Bu kichkina odam. Hali katta bo'lmagan. Ona-otasi bor.",
+      "phonemic": "bo…"
+    },
+    "tags": [
+      "family"
+    ]
+  },
+  {
+    "key": "naming_l1_tish",
+    "category": "speech",
+    "subtype": "naming",
+    "level": 1,
+    "prompt_text": "Bu nima?",
+    "stimulus": {
+      "emoji": "🦷"
+    },
+    "expected": {
+      "answers": [
+        "tish",
+        "тиш"
+      ]
+    },
+    "cues": {
+      "semantic": "Bu og'izda. Oq rangda. Bu bilan chaynaymiz.",
+      "phonemic": "ti…"
+    },
+    "tags": [
+      "body"
+    ]
+  },
+  {
+    "key": "naming_l1_oyoq",
+    "category": "speech",
+    "subtype": "naming",
+    "level": 1,
+    "prompt_text": "Bu nima?",
+    "stimulus": {
+      "emoji": "🦶"
+    },
+    "expected": {
+      "answers": [
+        "oyoq",
+        "оёқ"
+      ]
+    },
+    "cues": {
+      "semantic": "Bu bilan yuramiz. Ikkita bo'ladi. Unga poyabzal kiyamiz.",
+      "phonemic": "o…"
+    },
+    "tags": [
+      "body"
+    ]
+  },
+  {
+    "key": "naming_l1_uzum",
+    "category": "speech",
+    "subtype": "naming",
+    "level": 1,
+    "prompt_text": "Bu nima?",
+    "stimulus": {
+      "emoji": "🍇"
+    },
+    "expected": {
+      "answers": [
+        "uzum",
+        "узум"
+      ]
+    },
+    "cues": {
+      "semantic": "Bu meva. Boshcha bo'lib o'sadi. Undan mayiz qilinadi.",
+      "phonemic": "u…"
+    },
+    "tags": [
+      "fruit"
+    ]
+  },
+  {
+    "key": "naming_l1_tuxum",
+    "category": "speech",
+    "subtype": "naming",
+    "level": 1,
+    "prompt_text": "Bu nima?",
+    "stimulus": {
+      "emoji": "🥚"
+    },
+    "expected": {
+      "answers": [
+        "tuxum",
+        "тухум"
+      ]
+    },
+    "cues": {
+      "semantic": "Tovuq beradi. Po'sti bor. Qaynatib yeymiz.",
+      "phonemic": "tu…"
+    },
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "key": "naming_l1_qoshiq",
+    "category": "speech",
+    "subtype": "naming",
+    "level": 1,
+    "prompt_text": "Bu nima?",
+    "stimulus": {
+      "emoji": "🥄"
+    },
+    "expected": {
+      "answers": [
+        "qoshiq",
+        "қошиқ"
+      ]
+    },
+    "cues": {
+      "semantic": "Bu bilan ovqat yeymiz. Sho'rva ichishda kerak.",
+      "phonemic": "qo…"
+    },
+    "tags": [
+      "kitchen"
+    ]
+  },
+  {
+    "key": "naming_l1_stol",
+    "category": "speech",
+    "subtype": "naming",
+    "level": 1,
+    "prompt_text": "Bu nima?",
+    "stimulus": {
+      "emoji": "🪑🍽️"
+    },
+    "expected": {
+      "answers": [
+        "stol",
+        "стол"
+      ]
+    },
+    "cues": {
+      "semantic": "Ustida ovqat yeymiz. To'rtta oyog'i bor. Stul yonida turadi.",
+      "phonemic": "sto…"
+    },
+    "tags": [
+      "home",
+      "needs_image"
+    ]
+  },
+  {
+    "key": "naming_l1_eshik",
+    "category": "speech",
+    "subtype": "naming",
+    "level": 1,
+    "prompt_text": "Bu nima?",
+    "stimulus": {
+      "emoji": "🚪"
+    },
+    "expected": {
+      "answers": [
+        "eshik",
+        "эшик"
+      ]
+    },
+    "cues": {
+      "semantic": "Uyga bundan kiramiz. Ochiladi va yopiladi. Kaliti bor.",
+      "phonemic": "e…"
+    },
+    "tags": [
+      "home"
+    ]
+  },
+  {
+    "key": "naming_l1_soat",
+    "category": "speech",
+    "subtype": "naming",
+    "level": 1,
+    "prompt_text": "Bu nima?",
+    "stimulus": {
+      "emoji": "⌚"
+    },
+    "expected": {
+      "answers": [
+        "soat",
+        "соат"
+      ]
+    },
+    "cues": {
+      "semantic": "Bu vaqtni ko'rsatadi. Qo'lga taqiladi. Chiq-chiq qiladi.",
+      "phonemic": "so…"
+    },
+    "tags": [
+      "home"
+    ]
+  },
+  {
+    "key": "naming_l1_kalit",
+    "category": "speech",
+    "subtype": "naming",
+    "level": 1,
+    "prompt_text": "Bu nima?",
+    "stimulus": {
+      "emoji": "🔑"
+    },
+    "expected": {
+      "answers": [
+        "kalit",
+        "калит"
+      ]
+    },
+    "cues": {
+      "semantic": "Bu bilan eshikni ochamiz. Kichkina, temirdan. Qulfga solinadi.",
+      "phonemic": "ka…"
+    },
+    "tags": [
+      "home"
+    ]
+  },
+  {
+    "key": "naming_l2_telefon",
+    "category": "speech",
+    "subtype": "naming",
+    "level": 2,
+    "prompt_text": "Bu nima?",
+    "stimulus": {
+      "emoji": "📱"
+    },
+    "expected": {
+      "answers": [
+        "telefon",
+        "телефон"
+      ]
+    },
+    "cues": {
+      "semantic": "Bu bilan gaplashamiz. Uzoqdagi odamga qo'ng'iroq qilamiz.",
+      "phonemic": "te…"
+    },
+    "tags": [
+      "home",
+      "tech"
+    ]
+  },
+  {
+    "key": "naming_l2_mashina",
+    "category": "speech",
+    "subtype": "naming",
+    "level": 2,
+    "prompt_text": "Bu nima?",
+    "stimulus": {
+      "emoji": "🚗"
+    },
+    "expected": {
+      "answers": [
+        "mashina",
+        "машина",
+        "avtomobil",
+        "автомобиль"
+      ]
+    },
+    "cues": {
+      "semantic": "Bunda yuramiz. To'rtta g'ildiragi bor. Yo'lda yuradi.",
+      "phonemic": "ma…"
+    },
+    "tags": [
+      "transport"
+    ]
+  },
+  {
+    "key": "naming_l2_kartoshka",
+    "category": "speech",
+    "subtype": "naming",
+    "level": 2,
+    "prompt_text": "Bu nima?",
+    "stimulus": {
+      "emoji": "🥔"
+    },
+    "expected": {
+      "answers": [
+        "kartoshka",
+        "картошка"
+      ]
+    },
+    "cues": {
+      "semantic": "Bu sabzavot. Yer ostida o'sadi. Qovurib yeymiz.",
+      "phonemic": "kar…"
+    },
+    "tags": [
+      "food",
+      "vegetable"
+    ]
+  },
+  {
+    "key": "naming_l2_pomidor",
+    "category": "speech",
+    "subtype": "naming",
+    "level": 2,
+    "prompt_text": "Bu nima?",
+    "stimulus": {
+      "emoji": "🍅"
+    },
+    "expected": {
+      "answers": [
+        "pomidor",
+        "помидор"
+      ]
+    },
+    "cues": {
+      "semantic": "Bu sabzavot. Qizil, yumaloq. Salatga solamiz.",
+      "phonemic": "po…"
+    },
+    "tags": [
+      "food",
+      "vegetable"
+    ]
+  },
+  {
+    "key": "naming_l2_tarvuz",
+    "category": "speech",
+    "subtype": "naming",
+    "level": 2,
+    "prompt_text": "Bu nima?",
+    "stimulus": {
+      "emoji": "🍉"
+    },
+    "expected": {
+      "answers": [
+        "tarvuz",
+        "тарвуз"
+      ]
+    },
+    "cues": {
+      "semantic": "Bu katta meva. Ichi qizil, urug'i qora. Yozda yeymiz.",
+      "phonemic": "tar…"
+    },
+    "tags": [
+      "fruit"
+    ]
+  },
+  {
+    "key": "naming_l2_banan",
+    "category": "speech",
+    "subtype": "naming",
+    "level": 2,
+    "prompt_text": "Bu nima?",
+    "stimulus": {
+      "emoji": "🍌"
+    },
+    "expected": {
+      "answers": [
+        "banan",
+        "банан"
+      ]
+    },
+    "cues": {
+      "semantic": "Bu meva. Sariq, uzun. Po'stini archib yeymiz.",
+      "phonemic": "ba…"
+    },
+    "tags": [
+      "fruit"
+    ]
+  },
+  {
+    "key": "naming_l2_koylak",
+    "category": "speech",
+    "subtype": "naming",
+    "level": 2,
+    "prompt_text": "Bu nima?",
+    "stimulus": {
+      "emoji": "👕"
+    },
+    "expected": {
+      "answers": [
+        "ko'ylak",
+        "кўйлак"
+      ]
+    },
+    "cues": {
+      "semantic": "Buni kiyamiz. Tanaga kiyiladi. Yengi bor.",
+      "phonemic": "ko'y…"
+    },
+    "tags": [
+      "clothes"
+    ]
+  },
+  {
+    "key": "naming_l2_qalam",
+    "category": "speech",
+    "subtype": "naming",
+    "level": 2,
+    "prompt_text": "Bu nima?",
+    "stimulus": {
+      "emoji": "✏️"
+    },
+    "expected": {
+      "answers": [
+        "qalam",
+        "қалам"
+      ]
+    },
+    "cues": {
+      "semantic": "Bu bilan yozamiz. Qog'ozga chizamiz. Uchi bor.",
+      "phonemic": "qa…"
+    },
+    "tags": [
+      "school"
+    ]
+  },
+  {
+    "key": "naming_l2_shifokor",
+    "category": "speech",
+    "subtype": "naming",
+    "level": 2,
+    "prompt_text": "Bu nima?",
+    "stimulus": {
+      "emoji": "👨‍⚕️"
+    },
+    "expected": {
+      "answers": [
+        "shifokor",
+        "шифокор",
+        "vrach",
+        "doktor",
+        "врач",
+        "доктор"
+      ]
+    },
+    "cues": {
+      "semantic": "Bu odam bemorlarni davolaydi. Oq xalat kiyadi. Kasalxonada ishlaydi.",
+      "phonemic": "shi…"
+    },
+    "tags": [
+      "people"
+    ]
+  },
+  {
+    "key": "naming_l2_hamshira",
+    "category": "speech",
+    "subtype": "naming",
+    "level": 2,
+    "prompt_text": "Bu nima?",
+    "stimulus": {
+      "emoji": "👩‍⚕️"
+    },
+    "expected": {
+      "answers": [
+        "hamshira",
+        "ҳамшира",
+        "medsestra",
+        "медсестра"
+      ]
+    },
+    "cues": {
+      "semantic": "Bu ayol kasalxonada ishlaydi. Ukol qiladi. Vrachga yordam beradi.",
+      "phonemic": "ham…"
+    },
+    "tags": [
+      "people"
+    ]
+  },
+  {
+    "key": "naming_l2_samolyot",
+    "category": "speech",
+    "subtype": "naming",
+    "level": 2,
+    "prompt_text": "Bu nima?",
+    "stimulus": {
+      "emoji": "✈️"
+    },
+    "expected": {
+      "answers": [
+        "samolyot",
+        "самолёт"
+      ]
+    },
+    "cues": {
+      "semantic": "Bu osmonda uchadi. Odamlarni uzoqqa olib boradi. Qanoti bor.",
+      "phonemic": "sa…"
+    },
+    "tags": [
+      "transport"
+    ]
+  },
+  {
+    "key": "naming_l2_velosiped",
+    "category": "speech",
+    "subtype": "naming",
+    "level": 2,
+    "prompt_text": "Bu nima?",
+    "stimulus": {
+      "emoji": "🚲"
+    },
+    "expected": {
+      "answers": [
+        "velosiped",
+        "велосипед",
+        "velik"
+      ]
+    },
+    "cues": {
+      "semantic": "Bunda yuramiz. Ikkita g'ildiragi bor. Oyoq bilan aylantiramiz.",
+      "phonemic": "ve…"
+    },
+    "tags": [
+      "transport"
+    ]
+  },
+  {
+    "key": "naming_l2_daraxt",
+    "category": "speech",
+    "subtype": "naming",
+    "level": 2,
+    "prompt_text": "Bu nima?",
+    "stimulus": {
+      "emoji": "🌳"
+    },
+    "expected": {
+      "answers": [
+        "daraxt",
+        "дарахт"
+      ]
+    },
+    "cues": {
+      "semantic": "Bu bog'da o'sadi. Katta va baland. Barglari va shoxlari bor.",
+      "phonemic": "da…"
+    },
+    "tags": [
+      "nature"
+    ]
+  },
+  {
+    "key": "naming_l2_baliq",
+    "category": "speech",
+    "subtype": "naming",
+    "level": 2,
+    "prompt_text": "Bu nima?",
+    "stimulus": {
+      "emoji": "🐟"
+    },
+    "expected": {
+      "answers": [
+        "baliq",
+        "балиқ"
+      ]
+    },
+    "cues": {
+      "semantic": "Bu suvda yashaydi. Suzadi. Qovurib yeymiz.",
+      "phonemic": "ba…"
+    },
+    "tags": [
+      "animal",
+      "food"
+    ]
+  },
+  {
+    "key": "naming_l2_tovuq",
+    "category": "speech",
+    "subtype": "naming",
+    "level": 2,
+    "prompt_text": "Bu nima?",
+    "stimulus": {
+      "emoji": "🐔"
+    },
+    "expected": {
+      "answers": [
+        "tovuq",
+        "товуқ"
+      ]
+    },
+    "cues": {
+      "semantic": "Bu parranda. Tuxum beradi. Qo-qo deydi.",
+      "phonemic": "to…"
+    },
+    "tags": [
+      "animal"
+    ]
+  },
+  {
+    "key": "naming_l2_qovun",
+    "category": "speech",
+    "subtype": "naming",
+    "level": 2,
+    "prompt_text": "Bu nima?",
+    "stimulus": {
+      "emoji": "🍈"
+    },
+    "expected": {
+      "answers": [
+        "qovun",
+        "қовун"
+      ]
+    },
+    "cues": {
+      "semantic": "Bu meva. Sariq, shirin. Yozda tarvuz bilan yeymiz.",
+      "phonemic": "qo…"
+    },
+    "tags": [
+      "fruit"
+    ]
+  },
+  {
+    "key": "naming_l2_sabzi",
+    "category": "speech",
+    "subtype": "naming",
+    "level": 2,
+    "prompt_text": "Bu nima?",
+    "stimulus": {
+      "emoji": "🥕"
+    },
+    "expected": {
+      "answers": [
+        "sabzi",
+        "сабзи"
+      ]
+    },
+    "cues": {
+      "semantic": "Bu sabzavot. Sariq, uzun. Oshga solamiz.",
+      "phonemic": "sab…"
+    },
+    "tags": [
+      "vegetable"
+    ]
+  },
+  {
+    "key": "naming_l2_piyoz",
+    "category": "speech",
+    "subtype": "naming",
+    "level": 2,
+    "prompt_text": "Bu nima?",
+    "stimulus": {
+      "emoji": "🧅"
+    },
+    "expected": {
+      "answers": [
+        "piyoz",
+        "пиёз"
+      ]
+    },
+    "cues": {
+      "semantic": "Bu sabzavot. Achchiq. Kesganda ko'z yoshlanadi.",
+      "phonemic": "pi…"
+    },
+    "tags": [
+      "vegetable"
+    ]
+  },
+  {
+    "key": "naming_l2_bodring",
+    "category": "speech",
+    "subtype": "naming",
+    "level": 2,
+    "prompt_text": "Bu nima?",
+    "stimulus": {
+      "emoji": "🥒"
+    },
+    "expected": {
+      "answers": [
+        "bodring",
+        "бодринг"
+      ]
+    },
+    "cues": {
+      "semantic": "Bu sabzavot. Yashil, uzun. Salatga solamiz.",
+      "phonemic": "bod…"
+    },
+    "tags": [
+      "vegetable"
+    ]
+  },
+  {
+    "key": "naming_l2_limon",
+    "category": "speech",
+    "subtype": "naming",
+    "level": 2,
+    "prompt_text": "Bu nima?",
+    "stimulus": {
+      "emoji": "🍋"
+    },
+    "expected": {
+      "answers": [
+        "limon",
+        "лимон"
+      ]
+    },
+    "cues": {
+      "semantic": "Bu meva. Sariq, nordon. Choyga solamiz.",
+      "phonemic": "li…"
+    },
+    "tags": [
+      "fruit"
+    ]
+  },
+  {
+    "key": "naming_l2_maktab",
+    "category": "speech",
+    "subtype": "naming",
+    "level": 2,
+    "prompt_text": "Bu nima?",
+    "stimulus": {
+      "emoji": "🏫"
+    },
+    "expected": {
+      "answers": [
+        "maktab",
+        "мактаб"
+      ]
+    },
+    "cues": {
+      "semantic": "Bolalar bu yerda o'qiydi. O'qituvchi dars beradi.",
+      "phonemic": "mak…"
+    },
+    "tags": [
+      "place"
+    ]
+  },
+  {
+    "key": "naming_l2_masjid",
+    "category": "speech",
+    "subtype": "naming",
+    "level": 2,
+    "prompt_text": "Bu nima?",
+    "stimulus": {
+      "emoji": "🕌"
+    },
+    "expected": {
+      "answers": [
+        "masjid",
+        "масжид"
+      ]
+    },
+    "cues": {
+      "semantic": "Bu yerda namoz o'qiladi. Minorasi bor. Juma kuni odam ko'p bo'ladi.",
+      "phonemic": "mas…"
+    },
+    "tags": [
+      "place"
+    ]
+  },
+  {
+    "key": "naming_l2_dokon",
+    "category": "speech",
+    "subtype": "naming",
+    "level": 2,
+    "prompt_text": "Bu nima?",
+    "stimulus": {
+      "emoji": "🏪"
+    },
+    "expected": {
+      "answers": [
+        "do'kon",
+        "дўкон",
+        "magazin",
+        "магазин"
+      ]
+    },
+    "cues": {
+      "semantic": "Bu yerdan narsa sotib olamiz. Non, sut, shakar sotiladi.",
+      "phonemic": "do'…"
+    },
+    "tags": [
+      "place"
+    ]
+  },
+  {
+    "key": "naming_l2_televizor",
+    "category": "speech",
+    "subtype": "naming",
+    "level": 2,
+    "prompt_text": "Bu nima?",
+    "stimulus": {
+      "emoji": "📺"
+    },
+    "expected": {
+      "answers": [
+        "televizor",
+        "телевизор"
+      ]
+    },
+    "cues": {
+      "semantic": "Buni ko'ramiz. Kino va yangiliklar ko'rsatadi. Uyda turadi.",
+      "phonemic": "te…"
+    },
+    "tags": [
+      "home",
+      "tech"
+    ]
+  },
+  {
+    "key": "naming_l2_avtobus",
+    "category": "speech",
+    "subtype": "naming",
+    "level": 2,
+    "prompt_text": "Bu nima?",
+    "stimulus": {
+      "emoji": "🚌"
+    },
+    "expected": {
+      "answers": [
+        "avtobus",
+        "автобус"
+      ]
+    },
+    "cues": {
+      "semantic": "Bu katta mashina. Ko'p odam unda yuradi. Bekatda to'xtaydi.",
+      "phonemic": "av…"
+    },
+    "tags": [
+      "transport"
+    ]
+  },
+  {
+    "key": "naming_l2_choynak",
+    "category": "speech",
+    "subtype": "naming",
+    "level": 2,
+    "prompt_text": "Bu nima?",
+    "stimulus": {
+      "emoji": "🫖"
+    },
+    "expected": {
+      "answers": [
+        "choynak",
+        "чойнак"
+      ]
+    },
+    "cues": {
+      "semantic": "Bunda choy damlaymiz. Jo'mragi bor. Issiq suv quyamiz.",
+      "phonemic": "choy…"
+    },
+    "tags": [
+      "kitchen"
+    ]
+  },
+  {
+    "key": "naming_l2_pichoq",
+    "category": "speech",
+    "subtype": "naming",
+    "level": 2,
+    "prompt_text": "Bu nima?",
+    "stimulus": {
+      "emoji": "🔪"
+    },
+    "expected": {
+      "answers": [
+        "pichoq",
+        "пичоқ"
+      ]
+    },
+    "cues": {
+      "semantic": "Bu bilan non kesamiz. O'tkir. Ehtiyot bo'lish kerak.",
+      "phonemic": "pi…"
+    },
+    "tags": [
+      "kitchen"
+    ]
+  },
+  {
+    "key": "naming_l2_kozoynak",
+    "category": "speech",
+    "subtype": "naming",
+    "level": 2,
+    "prompt_text": "Bu nima?",
+    "stimulus": {
+      "emoji": "👓"
+    },
+    "expected": {
+      "answers": [
+        "ko'zoynak",
+        "кўзойнак"
+      ]
+    },
+    "cues": {
+      "semantic": "Buni ko'zga taqamiz. Yaxshi ko'rish uchun kerak. Ikkita oynasi bor.",
+      "phonemic": "ko'z…"
+    },
+    "tags": [
+      "home"
+    ]
+  },
+  {
+    "key": "naming_l2_soyabon",
+    "category": "speech",
+    "subtype": "naming",
+    "level": 2,
+    "prompt_text": "Bu nima?",
+    "stimulus": {
+      "emoji": "☂️"
+    },
+    "expected": {
+      "answers": [
+        "soyabon",
+        "соябон",
+        "zontik",
+        "зонтик"
+      ]
+    },
+    "cues": {
+      "semantic": "Yomg'irda ochamiz. Boshimiz ustida tutamiz. Ho'l bo'lmaymiz.",
+      "phonemic": "so…"
+    },
+    "tags": [
+      "home"
+    ]
+  },
+  {
+    "key": "naming_l2_poyabzal",
+    "category": "speech",
+    "subtype": "naming",
+    "level": 2,
+    "prompt_text": "Bu nima?",
+    "stimulus": {
+      "emoji": "👞"
+    },
+    "expected": {
+      "answers": [
+        "poyabzal",
+        "поябзал",
+        "tufli",
+        "botinka",
+        "туфли",
+        "ботинка"
+      ]
+    },
+    "cues": {
+      "semantic": "Buni oyoqqa kiyamiz. Ko'chaga chiqqanda kerak. Bog'ichi bor.",
+      "phonemic": "po…"
+    },
+    "tags": [
+      "clothes"
+    ]
+  },
+  {
+    "key": "repetition_l1_non",
+    "category": "speech",
+    "subtype": "repetition",
+    "level": 1,
+    "prompt_text": "Men aytaman, siz takrorlang: non",
+    "stimulus": {
+      "text": "non"
+    },
+    "expected": {
+      "answers": [
+        "non",
+        "нон"
+      ]
+    },
+    "cues": {
+      "semantic": "Yana bir bor tinglang va sekin takrorlang: non",
+      "phonemic": "no…"
+    },
+    "tags": [
+      "repetition"
+    ]
+  },
+  {
+    "key": "repetition_l1_suv",
+    "category": "speech",
+    "subtype": "repetition",
+    "level": 1,
+    "prompt_text": "Men aytaman, siz takrorlang: suv",
+    "stimulus": {
+      "text": "suv"
+    },
+    "expected": {
+      "answers": [
+        "suv",
+        "сув"
+      ]
+    },
+    "cues": {
+      "semantic": "Yana bir bor tinglang va sekin takrorlang: suv",
+      "phonemic": "su…"
+    },
+    "tags": [
+      "repetition"
+    ]
+  },
+  {
+    "key": "repetition_l1_choy",
+    "category": "speech",
+    "subtype": "repetition",
+    "level": 1,
+    "prompt_text": "Men aytaman, siz takrorlang: choy",
+    "stimulus": {
+      "text": "choy"
+    },
+    "expected": {
+      "answers": [
+        "choy",
+        "чой"
+      ]
+    },
+    "cues": {
+      "semantic": "Yana bir bor tinglang va sekin takrorlang: choy",
+      "phonemic": "cho…"
+    },
+    "tags": [
+      "repetition"
+    ]
+  },
+  {
+    "key": "repetition_l1_olma",
+    "category": "speech",
+    "subtype": "repetition",
+    "level": 1,
+    "prompt_text": "Men aytaman, siz takrorlang: olma",
+    "stimulus": {
+      "text": "olma"
+    },
+    "expected": {
+      "answers": [
+        "olma",
+        "олма"
+      ]
+    },
+    "cues": {
+      "semantic": "Yana bir bor tinglang va sekin takrorlang: olma",
+      "phonemic": "ol…"
+    },
+    "tags": [
+      "repetition"
+    ]
+  },
+  {
+    "key": "repetition_l1_uy",
+    "category": "speech",
+    "subtype": "repetition",
+    "level": 1,
+    "prompt_text": "Men aytaman, siz takrorlang: uy",
+    "stimulus": {
+      "text": "uy"
+    },
+    "expected": {
+      "answers": [
+        "uy",
+        "уй"
+      ]
+    },
+    "cues": {
+      "semantic": "Yana bir bor tinglang va sekin takrorlang: uy",
+      "phonemic": "u…"
+    },
+    "tags": [
+      "repetition"
+    ]
+  },
+  {
+    "key": "repetition_l1_gul",
+    "category": "speech",
+    "subtype": "repetition",
+    "level": 1,
+    "prompt_text": "Men aytaman, siz takrorlang: gul",
+    "stimulus": {
+      "text": "gul"
+    },
+    "expected": {
+      "answers": [
+        "gul",
+        "гул"
+      ]
+    },
+    "cues": {
+      "semantic": "Yana bir bor tinglang va sekin takrorlang: gul",
+      "phonemic": "gu…"
+    },
+    "tags": [
+      "repetition"
+    ]
+  },
+  {
+    "key": "repetition_l1_kitob",
+    "category": "speech",
+    "subtype": "repetition",
+    "level": 1,
+    "prompt_text": "Men aytaman, siz takrorlang: kitob",
+    "stimulus": {
+      "text": "kitob"
+    },
+    "expected": {
+      "answers": [
+        "kitob",
+        "китоб"
+      ]
+    },
+    "cues": {
+      "semantic": "Yana bir bor tinglang va sekin takrorlang: kitob",
+      "phonemic": "ki…"
+    },
+    "tags": [
+      "repetition"
+    ]
+  },
+  {
+    "key": "repetition_l1_sut",
+    "category": "speech",
+    "subtype": "repetition",
+    "level": 1,
+    "prompt_text": "Men aytaman, siz takrorlang: sut",
+    "stimulus": {
+      "text": "sut"
+    },
+    "expected": {
+      "answers": [
+        "sut",
+        "сут"
+      ]
+    },
+    "cues": {
+      "semantic": "Yana bir bor tinglang va sekin takrorlang: sut",
+      "phonemic": "su…"
+    },
+    "tags": [
+      "repetition"
+    ]
+  },
+  {
+    "key": "repetition_l1_soat",
+    "category": "speech",
+    "subtype": "repetition",
+    "level": 1,
+    "prompt_text": "Men aytaman, siz takrorlang: soat",
+    "stimulus": {
+      "text": "soat"
+    },
+    "expected": {
+      "answers": [
+        "soat",
+        "соат"
+      ]
+    },
+    "cues": {
+      "semantic": "Yana bir bor tinglang va sekin takrorlang: soat",
+      "phonemic": "so…"
+    },
+    "tags": [
+      "repetition"
+    ]
+  },
+  {
+    "key": "repetition_l1_kalit",
+    "category": "speech",
+    "subtype": "repetition",
+    "level": 1,
+    "prompt_text": "Men aytaman, siz takrorlang: kalit",
+    "stimulus": {
+      "text": "kalit"
+    },
+    "expected": {
+      "answers": [
+        "kalit",
+        "калит"
+      ]
+    },
+    "cues": {
+      "semantic": "Yana bir bor tinglang va sekin takrorlang: kalit",
+      "phonemic": "ka…"
+    },
+    "tags": [
+      "repetition"
+    ]
+  },
+  {
+    "key": "repetition_l2_issiq_choy",
+    "category": "speech",
+    "subtype": "repetition",
+    "level": 2,
+    "prompt_text": "Men aytaman, siz takrorlang: issiq choy",
+    "stimulus": {
+      "text": "issiq choy"
+    },
+    "expected": {
+      "answers": [
+        "issiq choy",
+        "иссиқ чой"
+      ]
+    },
+    "cues": {
+      "semantic": "Yana bir bor tinglang va sekin takrorlang: issiq choy",
+      "phonemic": "is…"
+    },
+    "tags": [
+      "repetition"
+    ]
+  },
+  {
+    "key": "repetition_l2_katta_uy",
+    "category": "speech",
+    "subtype": "repetition",
+    "level": 2,
+    "prompt_text": "Men aytaman, siz takrorlang: katta uy",
+    "stimulus": {
+      "text": "katta uy"
+    },
+    "expected": {
+      "answers": [
+        "katta uy",
+        "катта уй"
+      ]
+    },
+    "cues": {
+      "semantic": "Yana bir bor tinglang va sekin takrorlang: katta uy",
+      "phonemic": "ka…"
+    },
+    "tags": [
+      "repetition"
+    ]
+  },
+  {
+    "key": "repetition_l2_qizil_olma",
+    "category": "speech",
+    "subtype": "repetition",
+    "level": 2,
+    "prompt_text": "Men aytaman, siz takrorlang: qizil olma",
+    "stimulus": {
+      "text": "qizil olma"
+    },
+    "expected": {
+      "answers": [
+        "qizil olma",
+        "қизил олма"
+      ]
+    },
+    "cues": {
+      "semantic": "Yana bir bor tinglang va sekin takrorlang: qizil olma",
+      "phonemic": "qi…"
+    },
+    "tags": [
+      "repetition"
+    ]
+  },
+  {
+    "key": "repetition_l2_shirin_qovun",
+    "category": "speech",
+    "subtype": "repetition",
+    "level": 2,
+    "prompt_text": "Men aytaman, siz takrorlang: shirin qovun",
+    "stimulus": {
+      "text": "shirin qovun"
+    },
+    "expected": {
+      "answers": [
+        "shirin qovun",
+        "ширин қовун"
+      ]
+    },
+    "cues": {
+      "semantic": "Yana bir bor tinglang va sekin takrorlang: shirin qovun",
+      "phonemic": "shi…"
+    },
+    "tags": [
+      "repetition"
+    ]
+  },
+  {
+    "key": "repetition_l2_oq_non",
+    "category": "speech",
+    "subtype": "repetition",
+    "level": 2,
+    "prompt_text": "Men aytaman, siz takrorlang: oq non",
+    "stimulus": {
+      "text": "oq non"
+    },
+    "expected": {
+      "answers": [
+        "oq non",
+        "оқ нон"
+      ]
+    },
+    "cues": {
+      "semantic": "Yana bir bor tinglang va sekin takrorlang: oq non",
+      "phonemic": "oq…"
+    },
+    "tags": [
+      "repetition"
+    ]
+  },
+  {
+    "key": "repetition_l2_sovuq_suv",
+    "category": "speech",
+    "subtype": "repetition",
+    "level": 2,
+    "prompt_text": "Men aytaman, siz takrorlang: sovuq suv",
+    "stimulus": {
+      "text": "sovuq suv"
+    },
+    "expected": {
+      "answers": [
+        "sovuq suv",
+        "совуқ сув"
+      ]
+    },
+    "cues": {
+      "semantic": "Yana bir bor tinglang va sekin takrorlang: sovuq suv",
+      "phonemic": "so…"
+    },
+    "tags": [
+      "repetition"
+    ]
+  },
+  {
+    "key": "repetition_l2_yangi_kitob",
+    "category": "speech",
+    "subtype": "repetition",
+    "level": 2,
+    "prompt_text": "Men aytaman, siz takrorlang: yangi kitob",
+    "stimulus": {
+      "text": "yangi kitob"
+    },
+    "expected": {
+      "answers": [
+        "yangi kitob",
+        "янги китоб"
+      ]
+    },
+    "cues": {
+      "semantic": "Yana bir bor tinglang va sekin takrorlang: yangi kitob",
+      "phonemic": "yan…"
+    },
+    "tags": [
+      "repetition"
+    ]
+  },
+  {
+    "key": "repetition_l2_kichik_bola",
+    "category": "speech",
+    "subtype": "repetition",
+    "level": 2,
+    "prompt_text": "Men aytaman, siz takrorlang: kichik bola",
+    "stimulus": {
+      "text": "kichik bola"
+    },
+    "expected": {
+      "answers": [
+        "kichik bola",
+        "кичик бола"
+      ]
+    },
+    "cues": {
+      "semantic": "Yana bir bor tinglang va sekin takrorlang: kichik bola",
+      "phonemic": "ki…"
+    },
+    "tags": [
+      "repetition"
+    ]
+  },
+  {
+    "key": "repetition_l3_men_suv_ichmoqchiman",
+    "category": "speech",
+    "subtype": "repetition",
+    "level": 3,
+    "prompt_text": "Men aytaman, siz takrorlang: Men suv ichmoqchiman.",
+    "stimulus": {
+      "text": "Men suv ichmoqchiman."
+    },
+    "expected": {
+      "answers": [
+        "Men suv ichmoqchiman.",
+        "Мен сув ичмоқчиман."
+      ]
+    },
+    "cues": {
+      "semantic": "Yana bir bor tinglang va sekin takrorlang: Men suv ichmoqchiman.",
+      "phonemic": "men…"
+    },
+    "tags": [
+      "repetition"
+    ]
+  },
+  {
+    "key": "repetition_l3_bugun_havo_issiq",
+    "category": "speech",
+    "subtype": "repetition",
+    "level": 3,
+    "prompt_text": "Men aytaman, siz takrorlang: Bugun havo issiq.",
+    "stimulus": {
+      "text": "Bugun havo issiq."
+    },
+    "expected": {
+      "answers": [
+        "Bugun havo issiq.",
+        "Бугун ҳаво иссиқ."
+      ]
+    },
+    "cues": {
+      "semantic": "Yana bir bor tinglang va sekin takrorlang: Bugun havo issiq.",
+      "phonemic": "bu…"
+    },
+    "tags": [
+      "repetition"
+    ]
+  },
+  {
+    "key": "repetition_l3_nabiram_maktabga_bordi",
+    "category": "speech",
+    "subtype": "repetition",
+    "level": 3,
+    "prompt_text": "Men aytaman, siz takrorlang: Nabiram maktabga bordi.",
+    "stimulus": {
+      "text": "Nabiram maktabga bordi."
+    },
+    "expected": {
+      "answers": [
+        "Nabiram maktabga bordi.",
+        "Набирам мактабга борди."
+      ]
+    },
+    "cues": {
+      "semantic": "Yana bir bor tinglang va sekin takrorlang: Nabiram maktabga bordi.",
+      "phonemic": "na…"
+    },
+    "tags": [
+      "repetition"
+    ]
+  },
+  {
+    "key": "repetition_l3_choy_damlab_bering",
+    "category": "speech",
+    "subtype": "repetition",
+    "level": 3,
+    "prompt_text": "Men aytaman, siz takrorlang: Choy damlab bering.",
+    "stimulus": {
+      "text": "Choy damlab bering."
+    },
+    "expected": {
+      "answers": [
+        "Choy damlab bering.",
+        "Чой дамлаб беринг."
+      ]
+    },
+    "cues": {
+      "semantic": "Yana bir bor tinglang va sekin takrorlang: Choy damlab bering.",
+      "phonemic": "choy…"
+    },
+    "tags": [
+      "repetition"
+    ]
+  },
+  {
+    "key": "repetition_l3_boshim_ogriyapti",
+    "category": "speech",
+    "subtype": "repetition",
+    "level": 3,
+    "prompt_text": "Men aytaman, siz takrorlang: Boshim og'riyapti.",
+    "stimulus": {
+      "text": "Boshim og'riyapti."
+    },
+    "expected": {
+      "answers": [
+        "Boshim og'riyapti.",
+        "Бошим оғрияпти."
+      ]
+    },
+    "cues": {
+      "semantic": "Yana bir bor tinglang va sekin takrorlang: Boshim og'riyapti.",
+      "phonemic": "bo…"
+    },
+    "tags": [
+      "repetition"
+    ]
+  },
+  {
+    "key": "repetition_l3_eshikni_yoping",
+    "category": "speech",
+    "subtype": "repetition",
+    "level": 3,
+    "prompt_text": "Men aytaman, siz takrorlang: Eshikni yoping.",
+    "stimulus": {
+      "text": "Eshikni yoping."
+    },
+    "expected": {
+      "answers": [
+        "Eshikni yoping.",
+        "Эшикни ёпинг."
+      ]
+    },
+    "cues": {
+      "semantic": "Yana bir bor tinglang va sekin takrorlang: Eshikni yoping.",
+      "phonemic": "e…"
+    },
+    "tags": [
+      "repetition"
+    ]
+  },
+  {
+    "key": "repetition_l3_men_uxlamoqchiman",
+    "category": "speech",
+    "subtype": "repetition",
+    "level": 3,
+    "prompt_text": "Men aytaman, siz takrorlang: Men uxlamoqchiman.",
+    "stimulus": {
+      "text": "Men uxlamoqchiman."
+    },
+    "expected": {
+      "answers": [
+        "Men uxlamoqchiman.",
+        "Мен ухламоқчиман."
+      ]
+    },
+    "cues": {
+      "semantic": "Yana bir bor tinglang va sekin takrorlang: Men uxlamoqchiman.",
+      "phonemic": "men…"
+    },
+    "tags": [
+      "repetition"
+    ]
+  },
+  {
+    "key": "repetition_l3_rahmat_yaxshi",
+    "category": "speech",
+    "subtype": "repetition",
+    "level": 3,
+    "prompt_text": "Men aytaman, siz takrorlang: Rahmat, yaxshi.",
+    "stimulus": {
+      "text": "Rahmat, yaxshi."
+    },
+    "expected": {
+      "answers": [
+        "Rahmat, yaxshi.",
+        "Раҳмат, яхши."
+      ]
+    },
+    "cues": {
+      "semantic": "Yana bir bor tinglang va sekin takrorlang: Rahmat, yaxshi.",
+      "phonemic": "rah…"
+    },
+    "tags": [
+      "repetition"
+    ]
+  },
+  {
+    "key": "completion_l2_non_bilan",
+    "category": "speech",
+    "subtype": "completion",
+    "level": 2,
+    "prompt_text": "Jumlani tugating: Non bilan …",
+    "stimulus": {
+      "text": "Non bilan …"
+    },
+    "expected": {
+      "answers": [
+        "choy",
+        "чой"
+      ]
+    },
+    "cues": {
+      "semantic": "Ertalab non bilan issiq ichimlik ichamiz.",
+      "phonemic": "cho…"
+    },
+    "tags": [
+      "completion"
+    ]
+  },
+  {
+    "key": "completion_l2_qish_sovuq_yoz",
+    "category": "speech",
+    "subtype": "completion",
+    "level": 2,
+    "prompt_text": "Jumlani tugating: Qish sovuq, yoz …",
+    "stimulus": {
+      "text": "Qish sovuq, yoz …"
+    },
+    "expected": {
+      "answers": [
+        "issiq",
+        "иссиқ"
+      ]
+    },
+    "cues": {
+      "semantic": "Yozda quyosh qattiq qizdiradi. Sovuqning teskarisi.",
+      "phonemic": "is…"
+    },
+    "tags": [
+      "completion"
+    ]
+  },
+  {
+    "key": "completion_l2_quyosh_kunduzi_oy",
+    "category": "speech",
+    "subtype": "completion",
+    "level": 2,
+    "prompt_text": "Jumlani tugating: Quyosh kunduzi, oy …",
+    "stimulus": {
+      "text": "Quyosh kunduzi, oy …"
+    },
+    "expected": {
+      "answers": [
+        "kechasi",
+        "кечаси"
+      ]
+    },
+    "cues": {
+      "semantic": "Oy qachon ko'rinadi? Kunduzning teskarisi.",
+      "phonemic": "ke…"
+    },
+    "tags": [
+      "completion"
+    ]
+  },
+  {
+    "key": "completion_l2_kitobni",
+    "category": "speech",
+    "subtype": "completion",
+    "level": 2,
+    "prompt_text": "Jumlani tugating: Kitobni …",
+    "stimulus": {
+      "text": "Kitobni …"
+    },
+    "expected": {
+      "answers": [
+        "o'qiymiz",
+        "ўқиймиз",
+        "o'qiyman",
+        "ўқийман"
+      ]
+    },
+    "cues": {
+      "semantic": "Kitob bilan nima qilamiz? Ko'z bilan, harflarni.",
+      "phonemic": "o'…"
+    },
+    "tags": [
+      "completion"
+    ]
+  },
+  {
+    "key": "completion_l2_ovqatni",
+    "category": "speech",
+    "subtype": "completion",
+    "level": 2,
+    "prompt_text": "Jumlani tugating: Ovqatni …",
+    "stimulus": {
+      "text": "Ovqatni …"
+    },
+    "expected": {
+      "answers": [
+        "yeymiz",
+        "еймиз",
+        "yeyman",
+        "ейман"
+      ]
+    },
+    "cues": {
+      "semantic": "Ovqat bilan nima qilamiz? Og'iz bilan, qoshiq bilan.",
+      "phonemic": "ye…"
+    },
+    "tags": [
+      "completion"
+    ]
+  },
+  {
+    "key": "completion_l2_suvni",
+    "category": "speech",
+    "subtype": "completion",
+    "level": 2,
+    "prompt_text": "Jumlani tugating: Suvni …",
+    "stimulus": {
+      "text": "Suvni …"
+    },
+    "expected": {
+      "answers": [
+        "ichamiz",
+        "ичамиз",
+        "ichaman",
+        "ичаман"
+      ]
+    },
+    "cues": {
+      "semantic": "Suv bilan nima qilamiz? Chanqaganda.",
+      "phonemic": "i…"
+    },
+    "tags": [
+      "completion"
+    ]
+  },
+  {
+    "key": "completion_l3_eshikni",
+    "category": "speech",
+    "subtype": "completion",
+    "level": 3,
+    "prompt_text": "Jumlani tugating: Eshikni …",
+    "stimulus": {
+      "text": "Eshikni …"
+    },
+    "expected": {
+      "answers": [
+        "ochamiz",
+        "очамиз",
+        "yopamiz",
+        "ёпамиз",
+        "ochaman",
+        "yopaman"
+      ]
+    },
+    "cues": {
+      "semantic": "Uyga kirishda eshikni nima qilamiz? Kalit bilan.",
+      "phonemic": "o…"
+    },
+    "tags": [
+      "completion"
+    ]
+  },
+  {
+    "key": "completion_l3_mashinani",
+    "category": "speech",
+    "subtype": "completion",
+    "level": 3,
+    "prompt_text": "Jumlani tugating: Mashinani …",
+    "stimulus": {
+      "text": "Mashinani …"
+    },
+    "expected": {
+      "answers": [
+        "haydaymiz",
+        "ҳайдаймиз",
+        "haydayman",
+        "ҳайдайман"
+      ]
+    },
+    "cues": {
+      "semantic": "Mashina bilan nima qilamiz? Rulda o'tirib.",
+      "phonemic": "hay…"
+    },
+    "tags": [
+      "completion"
+    ]
+  },
+  {
+    "key": "completion_l2_kechasi_biz",
+    "category": "speech",
+    "subtype": "completion",
+    "level": 2,
+    "prompt_text": "Jumlani tugating: Kechasi biz …",
+    "stimulus": {
+      "text": "Kechasi biz …"
+    },
+    "expected": {
+      "answers": [
+        "uxlaymiz",
+        "ухлаймиз",
+        "uxlayman",
+        "ухлайман"
+      ]
+    },
+    "cues": {
+      "semantic": "Kechasi yotoqda nima qilamiz? Ko'zni yumib.",
+      "phonemic": "ux…"
+    },
+    "tags": [
+      "completion"
+    ]
+  },
+  {
+    "key": "completion_l3_baliq_suvda",
+    "category": "speech",
+    "subtype": "completion",
+    "level": 3,
+    "prompt_text": "Jumlani tugating: Baliq suvda …",
+    "stimulus": {
+      "text": "Baliq suvda …"
+    },
+    "expected": {
+      "answers": [
+        "suzadi",
+        "сузади"
+      ]
+    },
+    "cues": {
+      "semantic": "Baliq suvda nima qiladi? Odam ham hovuzda shunday qiladi.",
+      "phonemic": "su…"
+    },
+    "tags": [
+      "completion"
+    ]
+  },
+  {
+    "key": "completion_l3_qushlar_osmonda",
+    "category": "speech",
+    "subtype": "completion",
+    "level": 3,
+    "prompt_text": "Jumlani tugating: Qushlar osmonda …",
+    "stimulus": {
+      "text": "Qushlar osmonda …"
+    },
+    "expected": {
+      "answers": [
+        "uchadi",
+        "учади"
+      ]
+    },
+    "cues": {
+      "semantic": "Qushlar qanoti bilan nima qiladi? Samolyot ham shunday.",
+      "phonemic": "u…"
+    },
+    "tags": [
+      "completion"
+    ]
+  },
+  {
+    "key": "completion_l3_ertalab_quyosh",
+    "category": "speech",
+    "subtype": "completion",
+    "level": 3,
+    "prompt_text": "Jumlani tugating: Ertalab quyosh …",
+    "stimulus": {
+      "text": "Ertalab quyosh …"
+    },
+    "expected": {
+      "answers": [
+        "chiqadi",
+        "чиқади"
+      ]
+    },
+    "cues": {
+      "semantic": "Ertalab quyosh nima qiladi? Osmonda paydo bo'ladi.",
+      "phonemic": "chi…"
+    },
+    "tags": [
+      "completion"
+    ]
+  },
+  {
+    "key": "automatic_l1_counting",
+    "category": "speech",
+    "subtype": "automatic",
+    "level": 1,
+    "prompt_text": "1 dan 10 gacha sanang.",
+    "stimulus": {
+      "text": "1 … 10"
+    },
+    "expected": {
+      "answers": [
+        "bir ikki uch to'rt besh olti yetti sakkiz to'qqiz o'n",
+        "бир икки уч тўрт беш олти етти саккиз тўққиз ўн"
+      ]
+    },
+    "cues": {
+      "semantic": "Bir, ikki, … davom eting. Barmoqlaringizni sanang.",
+      "phonemic": "bir, ik…"
+    },
+    "tags": [
+      "automatic",
+      "counting"
+    ]
+  },
+  {
+    "key": "automatic_l1_weekdays",
+    "category": "speech",
+    "subtype": "automatic",
+    "level": 1,
+    "prompt_text": "Hafta kunlarini ayting.",
+    "stimulus": {
+      "text": "Dushanba …"
+    },
+    "expected": {
+      "answers": [
+        "dushanba seshanba chorshanba payshanba juma shanba yakshanba",
+        "душанба сешанба чоршанба пайшанба жума шанба якшанба"
+      ]
+    },
+    "cues": {
+      "semantic": "Hafta dushanbadan boshlanadi. Keyin seshanba…",
+      "phonemic": "du…"
+    },
+    "tags": [
+      "automatic",
+      "weekdays"
+    ]
+  },
+  {
+    "key": "automatic_l1_months",
+    "category": "speech",
+    "subtype": "automatic",
+    "level": 1,
+    "prompt_text": "Yil oylarini ayting.",
+    "stimulus": {
+      "text": "Yanvar …"
+    },
+    "expected": {
+      "answers": [
+        "yanvar fevral mart aprel may iyun iyul avgust sentabr oktabr noyabr dekabr",
+        "январ феврал март апрел май июн июл август сентябр октябр ноябр декабр"
+      ]
+    },
+    "cues": {
+      "semantic": "Yil yanvardan boshlanadi. Keyin fevral…",
+      "phonemic": "yan…"
+    },
+    "tags": [
+      "automatic",
+      "months"
+    ]
+  },
+  {
+    "key": "automatic_l1_alphabet",
+    "category": "speech",
+    "subtype": "automatic",
+    "level": 1,
+    "prompt_text": "Alifboni boshidan ayting.",
+    "stimulus": {
+      "text": "A, B, D …"
+    },
+    "expected": {
+      "answers": [
+        "a b d e f g h",
+        "a be de e ef ge ha",
+        "а б в г д е"
+      ]
+    },
+    "cues": {
+      "semantic": "Alifbo A harfidan boshlanadi. Keyin B…",
+      "phonemic": "a, b…"
+    },
+    "tags": [
+      "automatic",
+      "alphabet"
+    ]
+  },
+  {
+    "key": "reading_l1_non",
+    "category": "speech",
+    "subtype": "reading",
+    "level": 1,
+    "prompt_text": "Ekrandagi so'zni ovoz chiqarib o'qing.",
+    "stimulus": {
+      "text": "NON"
+    },
+    "expected": {
+      "answers": [
+        "non",
+        "нон"
+      ]
+    },
+    "cues": {
+      "semantic": "Bu yeyiladi, tandirda pishadi.",
+      "phonemic": "no…"
+    },
+    "tags": [
+      "reading"
+    ]
+  },
+  {
+    "key": "reading_l1_suv",
+    "category": "speech",
+    "subtype": "reading",
+    "level": 1,
+    "prompt_text": "Ekrandagi so'zni ovoz chiqarib o'qing.",
+    "stimulus": {
+      "text": "SUV"
+    },
+    "expected": {
+      "answers": [
+        "suv",
+        "сув"
+      ]
+    },
+    "cues": {
+      "semantic": "Bu ichiladi, daryoda oqadi.",
+      "phonemic": "su…"
+    },
+    "tags": [
+      "reading"
+    ]
+  },
+  {
+    "key": "reading_l1_choy",
+    "category": "speech",
+    "subtype": "reading",
+    "level": 1,
+    "prompt_text": "Ekrandagi so'zni ovoz chiqarib o'qing.",
+    "stimulus": {
+      "text": "CHOY"
+    },
+    "expected": {
+      "answers": [
+        "choy",
+        "чой"
+      ]
+    },
+    "cues": {
+      "semantic": "Bu ichiladi, issiq bo'ladi.",
+      "phonemic": "cho…"
+    },
+    "tags": [
+      "reading"
+    ]
+  },
+  {
+    "key": "reading_l1_olma",
+    "category": "speech",
+    "subtype": "reading",
+    "level": 1,
+    "prompt_text": "Ekrandagi so'zni ovoz chiqarib o'qing.",
+    "stimulus": {
+      "text": "OLMA"
+    },
+    "expected": {
+      "answers": [
+        "olma",
+        "олма"
+      ]
+    },
+    "cues": {
+      "semantic": "Bu meva, daraxtda o'sadi.",
+      "phonemic": "ol…"
+    },
+    "tags": [
+      "reading"
+    ]
+  },
+  {
+    "key": "reading_l2_men_choy_ichaman",
+    "category": "speech",
+    "subtype": "reading",
+    "level": 2,
+    "prompt_text": "Ekrandagi so'zni ovoz chiqarib o'qing.",
+    "stimulus": {
+      "text": "Men choy ichaman."
+    },
+    "expected": {
+      "answers": [
+        "men choy ichaman",
+        "мен чой ичаман"
+      ]
+    },
+    "cues": {
+      "semantic": "Birinchi so'z — men. Keyin ichimlik nomi.",
+      "phonemic": "men…"
+    },
+    "tags": [
+      "reading"
+    ]
+  },
+  {
+    "key": "reading_l2_bugun_havo_yaxshi",
+    "category": "speech",
+    "subtype": "reading",
+    "level": 2,
+    "prompt_text": "Ekrandagi so'zni ovoz chiqarib o'qing.",
+    "stimulus": {
+      "text": "Bugun havo yaxshi."
+    },
+    "expected": {
+      "answers": [
+        "bugun havo yaxshi",
+        "бугун ҳаво яхши"
+      ]
+    },
+    "cues": {
+      "semantic": "Birinchi so'z — bugun. Ob-havo haqida.",
+      "phonemic": "bu…"
+    },
+    "tags": [
+      "reading"
+    ]
+  },
+  {
+    "key": "reading_l2_nabiram_keldi",
+    "category": "speech",
+    "subtype": "reading",
+    "level": 2,
+    "prompt_text": "Ekrandagi so'zni ovoz chiqarib o'qing.",
+    "stimulus": {
+      "text": "Nabiram keldi."
+    },
+    "expected": {
+      "answers": [
+        "nabiram keldi",
+        "набирам келди"
+      ]
+    },
+    "cues": {
+      "semantic": "Birinchi so'z — nabiram. U uyga keldi.",
+      "phonemic": "na…"
+    },
+    "tags": [
+      "reading"
+    ]
+  },
+  {
+    "key": "reading_l2_eshikni_yoping",
+    "category": "speech",
+    "subtype": "reading",
+    "level": 2,
+    "prompt_text": "Ekrandagi so'zni ovoz chiqarib o'qing.",
+    "stimulus": {
+      "text": "Eshikni yoping."
+    },
+    "expected": {
+      "answers": [
+        "eshikni yoping",
+        "эшикни ёпинг"
+      ]
+    },
+    "cues": {
+      "semantic": "Birinchi so'z — eshikni. Uni yopish kerak.",
+      "phonemic": "e…"
+    },
+    "tags": [
+      "reading"
+    ]
+  }
+]

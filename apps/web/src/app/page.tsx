@@ -23,6 +23,9 @@ export default function HomePage() {
           </h1>
           <div className="flex items-center gap-2">
             <HealthBadge />
+            <Link href="/login" className={cn(buttonVariants({ variant: "outline", size: "sm" }))}>
+              {t("auth.login")}
+            </Link>
             <Link
               href="/status"
               className={cn(buttonVariants({ variant: "ghost", size: "sm" }), "gap-1.5")}

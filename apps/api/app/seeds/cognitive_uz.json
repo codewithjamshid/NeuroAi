@@ -1,0 +1,233 @@
+[
+  {
+    "key": "orientation_weekday",
+    "category": "cognitive",
+    "subtype": "orientation",
+    "level": 1,
+    "prompt_text": "Bugun hafta kunlaridan qaysi biri?",
+    "expected": {
+      "dynamic": "weekday"
+    },
+    "scoring": {
+      "kind": "llm_judge",
+      "max": 1
+    },
+    "tags": [
+      "orientation"
+    ]
+  },
+  {
+    "key": "orientation_month",
+    "category": "cognitive",
+    "subtype": "orientation",
+    "level": 1,
+    "prompt_text": "Hozir qaysi oy?",
+    "expected": {
+      "dynamic": "month"
+    },
+    "scoring": {
+      "kind": "llm_judge",
+      "max": 1
+    },
+    "tags": [
+      "orientation"
+    ]
+  },
+  {
+    "key": "orientation_year",
+    "category": "cognitive",
+    "subtype": "orientation",
+    "level": 1,
+    "prompt_text": "Hozir qaysi yil?",
+    "expected": {
+      "dynamic": "year"
+    },
+    "scoring": {
+      "kind": "llm_judge",
+      "max": 1
+    },
+    "tags": [
+      "orientation"
+    ]
+  },
+  {
+    "key": "orientation_place",
+    "category": "cognitive",
+    "subtype": "orientation",
+    "level": 1,
+    "prompt_text": "Siz hozir qayerdasiz?",
+    "expected": {
+      "dynamic": "place"
+    },
+    "scoring": {
+      "kind": "llm_judge",
+      "max": 1
+    },
+    "tags": [
+      "orientation"
+    ]
+  },
+  {
+    "key": "memory_set1",
+    "category": "cognitive",
+    "subtype": "memory",
+    "level": 1,
+    "prompt_text": "Uchta so'zni eslab qoling: olma, kalit, stol. Keyinroq so'rayman.",
+    "recall_prompt": "Boya aytgan uchta so'zni eslang.",
+    "expected": {
+      "answers": [
+        "olma",
+        "kalit",
+        "stol"
+      ]
+    },
+    "delay_s": 120,
+    "scoring": {
+      "kind": "recall",
+      "max": 3
+    },
+    "tags": [
+      "memory"
+    ]
+  },
+  {
+    "key": "memory_set2",
+    "category": "cognitive",
+    "subtype": "memory",
+    "level": 1,
+    "prompt_text": "Uchta so'zni eslab qoling: gul, soat, non. Keyinroq so'rayman.",
+    "recall_prompt": "Boya aytgan uchta so'zni eslang.",
+    "expected": {
+      "answers": [
+        "gul",
+        "soat",
+        "non"
+      ]
+    },
+    "delay_s": 120,
+    "scoring": {
+      "kind": "recall",
+      "max": 3
+    },
+    "tags": [
+      "memory"
+    ]
+  },
+  {
+    "key": "memory_set3",
+    "category": "cognitive",
+    "subtype": "memory",
+    "level": 1,
+    "prompt_text": "Uchta so'zni eslab qoling: it, kitob, choy. Keyinroq so'rayman.",
+    "recall_prompt": "Boya aytgan uchta so'zni eslang.",
+    "expected": {
+      "answers": [
+        "it",
+        "kitob",
+        "choy"
+      ]
+    },
+    "delay_s": 120,
+    "scoring": {
+      "kind": "recall",
+      "max": 3
+    },
+    "tags": [
+      "memory"
+    ]
+  },
+  {
+    "key": "fluency_fruits",
+    "category": "cognitive",
+    "subtype": "fluency",
+    "level": 2,
+    "prompt_text": "30 soniya ichida iloji boricha ko'p mevalarni ayting.",
+    "expected": {
+      "category": "mevalar"
+    },
+    "duration_s": 30,
+    "scoring": {
+      "kind": "llm_count"
+    },
+    "tags": [
+      "fluency"
+    ]
+  },
+  {
+    "key": "fluency_animals",
+    "category": "cognitive",
+    "subtype": "fluency",
+    "level": 2,
+    "prompt_text": "30 soniya ichida iloji boricha ko'p hayvonlarni ayting.",
+    "expected": {
+      "category": "hayvonlar"
+    },
+    "duration_s": 30,
+    "scoring": {
+      "kind": "llm_count"
+    },
+    "tags": [
+      "fluency"
+    ]
+  },
+  {
+    "key": "fluency_cities",
+    "category": "cognitive",
+    "subtype": "fluency",
+    "level": 2,
+    "prompt_text": "30 soniya ichida iloji boricha ko'p shaharlarni ayting.",
+    "expected": {
+      "category": "shaharlar"
+    },
+    "duration_s": 30,
+    "scoring": {
+      "kind": "llm_count"
+    },
+    "tags": [
+      "fluency"
+    ]
+  },
+  {
+    "key": "serial_20_3",
+    "category": "cognitive",
+    "subtype": "serial_subtraction",
+    "level": 2,
+    "prompt_text": "20 dan 3 tadan ayirib boring: 20, 17, …",
+    "expected": {
+      "answers": [
+        "17 14 11 8 5",
+        "o'n yetti o'n to'rt o'n bir sakkiz besh"
+      ]
+    },
+    "scoring": {
+      "kind": "steps",
+      "max": 5
+    },
+    "tags": [
+      "calculation"
+    ]
+  },
+  {
+    "key": "routine_morning",
+    "category": "cognitive",
+    "subtype": "routine",
+    "level": 1,
+    "prompt_text": "Ertalab turganda nima qilamiz?",
+    "expected": {
+      "keywords": [
+        "yuvinamiz",
+        "nonushta",
+        "choy",
+        "tish",
+        "kiyinamiz"
+      ]
+    },
+    "scoring": {
+      "kind": "llm_judge",
+      "max": 1
+    },
+    "tags": [
+      "routine"
+    ]
+  }
+]

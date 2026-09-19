@@ -39,7 +39,7 @@ async def test_providers_mock_worker_online(client: AsyncClient) -> None:
     assert worker["latency_ms"] >= 0
     assert set(worker["models"].values()) == {"mock"}
     for key in ("llm", "stt", "tts", "voice_emotion"):
-        assert body[key] == []
+        assert isinstance(body[key], list)  # filled from FallbackChain.status() since T-04
 
 
 async def test_providers_http_worker_offline_and_masked(app: FastAPI, client: AsyncClient) -> None:

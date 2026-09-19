@@ -8,11 +8,9 @@ from sqlalchemy import pool
 from sqlalchemy.engine import Connection
 from sqlalchemy.ext.asyncio import async_engine_from_config
 
+import app.db.registry  # noqa: F401  (registers every module's models on Base.metadata)
 from app.core.config import get_settings
 from app.db.base import Base
-
-# T-02+: import every module's models here so autogenerate sees them, e.g.
-# from app.modules.patients import models  # noqa: F401
 
 config = context.config
 if config.config_file_name is not None:

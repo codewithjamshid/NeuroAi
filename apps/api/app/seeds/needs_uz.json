@@ -1,0 +1,537 @@
+{
+  "groups": [
+    {
+      "key": "asosiy",
+      "label": "Asosiy"
+    },
+    {
+      "key": "tana",
+      "label": "Tana"
+    },
+    {
+      "key": "his",
+      "label": "His-tuyg'u"
+    },
+    {
+      "key": "oila",
+      "label": "Oila"
+    },
+    {
+      "key": "javob",
+      "label": "Javob"
+    }
+  ],
+  "items": [
+    {
+      "key": "water",
+      "label": "Suv",
+      "emoji": "💧",
+      "group": "asosiy",
+      "spoken": "Men suv ichmoqchiman.",
+      "aliases": [
+        "suv",
+        "ichmoqchiman",
+        "chanqadim"
+      ]
+    },
+    {
+      "key": "food",
+      "label": "Ovqat",
+      "emoji": "🍽️",
+      "group": "asosiy",
+      "spoken": "Men ovqat yemoqchiman.",
+      "aliases": [
+        "ovqat",
+        "yemoqchiman",
+        "qornim och",
+        "och"
+      ]
+    },
+    {
+      "key": "tea",
+      "label": "Choy",
+      "emoji": "🍵",
+      "group": "asosiy",
+      "spoken": "Men choy ichmoqchiman.",
+      "aliases": [
+        "choy",
+        "chay"
+      ]
+    },
+    {
+      "key": "bread",
+      "label": "Non",
+      "emoji": "🍞",
+      "group": "asosiy",
+      "spoken": "Menga non bering.",
+      "aliases": [
+        "non"
+      ]
+    },
+    {
+      "key": "fruit",
+      "label": "Meva",
+      "emoji": "🍎",
+      "group": "asosiy",
+      "spoken": "Men meva yemoqchiman.",
+      "aliases": [
+        "meva",
+        "olma",
+        "uzum"
+      ]
+    },
+    {
+      "key": "toilet",
+      "label": "Hojatxona",
+      "emoji": "🚻",
+      "group": "asosiy",
+      "spoken": "Men hojatxonaga bormoqchiman.",
+      "aliases": [
+        "hojatxona",
+        "hojat",
+        "tualet"
+      ]
+    },
+    {
+      "key": "bathroom_help",
+      "label": "Hojatxonaga yordam",
+      "emoji": "🧑‍🦽",
+      "group": "asosiy",
+      "spoken": "Hojatxonaga borishga yordam kerak.",
+      "aliases": [
+        "hojatxonaga yordam"
+      ]
+    },
+    {
+      "key": "medicine",
+      "label": "Dori",
+      "emoji": "💊",
+      "group": "asosiy",
+      "spoken": "Dori vaqti bo'ldi, dorimni bering.",
+      "aliases": [
+        "dori",
+        "tabletka"
+      ]
+    },
+    {
+      "key": "sleep",
+      "label": "Uxlash",
+      "emoji": "🛏️",
+      "group": "asosiy",
+      "spoken": "Men uxlamoqchiman.",
+      "aliases": [
+        "uxla",
+        "uyqu",
+        "charchadim"
+      ]
+    },
+    {
+      "key": "wash",
+      "label": "Yuvinish",
+      "emoji": "🚿",
+      "group": "asosiy",
+      "spoken": "Men yuvinmoqchiman.",
+      "aliases": [
+        "yuvin",
+        "cho'mil",
+        "dush"
+      ]
+    },
+    {
+      "key": "clothes",
+      "label": "Kiyim",
+      "emoji": "👕",
+      "group": "asosiy",
+      "spoken": "Kiyimimni almashtirmoqchiman.",
+      "aliases": [
+        "kiyim",
+        "ko'ylak",
+        "kiyin"
+      ]
+    },
+    {
+      "key": "glasses",
+      "label": "Ko'zoynak",
+      "emoji": "👓",
+      "group": "asosiy",
+      "spoken": "Ko'zoynagimni bering.",
+      "aliases": [
+        "ko'zoynak",
+        "oynak"
+      ]
+    },
+    {
+      "key": "light",
+      "label": "Chiroq",
+      "emoji": "💡",
+      "group": "asosiy",
+      "spoken": "Chiroqni yoqing yoki o'chiring.",
+      "aliases": [
+        "chiroq",
+        "svet",
+        "yoqing",
+        "o'chiring"
+      ]
+    },
+    {
+      "key": "window",
+      "label": "Deraza",
+      "emoji": "🪟",
+      "group": "asosiy",
+      "spoken": "Derazani oching yoki yoping.",
+      "aliases": [
+        "deraza",
+        "oyna"
+      ]
+    },
+    {
+      "key": "tv",
+      "label": "Televizor",
+      "emoji": "📺",
+      "group": "asosiy",
+      "spoken": "Televizorni yoqing.",
+      "aliases": [
+        "televizor",
+        "telvizor",
+        "kino"
+      ]
+    },
+    {
+      "key": "phone",
+      "label": "Telefon",
+      "emoji": "📞",
+      "group": "asosiy",
+      "spoken": "Telefonni bering, qo'ng'iroq qilmoqchiman.",
+      "aliases": [
+        "telefon",
+        "qo'ng'iroq"
+      ]
+    },
+    {
+      "key": "music",
+      "label": "Musiqa",
+      "emoji": "🎵",
+      "group": "asosiy",
+      "spoken": "Musiqa qo'yib bering.",
+      "aliases": [
+        "musiqa",
+        "qo'shiq",
+        "ashula"
+      ]
+    },
+    {
+      "key": "outside",
+      "label": "Tashqariga",
+      "emoji": "🌳",
+      "group": "asosiy",
+      "spoken": "Men tashqariga chiqmoqchiman.",
+      "aliases": [
+        "tashqari",
+        "ko'cha",
+        "havo",
+        "sayr"
+      ]
+    },
+    {
+      "key": "sit",
+      "label": "O'tirish",
+      "emoji": "🪑",
+      "group": "asosiy",
+      "spoken": "Men o'tirmoqchiman.",
+      "aliases": [
+        "o'tir",
+        "o'tirmoqchiman"
+      ]
+    },
+    {
+      "key": "lie",
+      "label": "Yotish",
+      "emoji": "🛌",
+      "group": "asosiy",
+      "spoken": "Men yotmoqchiman.",
+      "aliases": [
+        "yot",
+        "yotmoqchiman"
+      ]
+    },
+    {
+      "key": "position",
+      "label": "O'girilish",
+      "emoji": "🔄",
+      "group": "asosiy",
+      "spoken": "Meni o'girib qo'ying, joyimni o'zgartiring.",
+      "aliases": [
+        "o'gir",
+        "yonbosh",
+        "joyim"
+      ]
+    },
+    {
+      "key": "pray",
+      "label": "Namoz",
+      "emoji": "🤲",
+      "group": "asosiy",
+      "spoken": "Namoz o'qimoqchiman, tahorat kerak.",
+      "aliases": [
+        "namoz",
+        "tahorat"
+      ]
+    },
+    {
+      "key": "quiet",
+      "label": "Jimlik",
+      "emoji": "🤫",
+      "group": "asosiy",
+      "spoken": "Iltimos, jimroq bo'ling.",
+      "aliases": [
+        "jim",
+        "shovqin",
+        "sekin"
+      ]
+    },
+    {
+      "key": "pain",
+      "label": "Og'riq",
+      "emoji": "🤕",
+      "group": "tana",
+      "spoken": "Og'riyapti.",
+      "aliases": [
+        "og'ri",
+        "og'riq",
+        "ogri"
+      ]
+    },
+    {
+      "key": "cold",
+      "label": "Sovuq",
+      "emoji": "🥶",
+      "group": "tana",
+      "spoken": "Menga sovuq, ko'rpa bering.",
+      "aliases": [
+        "sovuq",
+        "sovq",
+        "muzla",
+        "ko'rpa"
+      ]
+    },
+    {
+      "key": "hot",
+      "label": "Issiq",
+      "emoji": "🥵",
+      "group": "tana",
+      "spoken": "Menga issiq bo'lyapti.",
+      "aliases": [
+        "issiq",
+        "isiq",
+        "terla"
+      ]
+    },
+    {
+      "key": "tired",
+      "label": "Charchadim",
+      "emoji": "😮‍💨",
+      "group": "tana",
+      "spoken": "Men charchadim, dam olmoqchiman.",
+      "aliases": [
+        "charcha",
+        "holsiz",
+        "dam"
+      ]
+    },
+    {
+      "key": "dizzy",
+      "label": "Boshim aylanyapti",
+      "emoji": "😵",
+      "group": "tana",
+      "spoken": "Boshim aylanyapti.",
+      "aliases": [
+        "bosh aylan",
+        "boshim aylan",
+        "aylanyapti"
+      ]
+    },
+    {
+      "key": "nausea",
+      "label": "Ko'nglim aynayapti",
+      "emoji": "🤢",
+      "group": "tana",
+      "spoken": "Ko'nglim aynayapti.",
+      "aliases": [
+        "ko'ngl",
+        "ayna",
+        "qusgim"
+      ]
+    },
+    {
+      "key": "sad",
+      "label": "Xafaman",
+      "emoji": "😢",
+      "group": "his",
+      "spoken": "Men xafaman.",
+      "aliases": [
+        "xafa",
+        "yig'la",
+        "g'amgin"
+      ]
+    },
+    {
+      "key": "happy",
+      "label": "Xursandman",
+      "emoji": "😊",
+      "group": "his",
+      "spoken": "Men xursandman.",
+      "aliases": [
+        "xursand",
+        "quvon",
+        "yaxshiman"
+      ]
+    },
+    {
+      "key": "scared",
+      "label": "Qo'rqyapman",
+      "emoji": "😨",
+      "group": "his",
+      "spoken": "Men qo'rqyapman.",
+      "aliases": [
+        "qo'rq",
+        "qurq"
+      ]
+    },
+    {
+      "key": "alone",
+      "label": "Yolg'iz qoldiring",
+      "emoji": "🙍",
+      "group": "oila",
+      "spoken": "Meni biroz yolg'iz qoldiring.",
+      "aliases": [
+        "yolg'iz",
+        "yolgiz",
+        "o'zim"
+      ]
+    },
+    {
+      "key": "company",
+      "label": "Yonimda o'tiring",
+      "emoji": "👥",
+      "group": "oila",
+      "spoken": "Yonimda o'tiring.",
+      "aliases": [
+        "yonimda",
+        "o'tiring",
+        "birga"
+      ]
+    },
+    {
+      "key": "yes",
+      "label": "Ha",
+      "emoji": "✅",
+      "group": "javob",
+      "spoken": "Ha.",
+      "aliases": [
+        "ha",
+        "xa",
+        "to'g'ri",
+        "mayli"
+      ]
+    },
+    {
+      "key": "no",
+      "label": "Yo'q",
+      "emoji": "❌",
+      "group": "javob",
+      "spoken": "Yo'q.",
+      "aliases": [
+        "yo'q",
+        "yoq",
+        "kerakmas",
+        "xohlamayman"
+      ]
+    },
+    {
+      "key": "thanks",
+      "label": "Rahmat",
+      "emoji": "🙏",
+      "group": "javob",
+      "spoken": "Rahmat.",
+      "aliases": [
+        "rahmat",
+        "raxmat"
+      ]
+    },
+    {
+      "key": "wait",
+      "label": "Kutib turing",
+      "emoji": "⏳",
+      "group": "javob",
+      "spoken": "Biroz kutib turing.",
+      "aliases": [
+        "kut",
+        "shoshma",
+        "hozir"
+      ]
+    },
+    {
+      "key": "help",
+      "label": "Yordam",
+      "emoji": "🆘",
+      "group": "javob",
+      "spoken": "Menga yordam kering.",
+      "aliases": [
+        "yordam",
+        "keling"
+      ]
+    },
+    {
+      "key": "doctor",
+      "label": "Vrach",
+      "emoji": "👨‍⚕️",
+      "group": "javob",
+      "spoken": "Vrachni chaqiring.",
+      "aliases": [
+        "vrach",
+        "doktor",
+        "shifokor"
+      ]
+    }
+  ],
+  "person_template": {
+    "key": "person:{name}",
+    "label": "{name}",
+    "emoji": "👤",
+    "group": "oila",
+    "spoken": "{name}ni chaqiring.",
+    "note": "Bemor profilidagi family_members ro'yxatidan runtime'da yaratiladi (person:nilufar ...)."
+  },
+  "body_map": [
+    {
+      "key": "head",
+      "label": "Bosh",
+      "emoji": "🧠"
+    },
+    {
+      "key": "chest",
+      "label": "Ko'krak",
+      "emoji": "🫁"
+    },
+    {
+      "key": "belly",
+      "label": "Qorin",
+      "emoji": "🫃"
+    },
+    {
+      "key": "arm",
+      "label": "Qo'l",
+      "emoji": "💪"
+    },
+    {
+      "key": "leg",
+      "label": "Oyoq",
+      "emoji": "🦵"
+    },
+    {
+      "key": "back",
+      "label": "Orqa",
+      "emoji": "🔙"
+    }
+  ]
+}

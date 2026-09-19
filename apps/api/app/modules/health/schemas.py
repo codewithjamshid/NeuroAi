@@ -23,12 +23,41 @@ class WorkerStatus(BaseModel):
 
 
 class ProviderStatus(BaseModel):
-    """Per-provider entry, filled by FallbackChain in T-04 (TZ §4.4)."""
+    """Compact per-provider entry (web StatusPanel); derived from the chain status."""
 
     name: str
     status: Status
     latency_ms: int | None = None
     circuit: Literal["closed", "open", "half_open"] = "closed"
+
+
+class ChainProviderStatus(BaseModel):
+    """FallbackChain.status() entry (TZ §4.4: online/offline, last latency, circuit)."""
+
+    name: str
+    configured: bool = True
+    circuit: Literal["closed", "open"] = "closed"
+    status: Status = "unknown"
+    last_ok: bool | None = None
+    last_latency_ms: int | None = None
+    last_error: str | None = None
+
+
+class ChainsStatus(BaseModel):
+    llm: list[ChainProviderStatus] = []
+    stt: list[ChainProviderStatus] = []
+    tts: list[ChainProviderStatus] = []
+    voice_emotion: list[ChainProviderStatus] = []
+
+
+class ProviderCallOut(BaseModel):
+    provider: str
+    task: str
+    latency_ms: int
+    ok: bool
+    fallback_index: int
+    error: str | None = None
+    created_at: datetime
 
 
 class ProvidersHealth(BaseModel):
@@ -37,3 +66,5 @@ class ProvidersHealth(BaseModel):
     stt: list[ProviderStatus] = []
     tts: list[ProviderStatus] = []
     voice_emotion: list[ProviderStatus] = []
+    chains: ChainsStatus = ChainsStatus()
+    recent_calls: list[ProviderCallOut] = []
