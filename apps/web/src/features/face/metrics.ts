@@ -129,8 +129,7 @@ export const LM = {
 } as const;
 
 export const clamp = (v: number, lo: number, hi: number) => Math.min(hi, Math.max(lo, v));
-export const mean = (xs: number[]) =>
-  xs.length ? xs.reduce((a, b) => a + b, 0) / xs.length : 0;
+export const mean = (xs: number[]) => (xs.length ? xs.reduce((a, b) => a + b, 0) / xs.length : 0);
 const dist = (a: Point, b: Point) => Math.hypot(a.x - b.x, a.y - b.y);
 
 export function bs(b: Blendshapes, name: string): number {
@@ -215,7 +214,19 @@ export function landmarkMeasures(frame: FaceFrame, rest?: RestPoints | null): La
   const earL = dist(frame.p(LM.eyeUpperL), frame.p(LM.eyeLowerL));
   const earR = dist(frame.p(LM.eyeUpperR), frame.p(LM.eyeLowerR));
   const eyeAsym = Math.abs(earL - earR) / Math.max(earL, earR, EXCURSION_FLOOR);
-  return { mouthL, mouthR, excursionL, excursionR, smileAsym, browL, browR, browAsym, earL, earR, eyeAsym };
+  return {
+    mouthL,
+    mouthR,
+    excursionL,
+    excursionR,
+    smileAsym,
+    browL,
+    browR,
+    browAsym,
+    earL,
+    earR,
+    eyeAsym,
+  };
 }
 
 // FSI = 1 − clamp(mean(active asym_k ∪ smile_asym ∪ brow_asym), 0, 1)
@@ -256,10 +267,12 @@ export function exprHint(b: Blendshapes, palsy: PalsySide): ExprHint {
   const conf = (v: number) => Math.min(0.6, Math.round(v * 100) / 100);
   const squint = side("eyeSquint");
   const sneer = side("noseSneer");
-  if (squint >= 0.5 && sneer >= 0.3) return { label: "grimace", conf: conf(Math.min(squint, sneer)) };
+  if (squint >= 0.5 && sneer >= 0.3)
+    return { label: "grimace", conf: conf(Math.min(squint, sneer)) };
   const frown = side("mouthFrown");
   const innerUp = bs(b, "browInnerUp");
-  if (frown >= 0.3 && innerUp >= 0.3) return { label: "frown", conf: conf(Math.min(frown, innerUp)) };
+  if (frown >= 0.3 && innerUp >= 0.3)
+    return { label: "frown", conf: conf(Math.min(frown, innerUp)) };
   const smile = side("mouthSmile");
   if (smile >= 0.5) return { label: "happy", conf: conf(smile) };
   return { label: "neutral", conf: 0.4 };
@@ -507,9 +520,10 @@ export function exerciseScore(
 }
 
 // Which side moved less during holds (paired exercises only).
-export function weakerSide(
-  sideSamples: { l: number; r: number }[],
-): { side: "left" | "right" | null; asym: number } {
+export function weakerSide(sideSamples: { l: number; r: number }[]): {
+  side: "left" | "right" | null;
+  asym: number;
+} {
   if (!sideSamples.length) return { side: null, asym: 0 };
   const l = mean(sideSamples.map((s) => s.l));
   const r = mean(sideSamples.map((s) => s.r));

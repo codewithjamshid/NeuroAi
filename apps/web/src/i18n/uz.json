@@ -335,5 +335,10 @@
   "face.side.left": "chap",
   "face.side.right": "o'ng",
   "face.again": "Yana bir marta",
-  "face.session.offline": "Server ulanmadi — natijalar faqat shu ekranda ko'rinadi."
+  "face.session.offline": "Server ulanmadi — natijalar faqat shu ekranda ko'rinadi.",
+  "board.group.asosiy": "Asosiy",
+  "board.group.tana": "Tana",
+  "board.group.his": "Hissiyot",
+  "board.group.oila": "Oila",
+  "board.group.javob": "Javob"
 }

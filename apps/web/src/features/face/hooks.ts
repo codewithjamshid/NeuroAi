@@ -13,7 +13,13 @@ import {
   startDetectionLoop,
   stopStream,
 } from "./mediapipe";
-import type { CameraErrorCode, FaceBaseline, FaceBatchItem, FrameMeasure, PalsySide } from "./types";
+import type {
+  CameraErrorCode,
+  FaceBaseline,
+  FaceBatchItem,
+  FrameMeasure,
+  PalsySide,
+} from "./types";
 
 export type TrackerStatus = "idle" | "camera" | "model" | "running" | "error";
 

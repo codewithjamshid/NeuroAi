@@ -137,7 +137,7 @@ def fuse(inputs: FusionInputs) -> PatientStateIn:  # noqa: PLR0912, PLR0915
     elif hint and hint["label"] in FROWN_HINTS:
         mood_parts.append((0.2, -0.5))
         explain.append(f"yuz: {hint['label']}")
-    tv = text_valence(inputs.text)
+    tv = -0.5 if inputs.keyword_distress else text_valence(inputs.text)  # "o'lsam yaxshi" ≠ good
     if tv is not None:
         mood_parts.append((0.2, tv))
         explain.append("so'zlar: " + ("ijobiy" if tv > 0 else "salbiy"))

@@ -59,10 +59,12 @@ export function BoardScreen({ backHref = "/p/say" }: { backHref?: string }) {
         const g = await guessM.mutateAsync({ text: label });
         interpretationId = g.interpretation_id;
       }
+      // Known need keys get the seed's first-person sentence ("Men suv ichmoqchiman.");
+      // custom_text only for free-text ("other") picks — otherwise the API would speak the bare label.
       const r = await confirmM.mutateAsync({
         interpretation_id: interpretationId,
         candidate_key: key,
-        custom_text: label,
+        ...(key === "other" ? { custom_text: label } : {}),
       });
       setResult(r);
       await player.play(r.tts_url, r.spoken_text);

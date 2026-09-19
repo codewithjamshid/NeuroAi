@@ -9,7 +9,7 @@ from google.genai import types
 from app.ai.providers.base import ProviderError
 from app.ai.providers.stt.base import CLOUD_STT_CONFIDENCE, STTResult
 
-DEFAULT_TIMEOUT_S = 8.0
+DEFAULT_TIMEOUT_S = 20.0  # Gemini rejects short deadlines ("deadline 8s is too short")
 _INSTRUCTION = (
     "Bu o'zbek tilidagi nutq. Aynan aytilganidek transkripsiya qil. "
     "Faqat transkripsiya matnini qaytar — izohsiz, tarjimasiz, lotin alifbosida."

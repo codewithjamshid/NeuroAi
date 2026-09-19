@@ -250,8 +250,8 @@ def decide(
         if result == "correct" or verdict.next_action == "suggest_break" or cue is None:
             action = "suggest_break" if verdict.next_action == "suggest_break" else "next_item"
             return result, feedback or EXHAUSTED_TEXT, action, None
-        if verdict.next_cue is not None and verdict.next_cue.text.strip():
-            cue = (cue[0], verdict.next_cue.text.strip())
+        if cue[0] == 1 and verdict.next_cue is not None and verdict.next_cue.text.strip():
+            cue = (1, verdict.next_cue.text.strip())  # LLM may paraphrase the semantic cue only
         return result, feedback, "retry_with_cue", NextCue(level=cue[0], text=cue[1])
     result = scored.result
     if result == "correct":

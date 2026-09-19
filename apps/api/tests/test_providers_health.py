@@ -20,10 +20,17 @@ CHAIN_ENTRY_KEYS = {
 
 
 @pytest.fixture(autouse=True)
-def _reset() -> Iterator[None]:
+def _reset(monkeypatch: pytest.MonkeyPatch) -> Iterator[None]:
+    # Pin the TZ default chain order: the root .env may put cloud providers first for the demo.
+    monkeypatch.setenv("LLM_PROVIDERS", "gemini,openai")
+    monkeypatch.setenv("STT_PROVIDERS", "worker,gemini,openai")
+    monkeypatch.setenv("TTS_PROVIDERS", "worker,openai,browser")
+    monkeypatch.setenv("VOICE_EMOTION_PROVIDERS", "worker")
+    get_settings.cache_clear()
     reset_chains()
     yield
     reset_chains()
+    get_settings.cache_clear()
 
 
 async def test_health_providers_shows_chains(client: AsyncClient) -> None:

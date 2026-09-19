@@ -1,4 +1,8 @@
-"""Weekly report (M7): Gemini Pro over `clinician.daily_metrics` + session summaries + flags."""
+"""Weekly report (M7): LLM `pro` tier over `clinician.daily_metrics` + session summaries + flags.
+
+If every provider fails on the `pro` tier (quota, retired model) the same prompt is retried on the
+`fast` tier before answering 503 — a flash-quality report beats no report on demo day.
+"""
 
 import json
 import uuid
@@ -7,9 +11,9 @@ from datetime import timedelta
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.ai.chains import FallbackChain, get_chains, recent_calls
+from app.ai.chains import FallbackChain, get_chains
 from app.ai.prompts.loader import render
-from app.ai.providers.base import ProviderUnavailable
+from app.ai.providers.base import ProviderCallRecord, ProviderUnavailable
 from app.core.config import get_settings
 from app.core.errors import AppError
 from app.modules.clinician import service as clinician_service
@@ -22,6 +26,7 @@ REPORT_TIMEOUT_S = 60.0
 REPORT_TEMPERATURE = 0.3
 OUTPUT_LINE = 'CHIQISH: faqat JSON {"content_md": "<markdown>"}'
 PERIOD_DAYS = {"7d": 7, "14d": 14}
+TIERS = ("pro", "fast")
 
 
 class LLMUnavailableError(AppError):
@@ -66,10 +71,43 @@ def build_system_prompt(
     return f"{text}\n{OUTPUT_LINE}"
 
 
-def _generated_by(provider: str) -> str:
+def _generated_by(provider: str, tier: str) -> str:
     s = get_settings()
-    model = {"gemini": s.gemini_model_pro, "openai": s.openai_model}.get(provider, provider)
-    return f"{provider}:{model}"
+    models = {
+        ("gemini", "pro"): s.gemini_model_pro,
+        ("gemini", "fast"): s.gemini_model_fast,
+        ("openai", "fast"): s.openai_model,
+    }
+    return f"{provider}:{models.get((provider, tier), tier)}"
+
+
+async def _call_llm(system: str) -> tuple[WeeklyReport, str, str]:
+    """→ (report, provider, tier). Tries `pro`, then `fast`; 503 when both are exhausted."""
+    records: list[ProviderCallRecord] = []
+
+    async def _sink(rec: ProviderCallRecord) -> None:
+        records.append(rec)
+
+    chain: FallbackChain = FallbackChain(
+        get_chains(get_settings()).llm.providers, REPORT_TIMEOUT_S, task="llm", on_record=_sink
+    )
+    for tier in TIERS:
+        try:
+            result = await chain.call(
+                "generate",
+                system=system,
+                messages=[{"role": "user", "content": "Hisobotni tayyorla."}],
+                schema=WeeklyReport,
+                temperature=REPORT_TEMPERATURE,
+                timeout_s=REPORT_TIMEOUT_S,
+                tier=tier,
+            )
+        except ProviderUnavailable:
+            continue
+        assert isinstance(result, WeeklyReport)
+        provider = next((r.provider for r in reversed(records) if r.ok), "unknown")
+        return result, provider, tier
+    raise LLMUnavailableError("Hisobot uchun LLM mavjud emas")
 
 
 async def generate(db: AsyncSession, patient: Patient, period: str) -> Report:
@@ -109,26 +147,7 @@ async def generate(db: AsyncSession, patient: Patient, period: str) -> Report:
     system = build_system_prompt(
         patient, f"{start.isoformat()} — {end.isoformat()} ({n_days} kun)", days, summaries, flags
     )
-
-    settings = get_settings()
-    chain: FallbackChain = FallbackChain(
-        get_chains(settings).llm.providers, REPORT_TIMEOUT_S, task="llm"
-    )
-    try:
-        result = await chain.call(
-            "generate",
-            system=system,
-            messages=[{"role": "user", "content": "Hisobotni tayyorla."}],
-            schema=WeeklyReport,
-            temperature=REPORT_TEMPERATURE,
-            timeout_s=REPORT_TIMEOUT_S,
-            tier="pro",
-        )
-    except ProviderUnavailable as exc:
-        raise LLMUnavailableError("Hisobot uchun LLM mavjud emas") from exc
-    assert isinstance(result, WeeklyReport)
-    calls = recent_calls(1)
-    provider = calls[0].provider if calls else "unknown"
+    result, provider, tier = await _call_llm(system)
 
     report = Report(
         patient_id=patient.id,
@@ -140,8 +159,9 @@ async def generate(db: AsyncSession, patient: Patient, period: str) -> Report:
             "adherence_week": week.model_dump(),
             "flags": len(flags),
             "sessions": len(summaries),
+            "llm_tier": tier,
         },
-        generated_by=_generated_by(provider),
+        generated_by=_generated_by(provider, tier),
     )
     db.add(report)
     await db.commit()

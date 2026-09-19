@@ -57,6 +57,13 @@ def today_utc() -> date:
     return datetime.now(UTC).date()
 
 
+def _utc(value: datetime | None) -> datetime | None:
+    """sqlite returns naive datetimes; the API always speaks UTC-aware ISO strings."""
+    if value is not None and value.tzinfo is None:
+        return value.replace(tzinfo=UTC)
+    return value
+
+
 def _bounds(start: date, end: date) -> tuple[datetime, datetime]:
     return (
         datetime.combine(start, time.min, tzinfo=UTC),
@@ -242,10 +249,12 @@ async def dashboard(db: AsyncSession, patient: Patient, days: int) -> DashboardO
     count_stmt = select(func.count(Session.id)).where(
         Session.patient_id == patient.id, Session.started_at >= lo, Session.started_at < hi
     )
+    # the week figure always spans 7 days, even when the chart window is shorter
+    week = _week(buckets, end) if days >= WEEK_DAYS else await week_adherence(db, patient.id, end)
     return DashboardOut(
         days=rows,
         flags=flags,
-        adherence_week=_week(buckets, end),
+        adherence_week=week,
         sessions_count=int(await db.scalar(count_stmt) or 0),
         fsi_base=fsi_base,
     )
@@ -265,7 +274,7 @@ async def list_patients(db: AsyncSession, user: User) -> list[ClinicianPatientOu
                 age=(year - p.birth_year) if p.birth_year else None,
                 aphasia_type=p.aphasia_type,
                 open_flags=await patients_service.count_open_flags(db, p.id),
-                last_activity=last,
+                last_activity=_utc(last),
                 adherence_week=(await week_adherence(db, p.id)).exercise,
             )
         )
@@ -300,8 +309,8 @@ async def list_sessions(
         ClinicianSessionOut(
             id=s.id,
             mode=s.mode,
-            started_at=s.started_at,
-            ended_at=s.ended_at,
+            started_at=_utc(s.started_at),  # type: ignore[arg-type]
+            ended_at=_utc(s.ended_at),
             summary=s.summary,
             accuracy=stats.get(s.id, (None, 0))[0],
             attempts=stats.get(s.id, (None, 0))[1],

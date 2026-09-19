@@ -14,7 +14,7 @@ from app.ai.providers.tts.base import DEFAULT_SPEED, DEFAULT_STYLE, TTSResult
 
 DEFAULT_MODEL = "gemini-2.5-flash-preview-tts"
 DEFAULT_VOICE = "Kore"
-DEFAULT_TIMEOUT_S = 12.0
+DEFAULT_TIMEOUT_S = 20.0
 _PREFIX = {
     "neutral": "O'zbek tilida, sekin va aniq o'qi: ",
     "calm": "O'zbek tilida, juda sekin, tinchlantiruvchi ohangda o'qi: ",

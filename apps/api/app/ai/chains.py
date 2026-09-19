@@ -41,8 +41,10 @@ RecordSink = Callable[[ProviderCallRecord], Awaitable[None]]
 
 RECENT_CALLS_MAX = 300
 LLM_TIMEOUT_S = 25.0
-STT_TIMEOUT_S = 8.0  # worker's own httpx timeout (4 s) fails faster; cloud STT needs headroom
-TTS_TIMEOUT_S = 12.0
+STT_TIMEOUT_S = (
+    20.0  # cloud STT (Gemini) needs ≥ 10 s deadline; worker httpx timeout (4 s) fails faster
+)
+TTS_TIMEOUT_S = 20.0  # Gemini TTS ≈ 5 s per call
 VOICE_EMOTION_TIMEOUT_S = 2.0  # TZ §4.8: error → null, never blocks the reply
 
 _recent: deque[ProviderCallRecord] = deque(maxlen=RECENT_CALLS_MAX)

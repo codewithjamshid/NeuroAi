@@ -33,7 +33,7 @@ async def patient_dashboard(
 async def clinician_sessions(
     patient_id: uuid.UUID,
     db: DbDep,
-    user: User = ClinicianDep,
+    user: CurrentUser,  # linked caregivers read it for /c/history (get_patient_for_user checks)
     limit: int = Query(default=30, ge=1, le=200),
     offset: int = Query(default=0, ge=0),
 ) -> list[ClinicianSessionOut]:

@@ -76,9 +76,9 @@ async def today_words(db: AsyncSession, patient_id: uuid.UUID) -> list[str]:
 async def last_interpretations(
     db: AsyncSession, patient_id: uuid.UUID, n: int = 5
 ) -> list[InterpretationBrief]:
-    stmt = (
+    stmt = (  # confirmed requests only (chosen is set by /interpreter/confirm)
         select(Interpretation)
-        .where(Interpretation.patient_id == patient_id)
+        .where(Interpretation.patient_id == patient_id, Interpretation.chosen.is_not(None))
         .order_by(Interpretation.created_at.desc())
         .limit(n)
     )

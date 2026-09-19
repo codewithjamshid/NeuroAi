@@ -1,5 +1,6 @@
 """Live cloud adapters — skipped unless GEMINI_API_KEY / OPENAI_API_KEY are set (.env or env)."""
 
+import os
 from typing import Literal
 
 import pytest
@@ -14,8 +15,13 @@ from app.ai.worker.mock import silence_wav
 from app.core.config import Settings
 
 _settings = Settings()  # same precedence as the app: env > .env > defaults
-gemini_live = pytest.mark.skipif(not _settings.gemini_api_key, reason="GEMINI_API_KEY not set")
-openai_live = pytest.mark.skipif(not _settings.openai_api_key, reason="OPENAI_API_KEY not set")
+LIVE = os.environ.get("LIVE_TESTS") == "1"  # opt-in: real network calls, quota-sensitive
+gemini_live = pytest.mark.skipif(
+    not (LIVE and _settings.gemini_api_key), reason="LIVE_TESTS=1 + GEMINI_API_KEY required"
+)
+openai_live = pytest.mark.skipif(
+    not (LIVE and _settings.openai_api_key), reason="LIVE_TESTS=1 + OPENAI_API_KEY required"
+)
 
 SYSTEM = "Sen o'zbek tilida qisqa, iliq javob beradigan yordamchisan. Faqat JSON qaytar."
 MESSAGES = [{"role": "user", "content": "Salom, bugun yaxshiman."}]
