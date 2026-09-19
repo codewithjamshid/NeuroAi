@@ -16,15 +16,17 @@ make health       # API + worker health
 
 ## Provayderlar (bugungi holat)
 
-| Vazifa         | Birinchi                         | Zaxira                          | Izoh                                                |
-| -------------- | -------------------------------- | ------------------------------- | --------------------------------------------------- |
-| LLM            | OpenAI `gpt-4o-mini` (1.3–2.6 s) | Gemini `gemini-3-flash-preview` | Gemini bepul tarif: 20 so'rov/daq                   |
-| STT            | Worker Kotib (ngrok)             | Gemini                          | Worker uzilsa 4 s ichida Gemini                     |
-| TTS            | Worker Navoiy (ngrok, ~2–3.5 s)  | Brauzer `speechSynthesis`       | Gemini TTS 10/kun (o'chirilgan); OpenAI'da TTS yo'q |
-| Ovoz hissiyoti | worker (`disabled`)              | null                            | Fusion ovozsiz ishlaydi                             |
+| Vazifa         | Birinchi                                           | Zaxira                       | Izoh                                                        |
+| -------------- | -------------------------------------------------- | ---------------------------- | ----------------------------------------------------------- |
+| LLM            | Gemini `gemini-2.5-flash` (thinking o'chiq, 1.8 s) | OpenAI `gpt-4o-mini` (2.2 s) | Gemini pullik tarif; hisobot uchun `gemini-3-flash-preview` |
+| STT            | Worker Kotib (ngrok)                               | Gemini                       | Worker uzilsa 12 s ichida Gemini                            |
+| TTS            | Gemini TTS (4–6 s, kesh bilan 0 s)                 | Worker Navoiy → brauzer      | Foydalanuvchi tanlovi: Gemini ovozi; statik matnlar keshda  |
+| Ovoz hissiyoti | worker (`disabled`)                                | null                         | Fusion ovozsiz ishlaydi                                     |
 
-`.env`: `AI_WORKER_URL`, `AI_WORKER_KEY` (ofis), `STT_PROVIDERS=worker,gemini,openai`, `TTS_PROVIDERS=worker,browser`.
-Ovozli navbat o'lchovi: matn → javob + Navoiy audio ≈ 5.4 s (LLM 2.2 s + TTS 3.1 s); ovozli kirishda + STT (Kotib).
+`.env`: `AI_WORKER_URL`, `AI_WORKER_KEY` (ofis), `LLM_PROVIDERS=gemini,openai`, `STT_PROVIDERS=worker,gemini,openai`,
+`TTS_PROVIDERS=gemini,worker,browser`, `AI_WORKER_TIMEOUT_S=12`.
+Ovozli navbat o'lchovi: matn → javob + Gemini audio ≈ 6–8.5 s (LLM 1.8 s + TTS 4–6 s); keshlangan prompt/ishoralar bir zumda;
+ovozli kirishda + STT (Kotib). Kesh: `make pregen-tts` (Gemini bilan ketma-ket, ~30 daqiqa).
 
 ## Oqim (§11.2) → URL
 
@@ -46,12 +48,12 @@ Ovozli navbat o'lchovi: matn → javob + Navoiy audio ≈ 5.4 s (LLM 2.2 s + TTS
 - [ ] `make demo` → `/d` da Bobur 14 kun grafik, 1 ta bayroq (resolved)
 - [ ] Chrome: mikrofon + kamera ruxsati `localhost:3000` uchun berilgan
 - [ ] Parvarishchi Telegram ulangan (`/c/settings` → kod → `/start <kod>`); test bayroq yuborib ko'rish
-- [ ] Gemini kvota: demo oldidan 10 daqiqa Gemini'ga so'rov yubormaslik (20/daq)
+- [ ] `make pregen-tts` bajarilgan (statik ovozlar keshda); Gemini pullik tarifda (`/status` da 429 yo'q)
 - [ ] Zaxira: matnli kiritish (`/p/talk`, `/p/exercise`), Taxta (`/p/board`); zaxira video
 - [ ] `git tag day-1` (oxirgi ishlaydigan holat)
 
 ## Ma'lum cheklovlar (halol aytiladi)
 
-- Ovoz chiqishi Navoiy (ofis worker, ngrok); worker uzilsa brauzer TTS (o'zbek ovozi yo'q — sifat past).
+- Ovoz chiqishi Gemini TTS (4–6 s); Gemini uzilsa Navoiy (ofis worker), so'ng brauzer TTS (o'zbek ovozi yo'q — sifat past).
 - Yuz mashqi natijasi bazaga nisbatan; ovoz hissiyoti o'chirilgan (worker `voice_emotion: disabled`).
 - PHQ, eslatmalar, kunlik Telegram xulosa, PIN rejimi — TZ P1/P2, "tez orada".

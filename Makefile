@@ -110,6 +110,9 @@ seed: ## Demo akkauntlar va kontent (T-02+)
 demo: seed ## "Bobur aka" 14 kunlik demo ma'lumotlari (T-17)
 	cd $(API_DIR) && $(UV) run python scripts/demo_data.py
 
+pregen-tts: ## Statik matnlar (mashq, ishora, yuz, xavfsiz skript) uchun TTS keshini to'ldirish
+	cd $(API_DIR) && $(UV) run python scripts/pregen_tts.py --concurrency 1
+
 # ---------- yordamchi ----------
 health: ## API va worker health'ni curl qiladi
 	@curl -sS http://localhost:$(API_PORT)/api/v1/health && echo

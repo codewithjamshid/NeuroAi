@@ -54,6 +54,9 @@ class GeminiLLM:
             response_mime_type="application/json",
             response_schema=schema,
             http_options=types.HttpOptions(timeout=int(timeout_s * 1000)),
+            # 2.5-flash "thinking" adds 3–4 s to dialogue turns; the fast tier answers ≤ 12-word
+            # replies and does not need it (TZ §3 latency budget). Pro tier keeps the default.
+            thinking_config=(types.ThinkingConfig(thinking_budget=0) if tier == "fast" else None),
         )
         try:
             resp = await self._get_client().aio.models.generate_content(
