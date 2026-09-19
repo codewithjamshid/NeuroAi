@@ -369,5 +369,7 @@
   "status.circuit.closed": "ochiq yo'l",
   "status.circuit.half_open": "sinov",
   "status.circuit.open": "uzilgan",
-  "common.back": "Orqaga"
+  "common.back": "Orqaga",
+  "p.face": "Yuz mashqi",
+  "p.face.hint": "Kamera: tabassum, qosh — simmetriya jonli"
 }

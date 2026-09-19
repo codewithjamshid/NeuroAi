@@ -63,6 +63,7 @@ export function PatientHome() {
           hint={t("p.exercise.hint")}
         />
         <BigButton href="/p/say" emoji="🖐️" label={t("p.say")} hint={t("p.say.hint")} />
+        <BigButton href="/p/exercise/face" emoji="😊" label={t("p.face")} hint={t("p.face.hint")} />
       </div>
 
       <Card>
